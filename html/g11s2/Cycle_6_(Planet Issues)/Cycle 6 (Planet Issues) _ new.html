@@ -1,75 +1,7 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Cycle 6 (Planet Issues)</title>
 <link rel="shortcut icon" href="../../../img/revision_icon.png" type="image/x-icon">
-<script>
-	window.onload = function() {
-		let text = document.querySelectorAll('table tbody tr td:first-child, table tbody tr td:nth-child(5), table tbody tr td:nth-child(6)');
-		let testbtn = document.getElementById('testbtn');
-		testbtn.onclick = function() {
-			for (let i = 0; i < text.length; i++)
-			{
-				// if (text[i].style.visibility == 'hidden') {
-				// 	text[i].style.visibility = 'visible';
-				// } else {
-				// 	text[i].style.visibility = 'hidden';
-				// }
-				text[i].classList.toggle('hiddenClass');
-			}
-			if (testbtn.innerHTML == 'Start Test') {
-				testbtn.innerHTML = 'End Test';
-				// testbtn.style.backgroundColor = '#ff4a4a';
-				testbtn.classList.add('red');
-			} else {
-				testbtn.innerHTML = 'Start Test'
-				testbtn.classList.remove('red');
-			}
-		}
-	}
-</script>
-<style>
-	table tbody tr td {
-		transition: 0.2;
-		z-index: 1;
-	}
-	table tbody tr td:first-child,
-	table tbody tr td:nth-child(5),
-	table tbody tr td:nth-child(6) {
-		/* visibility: hidden; */
-		transition: 0.3s;
-	}
-
-	.hiddenClass {
-		/* visibility: hidden; */
-		opacity: 0;
-		visibility: hidden;
-	}
-
-	.red {
-		background-color: #ff4a4a !important;
-	}
-
-	.red:hover {
-		background-color: #ff2626 !important;
-	}
-
-	#testbtn {
-		position: fixed;
-		bottom: 2rem;
-		right: 2rem;
-		background-color: rgba(73, 124, 255, 0.999);
-		border: none;
-		border-radius: 4px;
-		font-size: 1.3rem;
-		font-family:Georgia, 'Times New Roman', Times, serif;
-		padding: 7px 15px;
-		cursor: pointer;
-		transition: 0.2s;
-		z-index: 1000;
-		width: 125px;
-	}
-	#testbtn:hover {
-		background-color: #0047ffff;
-	}
-</style>
+<link rel="stylesheet" href="../../../css/testbtn.css">
+<script src="../../../js/script.js"></script>
 <style>
 /* cspell:disable-file */
 /* webkit printing magic: print all background colors */
@@ -739,7 +671,7 @@ blockquote {
 }
 	
 </style></head><body>
-	<button id="testbtn">Start Test</button>
+	<div id="testbtn"><button id="startbtn">Start Test</button><button id="settingsbtn">⚙</button></div><div id="settingstab" class="hiddenClass"><span>Columns To Hide!</span><br><input type="checkbox" name="chkbox" id="word" checked>Word<br><input type="checkbox" name="chkbox" id="partofspeech">Part of Speech<br><input type="checkbox" name="chkbox" id="meaning">Meaning<br><input type="checkbox" name="chkbox" id="meaninginenglish">Meaning in English<br><input type="checkbox" name="chkbox" id="examplesentence" checked>Example Sentence<br><input type="checkbox" name="chkbox" id="notes" checked>Notes</div>
 <article id="57f4157f-ba63-49c1-bbc2-06bd3077e9e4" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">6️⃣</span></div><h1 class="page-title"><a style="color: rgb(55, 53, 47); text-decoration: none;" href="../../../index.html">Cycle 6 (Planet Issues)</a></h1></header><div class="page-body"><h3 id="6e5bc4a2-7a10-4c70-a5d5-1e4b8d862181" class=""><mark class="highlight-blue"><em>Quick Navigation</em></mark></h3><ol type="1" id="f62bb432-ee2e-4d17-8c71-a0e7fcd719f8" class="numbered-list" start="1"><li><strong>Cycle Contents</strong></li></ol><ol type="1" id="fbda559b-570c-4b3a-bc48-7ca9458dcfa8" class="numbered-list" start="2"><li><strong>Cycle Vocabulary</strong><ol type="a" id="11dde401-c97b-40b1-8578-66b90ed9f55b" class="numbered-list" start="1"><li>Week 1<ol type="i" id="fd92edd3-e3ee-48d3-81e6-56ca87ac34e6" class="numbered-list" start="1"><li>Session 1</li></ol></li></ol><ol type="a" id="c67da6b3-b1bf-49be-8a91-642b55832684" class="numbered-list" start="2"><li>Week 2<ol type="i" id="55ae6053-a310-4ccd-b7eb-0d13f749239c" class="numbered-list" start="1"><li>Session 1</li></ol></li></ol><ol type="a" id="36de5de6-4d1b-4a94-9af6-dd449e0b8d64" class="numbered-list" start="3"><li>Week 3<ol type="i" id="7295e8e0-0dff-425a-b578-2eb06433f781" class="numbered-list" start="1"><li>Session 1</li></ol></li></ol></li></ol><ol type="1" id="d063487d-395c-4291-8fb3-17fd8f183115" class="numbered-list" start="3"><li><strong>Reading Sections</strong><ol type="a" id="4bfdd7f2-1a2e-4aab-a802-5ce9eb5ed3a4" class="numbered-list" start="1"><li>“Living For a Century” <em>[Upstream Unit 10 SB, P:176, </em><mark class="highlight-teal"><em>Week 1 Session 1</em></mark><em>]</em></li></ol><ol type="a" id="e4d8dbf7-b249-4c51-b786-835e10e5288d" class="numbered-list" start="2"><li> “Little Women” <em>[Upstream Unit 10 SB, P:182, </em><mark class="highlight-teal"><em>Week 2 Session 1</em></mark><em>]</em></li></ol><ol type="a" id="b3c95b8c-ddea-4440-bdf1-da60cbf5f083" class="numbered-list" start="3"><li>“Understanding Conservation” <em>[NWF , </em><a href="https://www.nwf.org/Educational-Resources/Wildlife-Guide/Understanding-Conservation"><em>link</em></a><em>, </em><mark class="highlight-teal"><em>Week 3 Session 1</em></mark><em>]</em></li></ol></li></ol><ol type="1" id="405d02e6-884a-4e84-9c0e-8fe984b56853" class="numbered-list" start="4"><li><strong>Extra Reading</strong><ol type="a" id="3952e08f-06ec-404c-b387-db95a8a8b574" class="numbered-list" start="1"><li>“Ethics of Wildlife Management and Conservation: What Should We Try to Protect?” <em>[Nature (By: Christian Gamborg), </em><a href="https://www.nature.com/scitable/knowledge/library/ethics-of-wildlife-management-and-conservation-what-80060473/"><em>link</em></a><em>, </em><mark class="highlight-teal"><em>Week 3 Session 1</em></mark><em>]</em></li></ol></li></ol><p id="0838c3d1-837c-4236-b435-24213741b286" class="">
 </p><hr id="8dfae071-35ae-4012-ac91-3a8c4403607b"/><p id="2cc64a12-c683-49d6-9fc3-8cf74fe37ab1" class="">
 </p><h1 id="f3ce295f-ec85-40c0-960d-f4c4ff676ada" class="">Cycle Content</h1><p id="b29597b1-252c-4306-8a78-6cad64a7654b" class=""><strong><mark class="highlight-red_background">Week 1</mark></strong></p><ol type="1" id="9af1c140-a6d1-4199-aa9f-84a156842b39" class="numbered-list" start="1"><li><strong>Upstream</strong>:<ol type="a" id="411e85e9-de26-4e1a-97a0-93cb0fe38d84" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid"><strong>Unit 10</strong></span>: The Cycle of Life</li></ol></li></ol><ol type="1" id="661cefe9-6ee5-4c9d-9243-fbce6e946653" class="numbered-list" start="2"><li><strong>Writing Academic English</strong>:<ol type="a" id="82c3a463-9108-4b5a-90ae-3ae9ba092043" class="numbered-list" start="1"><li>Part 2: Sentence Structure, <span style="border-bottom:0.05em solid"><strong>Chapter 12</strong></span>: <span style="border-bottom:0.05em solid"><strong>Noun Clauses</strong></span></li></ol><ol type="a" id="febec544-1e85-4017-ab29-0892356b48d9" class="numbered-list" start="2"><li>Part 2: Sentence Structure, <span style="border-bottom:0.05em solid"><strong>Chapter 13</strong></span>: <span style="border-bottom:0.05em solid"><strong>Adverb Clauses</strong></span></li></ol><ol type="a" id="2d8ca8fe-b9ec-45c4-9f86-241c7346ceee" class="numbered-list" start="3"><li>Part 2: Sentence Structure, <span style="border-bottom:0.05em solid"><strong>Chapter 14</strong></span>: <span style="border-bottom:0.05em solid"><strong>Adjective Clauses</strong></span></li></ol><ol type="a" id="9ebda5b0-72f7-420c-94a8-dea724932801" class="numbered-list" start="4"><li>Part 2: Sentence Structure, <span style="border-bottom:0.05em solid"><strong>Chapter 15</strong></span>: <span style="border-bottom:0.05em solid"><strong>Participial Phrases</strong></span></li></ol></li></ol><ol type="1" id="6a9b0d66-712b-465b-9e2a-143cb691f965" class="numbered-list" start="3"><li><em>Some online resources</em></li></ol><p id="e371f8a5-b05f-4802-90d4-5a94e991667e" class=""><strong><mark class="highlight-red_background">Week 2</mark></strong></p><ol type="1" id="057aec50-a2a1-4102-8563-c6f4ac1390fd" class="numbered-list" start="1"><li><strong>Upstream</strong>:<ol type="a" id="47604aec-5603-4f3c-9a2c-c1345e7aa2cd" class="numbered-list" start="1"><li><em>(continue)</em> <span style="border-bottom:0.05em solid"><strong>Unit 10</strong></span>: The Cycle of Life</li></ol></li></ol><ol type="1" id="9207ae75-1a1e-4f65-a9ac-9f6136f67551" class="numbered-list" start="2"><li><em>Some online resources</em></li></ol><p id="ad6bd125-4cd9-41ff-85bb-aea33a8672a9" class=""><strong><mark class="highlight-red_background">Week 3</mark></strong></p><ol type="1" id="fc354c1e-647f-4586-997a-9733b06aca59" class="numbered-list" start="1"><li><strong>New Hello</strong>:<ol type="a" id="4a8ca6ec-49a6-41e8-802d-c0631ecb9b61" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid"><strong>Unit 9</strong></span>: Conservation</li></ol><ol type="a" id="29f462bf-fefc-48a8-b23b-d7525d91b56c" class="numbered-list" start="2"><li><span style="border-bottom:0.05em solid"><strong>Unit 10</strong></span>: The News</li></ol></li></ol><ol type="1" id="e4a84783-237b-46f0-b277-030c85e1c185" class="numbered-list" start="2"><li><em>Some online resources</em></li></ol><p id="0ef4f194-1be1-42f4-aa91-3395aa72ee7c" class="">
