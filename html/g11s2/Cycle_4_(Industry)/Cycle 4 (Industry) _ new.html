@@ -1,0 +1,813 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Cycle 4 (Industry)</title>
+<script>
+	window.onload = function() {
+		let text = document.querySelectorAll('table tbody tr td:first-child, table tbody tr td:nth-child(5), table tbody tr td:nth-child(6)');
+		let testbtn = document.getElementById('testbtn');
+		testbtn.onclick = function() {
+			for (let i = 0; i < text.length; i++)
+			{
+				// if (text[i].style.visibility == 'hidden') {
+				// 	text[i].style.visibility = 'visible';
+				// } else {
+				// 	text[i].style.visibility = 'hidden';
+				// }
+				text[i].classList.toggle('hiddenClass');
+			}
+			if (testbtn.innerHTML == 'Start Test') {
+				testbtn.innerHTML = 'End Test';
+				// testbtn.style.backgroundColor = '#ff4a4a';
+				testbtn.classList.add('red');
+			} else {
+				testbtn.innerHTML = 'Start Test'
+				testbtn.classList.remove('red');
+			}
+		}
+	}
+</script>
+<style>
+	table tbody tr td {
+		transition: 0.2;
+		z-index: 1;
+	}
+	table tbody tr td:first-child,
+	table tbody tr td:nth-child(5),
+	table tbody tr td:nth-child(6) {
+		/* visibility: hidden; */
+		transition: 0.3s;
+	}
+
+	.hiddenClass {
+		/* visibility: hidden; */
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	.red {
+		background-color: #ff4a4a !important;
+	}
+
+	.red:hover {
+		background-color: #ff2626 !important;
+	}
+
+	#testbtn {
+		position: fixed;
+		bottom: 2rem;
+		right: 2rem;
+		background-color: rgba(73, 124, 255, 0.999);
+		border: none;
+		border-radius: 4px;
+		font-size: 1.3rem;
+		font-family:Georgia, 'Times New Roman', Times, serif;
+		padding: 7px 15px;
+		cursor: pointer;
+		transition: 0.2s;
+		z-index: 1000;
+		width: 125px;
+	}
+	#testbtn:hover {
+		background-color: #0047ffff;
+	}
+</style>
+<style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body>
+	<button id="testbtn">Start Test</button>
+<article id="60a0e042-3aa8-4902-aef6-7c3b5d20c9ea" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">4️⃣</span></div><h1 class="page-title"><a style="color: rgb(55, 53, 47); text-decoration: none;" href="../../../index.html">Cycle 4 (Industry)</a></h1></header><div class="page-body"><h3 id="c1381709-076c-45e2-b59a-351f79eca796" class=""><mark class="highlight-blue"><em>Quick Navigation</em></mark></h3><ol type="1" id="39f728ee-49e9-47e4-a15a-f8a722c1b5c4" class="numbered-list" start="1"><li><strong>Cycle Contents</strong></li></ol><ol type="1" id="fa173f1c-5810-48f6-9b7c-0ce235ed8575" class="numbered-list" start="2"><li><strong>Cycle Vocabulary</strong><ol type="a" id="af200b03-0499-4107-9b32-ee903a087c6a" class="numbered-list" start="1"><li>Week 1<ol type="i" id="dab83d84-05f8-46ef-8e2b-f1a3dc4359ba" class="numbered-list" start="1"><li>Session 1</li></ol></li></ol><ol type="a" id="1298d821-31db-4576-937e-42d20ebfdd2a" class="numbered-list" start="2"><li>Week 2<ol type="i" id="c0e8d49c-8ea1-4de1-891e-410d413c7ad8" class="numbered-list" start="1"><li>Session 1</li></ol></li></ol><ol type="a" id="d6dd7dd2-f8a7-4d95-aef1-1689115f2e34" class="numbered-list" start="3"><li>Week 3<ol type="i" id="49d0b9e2-a4f8-48b4-a237-e05b9f03774c" class="numbered-list" start="1"><li>Session 1</li></ol><ol type="i" id="656a7589-5402-4283-912b-ad5ccf2d3eb9" class="numbered-list" start="2"><li>Session 2</li></ol></li></ol></li></ol><ol type="1" id="afac7608-108f-4cd6-bff9-7bbf968e9248" class="numbered-list" start="3"><li><strong>Reading Sections</strong><ol type="a" id="06e1526a-669b-4d1d-b225-d4f193becdae" class="numbered-list" start="1"><li>“Why don’t you get a proper job?” <em>[Upstream Unit 3 SB, P:46, </em><mark class="highlight-teal"><em>Week 1 Session1</em></mark><em>]</em></li></ol><ol type="a" id="094cb86c-10d3-4aa9-8acb-07f99d6ca644" class="numbered-list" start="2"><li> “Great British Jobs” <em>[Upstream Unit 3 SB, P:52, </em><mark class="highlight-teal"><em>Week 2 Session 1</em></mark><em>]</em></li></ol><ol type="a" id="f690aeb9-9d2b-4b8c-9089-4cf9a444d2d0" class="numbered-list" start="3"><li>“Tesla&#x27;s rise made 2020 the year the U.S. auto industry went electric” <em>[Reuters (By: Joseph White), </em><a href="https://www.reuters.com/article/us-autos-electric-yearend-idUSKBN28V0HQ"><em>link</em></a><em>, </em><mark class="highlight-teal"><em>Week 3 Session 1</em></mark><em>]</em></li></ol><ol type="a" id="fd8d941d-b804-4313-8ecf-ad903229d76a" class="numbered-list" start="4"><li>“Republished: Princess Fatma Ismail - The woman behind Cairo University” <em>[AhramOnline (By: Amira Noshokaty), </em><a href="https://english.ahram.org.eg/News/259505.aspx"><em>link</em></a><em>, </em><mark class="highlight-teal"><em>Week 3 Session 2</em></mark><em>]</em></li></ol></li></ol><ol type="1" id="f4ced8f6-a49e-45a8-9621-fd2915680930" class="numbered-list" start="4"><li><strong>Extra Reading</strong><ol type="a" id="2c326d85-52c7-4818-b6d8-d8a1aeae51cd" class="numbered-list" start="1"><li>“Tesla is proof that the next 20 years in the tech industry won&#x27;t be like the last 20” <em>[INSIDER (By: Matthew DeBord), </em><a href="https://www.businessinsider.com/tesla-proof-next-20-years-in-tech-industry-wont-be-like-last-20-2019-3"><em>link</em></a><em>, </em><mark class="highlight-teal"><em>Week 3 Session 1</em></mark><em>]</em></li></ol></li></ol><ol type="1" id="662100ba-e1e7-4005-886b-b81a7dcdf246" class="numbered-list" start="5"><li><strong>From Grammarway 4</strong><ol type="a" id="534437da-6937-452a-b4b4-fe72f424fca6" class="numbered-list" start="1"><li>Unit 10</li></ol></li></ol><p id="b9c937d9-6f93-47a1-a195-f32ebb7cec81" class="">
+</p><hr id="1c72bb99-05d2-4969-a756-0d20bd7afa21"/><p id="e2a86b77-9fe4-46ee-91e2-547100332e37" class="">
+</p><h1 id="f94a7e51-0e4a-4082-8b34-6f6631432946" class="">Cycle Contents</h1><p id="a0f64fd2-305f-43b9-8a73-ea3e98c1db08" class=""><strong><mark class="highlight-red_background">Week 1</mark></strong></p><ol type="1" id="b87fe327-c311-4bf2-aaa4-beccd6b71213" class="numbered-list" start="1"><li><strong>Upstream</strong>:<ol type="a" id="fffabefa-3395-41fa-8633-70f33560b523" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid"><strong>Unit 3</strong></span>: Making a living { Reading: “<span style="border-bottom:0.05em solid">Why don’t you get a proper job?</span>” <em>[Upstream Unit 3 SB, P:46] </em>}</li></ol></li></ol><ol type="1" id="72559ce3-6b87-44de-9cd5-2a8e80836e86" class="numbered-list" start="2"><li><strong>Writing Academic English</strong>:<ol type="a" id="a1c91180-3c47-4423-b46f-bc44618e5087" class="numbered-list" start="1"><li>Part 2: Writing an Essay, <strong><span style="border-bottom:0.05em solid">Chapter 9</span></strong>: <span style="border-bottom:0.05em solid"><strong>Argumentative Essay</strong></span></li></ol></li></ol><ol type="1" id="5a79b675-a9bb-49a6-96b9-2ead8621c735" class="numbered-list" start="3"><li><em>Some online resources</em></li></ol><p id="64a9178a-f829-47f1-90b1-ff1c99540808" class=""><strong><mark class="highlight-red_background">Week 2</mark></strong></p><ol type="1" id="541fba8e-980b-418b-8c2e-be2f6f16bd98" class="numbered-list" start="1"><li><strong>Upstream</strong>:<ol type="a" id="dc8372ef-7c7b-44ba-93e5-1e10d98c7266" class="numbered-list" start="1"><li><em>(continue)</em> <span style="border-bottom:0.05em solid"><strong>Unit 3</strong></span>: Making a living { Reading: “Great British Jobs” <em>[Upstream Unit 3 SB, P:52]</em> }</li></ol></li></ol><p id="eda63d40-d7c8-4876-ad01-b4dc2314afff" class=""><strong><mark class="highlight-red_background">Week 3</mark></strong></p><ol type="1" id="d69dfa89-7869-4fdf-8538-ad19fb924cde" class="numbered-list" start="1"><li><strong>New Hello</strong>:<ol type="a" id="9fcfdc01-0d09-4b92-a758-af6265de065b" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid"><strong>Unit 8</strong></span>: High tech-transport</li></ol><ol type="a" id="dd4a6828-5ed7-4719-bfcd-62a6422ba0f9" class="numbered-list" start="2"><li><span style="border-bottom:0.05em solid"><strong>Unit 12</strong></span>: Achievements &amp; goals</li></ol></li></ol><ol type="1" id="ca26823e-e71a-4899-ba48-efd621793d9b" class="numbered-list" start="2"><li><strong>Grammarway 4</strong>:<ol type="a" id="d45c36e3-b34e-4e07-9504-8196acca14a1" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid"><strong>Unit 10</strong></span>: Clauses - Linking Words</li></ol></li></ol><ol type="1" id="33bc5e17-278a-4844-a4a3-ebc08624108a" class="numbered-list" start="3"><li><em>Some online resources</em></li></ol><p id="b6332547-433f-459b-8e4c-635062537768" class="">
+</p><p id="d4eea155-b8dc-4219-bc41-303d118b1fb7" class=""><mark class="highlight-orange_background">** All online resources can be found in the cycle file.</mark></p><p id="d2eadf57-225b-4534-9af3-bf928e9af31a" class="">
+</p><hr id="936d4867-47ec-4c5e-a530-70030bde063b"/><h1 id="57c00ff9-8af4-4dab-801d-7dc2c0420dea" class="">Cycle Vocabulary</h1><h2 id="99130ad0-4777-4595-9a40-f9ad7435d066" class=""><mark class="highlight-red_background">Week 1</mark></h2><div id="a17ba824-19f4-477e-aec1-6110fb7300ca" class="collection-content"><h4 class="collection-title">Session 1</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Word</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Part of Speech</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning in English</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Example Sentence</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Notes</th></tr></thead><tbody><tr id="3c7456a9-c9a6-4b04-8c2b-55b155c1da29"><td class="cell-\]]D"><em>career</em> prospect</td><td class="cell-UrnO"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">الآفاق المهنية</td><td class="cell-EsVE">the chances of being successful esp. in one’s career</td><td class="cell-b`;a"><em>The job had no career prospects, it was a small, family business.</em>
+</td><td class="cell-ZSfO"></td></tr><tr id="c08215a7-505f-4dab-9d80-e16a878b481e"><td class="cell-\]]D">rigid</td><td class="cell-UrnO"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">جامد</td><td class="cell-EsVE">inflexible, firm, harsh</td><td class="cell-b`;a"><em>The school has rigid rules against using mobile phones in the classroom.</em>
+</td><td class="cell-ZSfO"></td></tr><tr id="067e9d7d-2b1c-4274-acae-910cdf2aa61b"><td class="cell-\]]D">well-founded</td><td class="cell-UrnO"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">راسخ</td><td class="cell-EsVE">based on facts</td><td class="cell-b`;a"><em>Their faith in rigid career paths was well-founded.</em></td><td class="cell-ZSfO"></td></tr><tr id="bb173b2f-e8e7-4a4b-b7db-5cb58b22b37d"><td class="cell-\]]D">determined [<strong>to</strong>]</td><td class="cell-UrnO"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">مُصّر</td><td class="cell-EsVE">wanting to do something very much and not allowing anyone or any difficulties to stop you</td><td class="cell-b`;a"><em>She&#x27;s sure to get the job she wants - she&#x27;s a very determined person.</em></td><td class="cell-ZSfO"></td></tr><tr id="1a4808cc-84ec-4a5b-a785-3eba04019c28"><td class="cell-\]]D">dependable</td><td class="cell-UrnO"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">جدير بالثقة</td><td class="cell-EsVE">reliable</td><td class="cell-b`;a"><em>Don’t count on Janice to drive you to the airport, she’s not very dependable.</em>
+</td><td class="cell-ZSfO"></td></tr><tr id="67780bc3-515c-41c7-8994-d6e27eb99c7f"><td class="cell-\]]D">resourceful</td><td class="cell-UrnO"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">واسع الحيلة</td><td class="cell-EsVE">imaginative, creative</td><td class="cell-b`;a"><em>My mum was a very resourceful woman who always found ways of dealing with problems.</em>
+</td><td class="cell-ZSfO"></td></tr><tr id="9dbd0f9b-05f7-444e-a84a-d89eeaa5ac2f"><td class="cell-\]]D">pitfall</td><td class="cell-UrnO"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">مأزق</td><td class="cell-EsVE">an unseen danger or difficulty that is a common cause of mistakes</td><td class="cell-b`;a"><em>One of the pitfalls of being rich and famous is that you never know who your real friends are.</em>
+</td><td class="cell-ZSfO"></td></tr><tr id="1de8ea51-fd79-47f5-b4e9-1926198893f3"><td class="cell-\]]D">redundancy</td><td class="cell-UrnO"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">وفرة</td><td class="cell-EsVE">a situation in which <em>sb</em> has to leave their job as there is no more work available for them</td><td class="cell-b`;a"><em>Because of the drop in tourism, many workers in the service sector are facing redundancy.</em>
+</td><td class="cell-ZSfO"></td></tr><tr id="b3914f3d-a820-40f7-9d0f-31eaa9f624b2"><td class="cell-\]]D"><em>be</em> obsessed <strong>with</strong> / <strong>by</strong></td><td class="cell-UrnO"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">مهووس بـ</td><td class="cell-EsVE">to be fixated</td><td class="cell-b`;a"><em>Ever since he was a teenager, he’s been obsessed with the idea of becoming a movie star.</em>
+</td><td class="cell-ZSfO"></td></tr><tr id="c094438e-6c59-4186-9b06-11a94bf97ebc"><td class="cell-\]]D">optimism</td><td class="cell-UrnO"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">التفاؤل</td><td class="cell-EsVE">hopefulness</td><td class="cell-b`;a"><em>The newly elected president expressed optimism about his country’s economic future.</em>
+</td><td class="cell-ZSfO"><strong>Der. :
+</strong><mark class="highlight-red">optimist </mark><em>(n)</em>, <mark class="highlight-red">optimistic </mark><em>(adj)</em>, <mark class="highlight-red">optimistically </mark><em>(adv)
+</em><strong>Opp. :
+</strong><mark class="highlight-red">pessimism</mark></td></tr><tr id="d30f6377-528a-4e09-af91-65e556dd40cc"><td class="cell-\]]D">antidote</td><td class="cell-UrnO"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">ترياق</td><td class="cell-EsVE">a way of preventing or acting against something bad</td><td class="cell-b`;a"><em>A bit of optimism from an adult can serve as an antidote to the constant criticism of teenagers in the press.</em></td><td class="cell-ZSfO"></td></tr><tr id="8bf47abd-bca7-459c-9248-5b8901a7ce92"><td class="cell-\]]D">dead-end</td><td class="cell-UrnO"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">نهاية</td><td class="cell-EsVE">(of a job) one that does not lead to further developments or progress</td><td class="cell-b`;a"><em>Waitressing was a dead-end job.</em></td><td class="cell-ZSfO"></td></tr><tr id="2c7bc862-c1f3-4c6f-8a56-82bdc5b3acdd"><td class="cell-\]]D">diligent</td><td class="cell-UrnO"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">مجتهد</td><td class="cell-EsVE">meticulous, hard-working</td><td class="cell-b`;a"><em>He has always been a diligent and reliable employee.</em>
+</td><td class="cell-ZSfO"><strong>Der. :</strong>
+<mark class="highlight-red">diligence </mark><em>(n)</em>, <mark class="highlight-red">diligently </mark><em>(adv)</em></td></tr><tr id="a526b33f-35e6-44b5-b8f2-7fa3b2de97e8"><td class="cell-\]]D">freelance</td><td class="cell-UrnO"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">يعمل لمصلحته الخاصة</td><td class="cell-EsVE">to work freelance</td><td class="cell-b`;a"><em>I prefer to freelance from home rather than to work in an office.</em></td><td class="cell-ZSfO"></td></tr><tr id="adaeff96-5dac-4549-9158-00d320fa8f4e"><td class="cell-\]]D">resilient</td><td class="cell-UrnO"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">مرن</td><td class="cell-EsVE">able to restore one&#x27;s energy, recover from unpleasant events</td><td class="cell-b`;a"><em>Kids are quite resilient, they usually adapt to change very quickly.</em>
+</td><td class="cell-ZSfO"></td></tr><tr id="7e7195f2-4243-4a67-b239-b46b2563b517"><td class="cell-\]]D">initiative</td><td class="cell-UrnO"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">مبادر</td><td class="cell-EsVE">the ability to decide what to do next, without needing other people to tell you</td><td class="cell-b`;a"><em>The manager was away, so she took the initiative and presented her ideas to the president of the company.</em></td><td class="cell-ZSfO"></td></tr></tbody></table></div><p id="385fda17-e401-4874-8f25-9bfefe22b068" class="">
+</p><hr id="d8511a27-28d0-4363-9808-fd1db4f60108"/><h2 id="76de6998-b5cb-4266-991e-1b59c38338bf" class=""><mark class="highlight-red_background">Week 2</mark></h2><div id="338e487b-758b-47ad-8511-3480919b8cd7" class="collection-content"><h4 class="collection-title">Session 1</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Word</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Part of Speech</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning in English</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Example Sentence</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Notes</th></tr></thead><tbody><tr id="480e2510-5c5b-48f5-b0d8-6db8e7293624"><td class="cell-RR[N">butler</td><td class="cell-vEOi"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">كبير الخدم</td><td class="cell-DY?_">the most important male servant in a wealthy house</td><td class="cell-RD`I"><em>Only the most affluent families can afford having a butler nowadays.</em></td><td class="cell-oqfB"></td></tr><tr id="6428aa26-62dd-4d64-be71-3d956cbb17c8"><td class="cell-RR[N">shepherd</td><td class="cell-vEOi"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">الراعي</td><td class="cell-DY?_">a person who takes care of sheep in the fields</td><td class="cell-RD`I"><em>The cottage used to belong to an old shepherd who kept his sheep in a field at the foot of the mountain.</em>
+</td><td class="cell-oqfB"></td></tr><tr id="fdce998f-8748-4323-a5bc-087a44d6602a"><td class="cell-RR[N">milkman</td><td class="cell-vEOi"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">someone who brings milk to your home in the early morning</td><td class="cell-DY?_"><em>Britain is one of the few countries where milk is delivered daily to the doorstep by milkmen.</em></td><td class="cell-RD`I"></td><td class="cell-oqfB"></td></tr><tr id="b244260c-7a1e-4cae-8bb1-4f7400146869"><td class="cell-RR[N">beefeater</td><td class="cell-vEOi"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS"></td><td class="cell-DY?_">a guard at the Tower of London</td><td class="cell-RD`I"><em>When we visited the Tower of London, we got our picture taken with one of the Beefeaters.</em>
+</td><td class="cell-oqfB"></td></tr><tr id="ace9ac7b-275c-465c-8e34-fd46983fafdf"><td class="cell-RR[N">chimney sweep</td><td class="cell-vEOi"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">منظف المداخن</td><td class="cell-DY?_">a person whose job is to clean the soot out of chimneys</td><td class="cell-RD`I"><em>Even today, many houses still have working fireplaces so a chimney sweep can still find plenty of work.</em>
+</td><td class="cell-oqfB"></td></tr><tr id="0033b004-5ef1-47a7-abf6-40d24879ce00"><td class="cell-RR[N">steeplejack</td><td class="cell-vEOi"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS"></td><td class="cell-DY?_">a person who carries out a range of building, repair and maintenance jobs to the outside of tall structures (e.g. monuments)</td><td class="cell-RD`I"><em>My dad was a steeplejack but I’m too scared of heights to do the same job.</em>
+</td><td class="cell-oqfB"></td></tr><tr id="c5e31bf9-3f61-4c10-b95b-c92d101a72ad"><td class="cell-RR[N">town crier</td><td class="cell-vEOi"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">مؤذن المدينة</td><td class="cell-DY?_">an individual who passed on the news to the general public</td><td class="cell-RD`I"><em>In olden days people had to rely on the town crier to find out what was going on.</em>
+</td><td class="cell-oqfB"></td></tr><tr id="6dac886e-a027-4edd-8010-1f4ac4f98301"><td class="cell-RR[N">stockbroker</td><td class="cell-vEOi"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">سمسار البورصة</td><td class="cell-DY?_">a person who gives advice and helps people buy and sell stocks and shares</td><td class="cell-RD`I"><em>You need to hire a good stockbroker if you want to make money on the stock market.</em>
+</td><td class="cell-oqfB"></td></tr><tr id="5f663803-eda0-4b0d-8898-fc299aceb505"><td class="cell-RR[N">self-employed</td><td class="cell-vEOi"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">عامل لحسابه الخاص</td><td class="cell-DY?_">doing freelance work</td><td class="cell-RD`I"><em>I’m self-employed, I run my own catering business.</em>
+</td><td class="cell-oqfB"></td></tr><tr id="e76b9d47-7d94-4c7f-8cc3-71fb93cc6043"><td class="cell-RR[N">church spire</td><td class="cell-vEOi"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">أبراج الكنيسة</td><td class="cell-DY?_">a tall pointed structure on top of a building, especially on top of a church tower</td><td class="cell-RD`I"><em>This man carries out a range of building, repair and maintenance jobs to the outside of 15 tall structures such as church spires, monuments, industrial chimneys, and high rise buildings.</em></td><td class="cell-oqfB"></td></tr><tr id="0b9cd409-ddc9-4254-9ed1-e0a9a14eb121"><td class="cell-RR[N">grace</td><td class="cell-vEOi"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">زيّن</td><td class="cell-DY?_">to make sth look more attractive</td><td class="cell-RD`I"><em>Her portrait graced the wall above the fireplace.</em></td><td class="cell-oqfB"></td></tr><tr id="934b89e4-d04b-4589-bfb5-2dd50073baad"><td class="cell-RR[N">ceremony</td><td class="cell-vEOi"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">احتفالية</td><td class="cell-DY?_">a ritual, service</td><td class="cell-RD`I"><em>The wedding ceremony took place at St Bartholomew’s Church in Oxford.</em>
+</td><td class="cell-oqfB"><strong>Der. :</strong>
+<mark class="highlight-red">ceremonial</mark> <em>(adj)</em></td></tr><tr id="ffddbfb3-aafb-425b-90ad-ab5cbc2ca4d5"><td class="cell-RR[N">promotional</td><td class="cell-vEOi"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">الترويجية</td><td class="cell-DY?_">related to advertising</td><td class="cell-RD`I"><em>To increase overseas sales of their music, the band went on a promotional tour of Australia.</em>
+</td><td class="cell-oqfB"></td></tr><tr id="10942094-0289-4fa8-99a9-306368e6854c"><td class="cell-RR[N">booming</td><td class="cell-vEOi"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">عالي / صاخب</td><td class="cell-DY?_">loud</td><td class="cell-RD`I"><em>Our boss has such a booming voice that everyone can hear him, even when the door to his office is closed.</em>
+</td><td class="cell-oqfB"></td></tr><tr id="50575477-f6a9-40ce-96a0-88dfba96a585"><td class="cell-RR[N">crate</td><td class="cell-vEOi"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">قفص</td><td class="cell-DY?_">a box used to carry things</td><td class="cell-RD`I"><em>I packed my belongings into crates and shipped them to my new house in France.</em>
+</td><td class="cell-oqfB"></td></tr><tr id="e5973075-0220-47c4-8a43-7048446dc424"><td class="cell-RR[N">strain</td><td class="cell-vEOi"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">يضغط</td><td class="cell-DY?_">to put pressure</td><td class="cell-RD`I"><em>I strained my back when I tried to move the bookcase to clean the space behind it.</em>
+</td><td class="cell-oqfB"></td></tr><tr id="d7a18811-5146-4b55-9413-f588435bcbb0"><td class="cell-RR[N">go against nature</td><td class="cell-vEOi"><span class="selected-value select-value-color-orange">(phr)</span></td><td class="cell-EJZS">تتعارض مع الطبيعة</td><td class="cell-DY?_">to do <em>sth</em> abnormal</td><td class="cell-RD`I"><em>It goes against nature for animals not to feed their young.</em>
+</td><td class="cell-oqfB"></td></tr><tr id="f23b3da1-0c56-4ea5-81c5-8db2d47cf178"><td class="cell-RR[N">faulty</td><td class="cell-vEOi"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">متعطل</td><td class="cell-DY?_">defective, damaged</td><td class="cell-RD`I"><em>The fire was caused by faulty wiring.</em>
+</td><td class="cell-oqfB"></td></tr><tr id="99594e2c-058e-4014-bbb3-11ec300188e2"><td class="cell-RR[N">obstruction</td><td class="cell-vEOi"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">إعاقة</td><td class="cell-DY?_">an obstacle, a barrier</td><td class="cell-RD`I"><em>A tree had fallen across the road and was causing an obstruction.</em>
+</td><td class="cell-oqfB"></td></tr><tr id="55e39762-0274-4b98-8d33-861ef8f024c9"><td class="cell-RR[N">ventilation</td><td class="cell-vEOi"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">تهوية</td><td class="cell-DY?_">a system, such as air openings and blowers, used to change the air in a room or building</td><td class="cell-RD`I"><em>The room had poor ventilation so it soon became hot and stuffy.</em>
+</td><td class="cell-oqfB"></td></tr><tr id="2603a284-313c-48b9-8248-8721f7bf2828"><td class="cell-RR[N"><em>be</em> <strong>on</strong> your guard</td><td class="cell-vEOi"><span class="selected-value select-value-color-pink">(exp)</span></td><td class="cell-EJZS">كن حريص</td><td class="cell-DY?_">to be careful</td><td class="cell-RD`I"><em>When travelling abroad, you should be on your guard against dishonest people who will try to overcharge you.</em>
+</td><td class="cell-oqfB"></td></tr><tr id="439c2739-6158-4ac3-aa49-9250ba390a32"><td class="cell-RR[N">bomb scare</td><td class="cell-vEOi"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">قنبلة ذعر</td><td class="cell-DY?_">a false alarm for an explosion</td><td class="cell-RD`I"><em>Our flight was delayed because there was a bomb scare at the airport.</em>
+</td><td class="cell-oqfB"></td></tr></tbody></table></div><p id="6997e684-22f2-47ca-9c06-09185828523c" class="">
+</p><hr id="b07d3c1a-ae75-4236-9038-e62decb65d5c"/><h2 id="e691e814-58a9-4e51-86d5-00cdf29e77ce" class=""><mark class="highlight-red_background">Week 3</mark></h2><div id="90a4533e-07cb-445f-b87d-921a2940e210" class="collection-content"><h4 class="collection-title">Session 1</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Word</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Part of Speech</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning in English</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Example Sentence</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Notes</th></tr></thead><tbody><tr id="9986fdd5-b001-463d-999d-abf3ac72d1af"><td class="cell-qZk&lt;">surged</td><td class="cell-DR\@"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">ارتفعت</td><td class="cell-osb&lt;">to increase suddenly and strongly</td><td class="cell-|`Jj"><em>The company&#x27;s profits have surged.</em></td><td class="cell-XUBS"></td></tr><tr id="eed17aa5-7e23-4ccf-a8ca-c6cce3f188b9"><td class="cell-qZk&lt;">frantic</td><td class="cell-DR\@"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">شديد</td><td class="cell-osb&lt;">done or arranged in a hurry and a state of excitement or confusion</td><td class="cell-|`Jj"><em>Rescuers were engaged in a frantic all-night effort to reach the survivors before their supply of air ran out.</em></td><td class="cell-XUBS"></td></tr><tr id="a9b26e40-3628-40dd-9cc0-0f0517f7ac57"><td class="cell-qZk&lt;">anticipated</td><td class="cell-DR\@"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">كان متوقعا</td><td class="cell-osb&lt;">to imagine or expect that something will happen, sometimes taking action in preparation for it happening</td><td class="cell-|`Jj"><em>We had one or two difficulties along the way that we didn&#x27;t anticipate.</em></td><td class="cell-XUBS"></td></tr><tr id="c5866e82-fadf-45b3-8da4-8e1eb6654351"><td class="cell-qZk&lt;">electrification</td><td class="cell-DR\@"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">كهربة</td><td class="cell-osb&lt;">the process of making a machine or system operate using electricity when it did not before</td><td class="cell-|`Jj"><em>For 2021, all signs point toward the industry accelerating its shift toward electrification.</em></td><td class="cell-XUBS"></td></tr><tr id="2c425db0-5d03-4c2e-b150-f28d92b44ea9"><td class="cell-qZk&lt;">momentous</td><td class="cell-DR\@"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">بالغ الأهمية</td><td class="cell-osb&lt;">very important because of effects on future events</td><td class="cell-|`Jj"><em>Whether or not to move overseas was a momentous decision for the family.</em></td><td class="cell-XUBS"></td></tr><tr id="7e484f29-e7ae-4819-8712-e257c5b9c8a1"><td class="cell-qZk&lt;">bankruptcy</td><td class="cell-DR\@"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">إفلاس</td><td class="cell-osb&lt;">a situation in which a business or a person becomes bankrupt</td><td class="cell-|`Jj"><em>The company was forced into bankruptcy.</em></td><td class="cell-XUBS"></td></tr><tr id="9860504d-9e6a-4fa1-a423-179e2356d047"><td class="cell-qZk&lt;">ascent</td><td class="cell-DR\@"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">صعود</td><td class="cell-osb&lt;">when someone starts to become successful</td><td class="cell-|`Jj"><em>His ascent to power was rapid and unexpected.</em></td><td class="cell-XUBS"></td></tr><tr id="ad0fcb2e-dddc-4ef4-b2e1-aea03831ac24"><td class="cell-qZk&lt;">hedge <em>fund</em></td><td class="cell-DR\@"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">صناديق التحوط</td><td class="cell-osb&lt;">a financial service where money is  invested   (= given to companies hoping to get more back)  in a way which tries to make very big profits, but which has a big risk</td><td class="cell-|`Jj"><em>If you have thousands or millions or even billions of dollars to invest in a hedge fund you still want to look closely before you invest.</em></td><td class="cell-XUBS"></td></tr><tr id="cf40ebde-355d-4bcd-ba67-60dd91535fcd"><td class="cell-qZk&lt;">ratchet <strong>up</strong> (ratcheted - ratcheted)</td><td class="cell-DR\@"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">تصاعد</td><td class="cell-osb&lt;">to increase something over a period of time</td><td class="cell-|`Jj"><em>The debate should ratchet up awareness of the problem among members of the general public.</em></td><td class="cell-XUBS"></td></tr><tr id="41114c87-61e5-430b-96c0-768145b9daaa"><td class="cell-qZk&lt;">combustion</td><td class="cell-DR\@"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">الإحتراق</td><td class="cell-osb&lt;">the process of burning</td><td class="cell-|`Jj"><em>It might, for example, be suggested that the heat of the sun was supplied by chemical combination analogous to combustion.</em></td><td class="cell-XUBS"></td></tr><tr id="d78b637d-32c2-463b-9af8-75f1af442f90"><td class="cell-qZk&lt;">embraced <em>plans</em></td><td class="cell-DR\@"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">تبنّى</td><td class="cell-osb&lt;">to accept something enthusiastically</td><td class="cell-|`Jj"><em>Political leaders also embraced plans to start phasing out internal combustion engine-only vehicles as early as 2030.</em></td><td class="cell-XUBS"></td></tr><tr id="f4054031-fe30-421c-aed1-f676ad5cd1fb"><td class="cell-qZk&lt;">strip <strong>away</strong></td><td class="cell-DR\@"><span class="selected-value select-value-color-orange">(phr)</span></td><td class="cell-EJZS">يقلل / يجرد</td><td class="cell-osb&lt;">to gradually reduce something important or something that has existed for a long time</td><td class="cell-|`Jj"><em>I helped strip away his chances of staying with you.</em></td><td class="cell-XUBS"></td></tr><tr id="2c9e738c-98eb-40fa-8065-0fd27f3bb990"><td class="cell-qZk&lt;">incumbent { automakers }</td><td class="cell-DR\@"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">شركات صناعة السيارات الحالية</td><td class="cell-osb&lt;">officially having the named position</td><td class="cell-|`Jj"><em>The incumbent president faces problems which began many years before he took office.</em></td><td class="cell-XUBS"></td></tr><tr id="837893a4-b84f-4331-9b61-79b53b1d9c1e"><td class="cell-qZk&lt;">plug in</td><td class="cell-DR\@"><span class="selected-value select-value-color-orange">(phr)</span></td><td class="cell-EJZS">يشترك في</td><td class="cell-osb&lt;">to get to know and receive information about something, or to start using or being involved in it</td><td class="cell-|`Jj"><em>Andy is really plugged into the popular music scene.</em></td><td class="cell-XUBS">plug <span style="border-bottom:0.05em solid"><strong>in</strong></span> + <em><strong>....</strong></em><strong>
+</strong>plug <span style="border-bottom:0.05em solid"><strong>into</strong></span> + <em>object</em></td></tr><tr id="88ba2d4a-6c63-442b-a57a-aa8f92c3a0e1"><td class="cell-qZk&lt;">parity</td><td class="cell-DR\@"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">التكافؤ</td><td class="cell-osb&lt;">equality , especially of pay or position</td><td class="cell-|`Jj"><em>British nurses would like to see pay parity with nurses in other major European countries.</em></td><td class="cell-XUBS"></td></tr><tr id="30adb394-b51c-4fa2-82c5-0ad9e0d72c92"><td class="cell-qZk&lt;">scramble [ <strong>to</strong> ]</td><td class="cell-DR\@"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">تزاحم / يتدافع</td><td class="cell-osb&lt;">to compete with other people for something there is very little of</td><td class="cell-|`Jj"><em>People are scrambling to buy property before prices rise even further.</em></td><td class="cell-XUBS"></td></tr><tr id="d269e6f1-9e93-4526-8682-ccf190e5ccbc"><td class="cell-qZk&lt;">consultancy</td><td class="cell-DR\@"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">شركة الاستشارات</td><td class="cell-osb&lt;">a company that gives specialist advice on a particular subject</td><td class="cell-|`Jj"><em>We are an engineering consultancy that requires a cost accountant.</em></td><td class="cell-XUBS"></td></tr><tr id="252e7f2f-bec2-4663-9af6-f8410491df6c"><td class="cell-qZk&lt;">elevate [ <strong>to</strong> ]</td><td class="cell-DR\@"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">رفع</td><td class="cell-osb&lt;">to be given a higher rank or social position</td><td class="cell-|`Jj"><em>He has been elevated to deputy manager.</em></td><td class="cell-XUBS"></td></tr><tr id="872861f7-7bd5-4a2d-ac04-dcc55c9cd68d"><td class="cell-qZk&lt;">compel [ <em>sth/sm</em> t<strong>o</strong> ]</td><td class="cell-DR\@"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">تجبر</td><td class="cell-osb&lt;">to force someone to do something</td><td class="cell-|`Jj"><em>As a school boy he was compelled  to wear shorts even in winter.</em></td><td class="cell-XUBS"></td></tr><tr id="93356528-9d01-447c-8c99-b362a8103ab9"><td class="cell-qZk&lt;">hybrid</td><td class="cell-DR\@"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">هجين</td><td class="cell-osb&lt;">being a mixture of two very different things</td><td class="cell-|`Jj"><em>A hybrid car is a vehicle with an engine that uses both petrol and another type of energy, usually electricity.</em></td><td class="cell-XUBS"></td></tr><tr id="6e12b159-a08c-4eed-99bf-ac435565b5d0"><td class="cell-qZk&lt;">hub</td><td class="cell-DR\@"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">مركز</td><td class="cell-osb&lt;">the central or main part of something where there is most activity</td><td class="cell-|`Jj"><em>The City of London is the hub of Britain&#x27;s financial world.</em></td><td class="cell-XUBS"></td></tr></tbody></table></div><p id="87b19f37-a34c-4ba6-9f7b-082dfad8369b" class="">
+</p><div id="a4cc420f-a3b2-4938-8d84-4ec56fb4339b" class="collection-content"><h4 class="collection-title">Session 2</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Word</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Part of Speech</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning in English</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Example Sentence</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Notes</th></tr></thead><tbody><tr id="edff3082-b460-47ab-b7da-e38181fdafdc"><td class="cell-gl_q">strive</td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">السعي</td><td class="cell-eY}I">to try very hard to do something or to make something happen, especially for a long time or against difficulties</td><td class="cell-omD`"><em>Mr Roe has kindled expectations that he must now strive to live up to.</em></td><td class="cell-}sNL">past simple: <strong><mark class="highlight-red">strove
+</mark></strong>past participle: <strong><mark class="highlight-red">striven
+</mark></strong><em>[also: strived → strived; but the former is more common]</em></td></tr><tr id="45b8ac66-20d0-472d-95ab-8c99ae4bf672"><td class="cell-gl_q">gratitude</td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">شكر</td><td class="cell-eY}I">the feeling or quality of being grateful</td><td class="cell-omD`"><em>She sent them a present to show/express her gratitude.</em></td><td class="cell-}sNL"></td></tr><tr id="9d7e0ea0-9d70-4a51-b9be-878959335d83"><td class="cell-gl_q">against all odds</td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-red">(exp)</span></td><td class="cell-EJZS">ضد كل الصعوبات</td><td class="cell-eY}I">If you do or achieve something against all odds, you do or achieve it although there were a lot of problems and you were not likely to succeed</td><td class="cell-omD`"><em>Against all the odds, he recovered.</em></td><td class="cell-}sNL"></td></tr><tr id="d8e23232-6a7b-4dd1-8f4a-2a31da6f24cc"><td class="cell-gl_q">lobby</td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">ضغط</td><td class="cell-eY}I">to try to persuade a politician, the government or an official group that a particular thing should or should not happen, or that a law should be changed</td><td class="cell-omD`"><em>Small businesses have lobbied hard for/against changes in the tax laws.</em></td><td class="cell-}sNL"></td></tr><tr id="17dfdbdc-cb1f-47d2-b11a-e6d7a9278193"><td class="cell-gl_q">interweave</td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">نسج</td><td class="cell-eY}I">to weave together or combine two or more things so that they cannot be separated easily</td><td class="cell-omD`"><em>She has created an intriguing story by skillfully interweaving fictional and historical events.</em></td><td class="cell-}sNL">past simple: <mark class="highlight-red"><strong>interwove</strong></mark>
+past participle: <mark class="highlight-red"><strong>interwoven</strong></mark></td></tr><tr id="8e89814e-2e58-4e34-bbdd-eeaee0b52b78"><td class="cell-gl_q">relics</td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">الاثار</td><td class="cell-eY}I"><em>a relic</em> : an object, tradition or system from the past which continues to exist</td><td class="cell-omD`"><em>During the dig, the archeological team found some relics from the Stone Age.</em></td><td class="cell-}sNL"></td></tr><tr id="e32bf5a9-f8ff-4666-b27d-d0b0a62f51d2"><td class="cell-gl_q">royal highness</td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">صاحب السمو الملكي</td><td class="cell-eY}I">used when you are speaking about or to a royal person</td><td class="cell-omD`"><em>Thank you, Your Royal Highness.</em></td><td class="cell-}sNL"></td></tr><tr id="0c9cfab7-9637-4758-9c5e-a46b337ddf89"><td class="cell-gl_q"><em>the footprint of </em>philanthropy</td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">بصمة العمل الخيري</td><td class="cell-eY}I"><em>philanthropy</em> : the desire to promote the welfare of others, expressed especially by the generous donation of money to good causes.</td><td class="cell-omD`"><em>Fatma Ismail was unique among the daughters of Khedive Ismail for the footprint of philanthropy and social work she left on Egyptian history.</em></td><td class="cell-}sNL"></td></tr><tr id="31bbca24-1d35-4851-b340-927fa2a3b920"><td class="cell-gl_q">public figures</td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">الشخصيات العامة</td><td class="cell-eY}I">someone who is famous because of what they do</td><td class="cell-omD`"><em>If you are a public figure you can&#x27;t afford to be too sensitive to criticism.</em></td><td class="cell-}sNL"></td></tr><tr id="65316bd8-2a99-4d3e-8f93-2dfd29aad5b4"><td class="cell-gl_q">intellectuals</td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">المثقفين</td><td class="cell-eY}I">a very educated person whose interests are studying and other activities that involve careful thinking and mental effort</td><td class="cell-omD`"><em>She was too much of an intellectual to find popular films interesting.</em></td><td class="cell-}sNL"></td></tr><tr id="717e890b-9201-487a-ba12-07eaefb7caaf"><td class="cell-gl_q">fundraising <em>campaign</em></td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">حملة لجمع التبرعات</td><td class="cell-eY}I"><em>fundraising</em> : when you collect or produce money for a particular purpose, especially for a charity</td><td class="cell-omD`"><em>Fundraising campaigns and events have the potential of making a lot of money if they&#x27;re executed properly.</em></td><td class="cell-}sNL"></td></tr><tr id="7fdae07b-0638-4122-8a1d-c2d8abf71d43"><td class="cell-gl_q"><em>the </em>pressing <em>need</em></td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">الحاجة الملحة</td><td class="cell-eY}I"><em>pressing</em> : urgent or needing to be dealt with immediately</td><td class="cell-omD`"><em>Six new cruisers were projected, but the republic has no pressing need of a navy.</em></td><td class="cell-}sNL"></td></tr><tr id="b9f03d35-e75d-4fe2-bd70-18add5c962ba"><td class="cell-gl_q">endowment</td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">هبة او منحة</td><td class="cell-eY}I">money that is given to a college or hospital, etc. in order to provide it with an income, or the giving of this money</td><td class="cell-omD`"><em>The school has received an endowment of £50 000 to buy new books for the library.</em></td><td class="cell-}sNL"></td></tr><tr id="d49ab46e-cee0-4f23-aced-5d74e886633f"><td class="cell-gl_q">era</td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">حقبة</td><td class="cell-eY}I">a period of time of which particular events or stages of development are typical</td><td class="cell-omD`"><em>They had worked for peace during the long era of conflict.</em></td><td class="cell-}sNL"></td></tr><tr id="eea3e9d4-9e8e-4268-bb0c-4162c29b074b"><td class="cell-gl_q">enlighten</td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">تنوير</td><td class="cell-eY}I">to provide someone with information and understanding; to explain the true facts about something to someone</td><td class="cell-omD`"><em>I don&#x27;t understand this. Could you enlighten me?</em></td><td class="cell-}sNL"><strong><mark class="highlight-red">enlightened (adj)</mark></strong> : showing understanding, acting in a positive way, and not following old-fashioned or false beliefs
+e.g. : <em>These days she&#x27;s much more enlightened in her views on education.</em></td></tr><tr id="1685d9ff-ae62-4ff1-8ac8-9cfa0c48d351"><td class="cell-gl_q"><mark class="highlight-yellow_background">supreme judge</mark></td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">رئيس المحكمة الدستورية العليا</td><td class="cell-eY}I">the president of the highest court of the country</td><td class="cell-omD`"><em>In the latter year he became one of the judges of the supreme court of Canada.</em></td><td class="cell-}sNL"></td></tr><tr id="6281605c-6342-496f-8215-f286d13c50c6"><td class="cell-gl_q">founding board</td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">المجلس التأسيسي</td><td class="cell-eY}I">A founding board is often 
+assembled by someone who has the initial vision for an organization and gathers their friends or colleagues in support of a unified effort.</td><td class="cell-omD`"><em>Ram Shriram is the founding board member of Google and one of its first investors.</em></td><td class="cell-}sNL"></td></tr><tr id="1a2befa5-7e5f-42cc-bbfa-518411b740b1"><td class="cell-gl_q">intervention</td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">تدخل قضائي</td><td class="cell-eY}I">the act or fact of intervening.
+[<em>intervene (v)</em> : to intentionally become involved in a difficult situation in order to improve it or prevent it from getting worse]</td><td class="cell-omD`"><em>Repeated interventions on the currency markets have failed to prevent the value of the currency falling.</em></td><td class="cell-}sNL"></td></tr><tr id="c471e3b5-26af-4f54-b67b-d7cd4cd0ea50"><td class="cell-gl_q">applaud</td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">استحسن / مدح</td><td class="cell-eY}I">to say that you admire and agree with a person&#x27;s action or decision</td><td class="cell-omD`"><em>We applaud the family&#x27;s decision to remain silent over the issue.</em></td><td class="cell-}sNL"></td></tr><tr id="4d68d2dd-e331-4021-a31b-0a6b6b01ca12"><td class="cell-gl_q">take to heart</td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-red">(exp)</span></td><td class="cell-EJZS">تأخذ على محمل الجد</td><td class="cell-eY}I">If you take criticism or advice to heart, you think about it seriously, often because it upsets you</td><td class="cell-omD`"><em>Don&#x27;t take it to heart - he was only joking about your hair.</em></td><td class="cell-}sNL"></td></tr><tr id="a17ebb10-0f24-4b4d-8084-eceb537fa6a0"><td class="cell-gl_q">departed monarch</td><td class="cell-b&gt;L\"></td><td class="cell-EJZS">الملك الراحل</td><td class="cell-eY}I"><em>departed (adj) </em>: dead
+<em>monarch</em> (n) : a king or queen</td><td class="cell-omD`"><em>In 1940, the university was renamed King Fuad I University, in honor of the lately departed monarch.</em></td><td class="cell-}sNL"></td></tr><tr id="79e091ae-c405-41d4-91e4-9ee02a839280"><td class="cell-gl_q">new regime</td><td class="cell-b&gt;L\"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">نظام جديد</td><td class="cell-eY}I">a particular government or a system or method of government</td><td class="cell-omD`"><em>The government was accused of covert military operations against the regime.</em></td><td class="cell-}sNL"></td></tr></tbody></table></div><p id="67e5250d-5140-4a08-8974-3e1ce2eabed6" class="">
+</p><hr id="558e4e0e-43f2-4eae-855b-8e7f6bfbc2ee"/><h1 id="7fb94fe3-ef8f-462c-b6d0-c52f8ecceea2" class="">Reading</h1><h3 id="60fb8363-a0dd-45d3-ac36-97c186edfaf8" class="">“<span style="border-bottom:0.05em solid">Why don’t you get a proper job?</span>” <em>[Upstream Unit 3 SB, P:46, </em><mark class="highlight-teal"><em>Week 1 Session1</em></mark><em>]</em></h3><p id="fa7a7d6a-ee9c-4132-9278-8c07d97e13ff" class="">She wants to be a singer; you think she should go for a long-term career with job security and eventually retire with a good pension. But a new report suggests that in fact she&#x27;s the practical one. Why do parents make terrible career advisers?</p><p id="95be3665-5e29-4fd5-918a-4f09082148b6" class="">Today&#x27;s 14 and 15-year-olds are ambitious. They are optimistic about their <mark class="highlight-pink_background"><strong>prospects</strong></mark>, but their career ideas are rather vague. Although 80% of them have no intention of following in their parents&#x27; footsteps, 69% still turn to their parents for advice. They look at their working future in a different way to their parents.</p><p id="f9a33cd0-b28d-4079-83d1-6d5f5fdfaccd" class="">A job for life is not in their vocabulary; neither is a dead-end but secure job that is boring but pays the bills. Almost half the boys surveyed expected that their hobbies would lead them into the right sort of job, while most girls seemed <mark class="highlight-pink_background"><strong>determined</strong></mark> to avoid traditionally female careers such as nursing.</p><p id="a1401214-1ac2-4e2e-ab8a-8f6cd43e43b8" class="">In the past, this might have counted as bad news. Certainly when I was 15, my guidance counsellors were horrified at my plans to become a writer. I&#x27;m glad I didn&#x27;t change my plans to suit them. Even so, their faith in <mark class="highlight-pink_background"><strong>rigid</strong></mark> career paths was <mark class="highlight-pink_background"><strong>well-founded</strong></mark>. In those days, that was the way to get ahead.</p><p id="c778829b-ceda-4a33-bb50-c424d9ce2074" class="">But the world has changed. The global economy is not kind to yesterday&#x27;s diligent and <mark class="highlight-pink_background"><strong>dependable</strong></mark> worker. The future belongs to quick-thinking people who are <mark class="highlight-pink_background"><strong>resourceful</strong></mark>, ambitious and can take the initiative. This means that a 14-year-old who sees her working future as a kind of adventure, to be made up as she goes along, is not necessarily being unrealistic.</p><p id="1adcb02e-7a8c-4dca-9dc5-42bd903e0ff8" class="">However, she has to have the training and guidance to help her develop the right skills for today&#x27;s market; not the rigid preparation for a workplace that disappeared twenty years ago. Many young people are very aware of the <mark class="highlight-pink_background"><strong>pitfalls</strong></mark> of the flexible workplace; they understand that <mark class="highlight-pink_background"><strong>redundancy</strong></mark>, downsizing and <mark class="highlight-pink_background"><strong>freelancing</strong></mark> are all part of modern working life, but no one is telling them how they might be able to turn the new rules of the employment game to their advantage. This is what they need to know if they are to make a life for themselves.</p><p id="e2d0ad5e-a4d6-40e0-b667-5d1f49e2c189" class="">So what is to be done? A good first step would be to change the way in which schools prepare young people for adult life. The education system is becoming less flexible and more <mark class="highlight-pink_background"><strong>obsessed</strong></mark> with traditional skills at just the time that the employment market is going in the opposite direction.</p><p id="2172f630-0880-4b95-8296-c5adf69bcdc6" class="">Accurate, up-to-date information on new jobs and qualifications can help <mark class="highlight-pink_background"><strong>guidance counsellors</strong></mark> to help their students. Young people need solid information on the sort of training they need to pursue the career of their dreams. Also, a little bit of encouragement can go a long way. If nothing else, a bit of <mark class="highlight-pink_background"><strong>optimism</strong></mark> from an adult can serve as an antidote to the constant criticism of teenagers in the press.</p><p id="105f97bc-21ca-4982-b0a2-79ed79d190ac" class="">What, then, can we as parents do to help them? The best thing is to forget all the advice that your parents gave you, and step into your teenager&#x27;s shoes. Once you&#x27;ve done that, it&#x27;s easier to see how important it is that they learn how to be independent, resourceful and <mark class="highlight-pink_background"><strong>resilient</strong></mark>. Give them the courage to follow their dreams - however odd they might sound right now. In a world that offers economic security to almost no one, imagination is a terrible thing to waste.</p><p id="c29a2180-22c4-4d45-8a0c-d882007a388c" class="">
+</p><hr id="86889448-5409-4836-a67c-6730912dbb11"/><p id="cf4cb3f9-3ab8-4ec0-8565-312def664859" class="">
+</p><h3 id="fba1726e-73c5-44d2-a1a8-da482758dd80" class="">“<span style="border-bottom:0.05em solid">Great British Jobs</span>” <em>[Upstream Unit 3 SB, P:52, </em><mark class="highlight-teal"><em>Week 2 Session 1</em></mark><em>]</em></h3><p id="53dac95b-b57f-43bc-a6b5-9d21098be980" class=""><em>We talked to some people who are still managing to make a living doing traditional jobs in today&#x27;s hi-tech Britain</em></p><p id="0eb5e973-5633-48f2-8753-91abd68b7b3c" class="">
+</p><p id="1a3e7d8d-d2d7-49a3-bad4-b6f022448f2a" class=""><span style="border-bottom:0.05em solid"><strong>A) SHAUN HARRISON – BUTLER</strong></span></p><p id="a78dedb4-cb27-41bd-9453-de5d42710cf0" class="">Modern butlers combine the roles of cook, cleaner, waiter, gardener, driver and household manager and they have to be polite, respectful, and well-organised. &quot;We do everything from paying the bills to picking up the children, organising parties and getting the washing machine repaired,&quot; says Shaun Harrison, 32, who works for a family in the Oxfordshire countryside. &quot;During the week I&#x27;m in jeans and a shirt, busy looking after the household and the gardens. At weekends, when the family arrives, I put on a suit and take on the role of a traditional butler. I get four weeks holiday a year and I have to take it when it suits my employer.&quot;</p><p id="b55b722e-995b-4798-9cef-e31ceeb4173d" class="">
+</p><p id="73fef348-840b-43fe-9989-80351639f61f" class=""><span style="border-bottom:0.05em solid"><strong>B) MARK THOMPSON – STEEPLEJACK</strong></span></p><p id="04206360-2d11-4ffb-93a8-9f49ff833032" class="">Mark Thompson is <mark class="highlight-pink_background"><strong>self-employed</strong></mark> and carries out a range of building, repair and maintenance jobs to the outside of tall structures such as church spires, monuments, industrial chimneys and high rise buildings. It takes from 2-6 years to <mark class="highlight-pink_background"><strong>train</strong></mark> as a professional steeplejack and Mark has been doing it for the last 15 years. &quot;The one thing you must have for this job is a head for heights,&quot; he says. &quot;I like working outdoors, but it can be very dangerous carrying equipment and trying to keep your balance when the weather&#x27;s bad. It gets really windy up there, so you&#x27;ve got be quite fearless!” Also make sure you take plenty of exercise so as to be strong enough. Mark travels all over the country and often works away from home for <mark class="highlight-pink_background"><strong>extended</strong></mark> periods. &quot;I often have to work a lot of unsociable hours such as weekends and evenings to get the job done, but I get a great feeling when I finish and I know that because of me beautiful buildings will continue to <mark class="highlight-pink_background"><strong>grace</strong></mark> the skyline for a good few years.&quot;</p><p id="c2724015-7fd3-4723-9dc8-fe27e55b96b3" class="">
+</p><p id="1c1ccf9a-73bf-410d-b06f-6cbef0003250" class=""><span style="border-bottom:0.05em solid"><strong>C) PETER MOORE – TOWN CRIER</strong></span></p><p id="25c6224f-d7b0-4dbb-b364-34138cd60fd7" class="">The job of Town Crier can be traced back as far as the Battle of Hastings in 1066 when the news was passed on to the general public by individuals employed by the king. &quot;Basically, a Town Crier was a kind of talking newspaper, but today a lot of my work is <mark class="highlight-pink_background"><strong>ceremonial</strong></mark> or <mark class="highlight-pink_background"><strong>promotional</strong></mark>,&quot; says Peter. &quot;I wear a traditional costume and carry a bell and shout the familiar call of <em>Oyez Oyez* </em>to get people&#x27;s attention. I work for the British Tourist Authority and I preside at festivals, shows and parades as well as at London&#x27;s tourist attractions. I also get to travel all over the world doing different promotions at department stores and hotels.&quot; Peter has been doing this job for more than 25 years and to him it is more than a job; it is a way of life. “I’m keeping a much-loved tradition alive. If you ever need to find me, just follow the sound of my <mark class="highlight-pink_background"><strong>booming</strong></mark> voice.” In his job he has met lots of celebrities including MPs and members of the Royal Family, but his proudest <strong>boast</strong> is that he has never lost his voice.</p><p id="dda994cc-a1d2-417a-98e0-8da06ea03af9" class=""><em>( * Oyez Oyez, roughly translated, means listen listen.)</em></p><p id="e26d506a-b8a9-4e8f-8b00-abafcc13dd73" class="">
+</p><p id="034f7d7a-b172-48ba-8304-3f8f0036ebbe" class=""><span style="border-bottom:0.05em solid"><strong>D) RICK BOOTH – MILKMAN</strong></span></p><p id="b45189e5-ba2b-45a9-845c-c94ddaec6b33" class="">Rick Booth, 36, is one of a decreasing number of milkmen still working in Britain. He arrives at the dairy around 11.00pm to load up his milk float and it takes him about five hours to <mark class="highlight-pink_background"><strong>complete his round</strong></mark>. He leaves the milk on the doorstep and collects the empty bottles left there by the householders. By the morning, Rick&#x27;s hands are sore and blistered. &quot;Picking up and carrying <mark class="highlight-pink_background"><strong>crates</strong></mark> all night is really hard on your hands,&quot; he admits. It also <mark class="highlight-pink_background"><strong>strains</strong></mark> his knees and back. “I’m always bending down and lifting so you have to be in good shape to do this job.&quot; Sore knees and backs aren&#x27;t the only pains milkmen have to suffer. Angry pets are another problem. &quot;Some dogs get you when your back is turned,&quot; Rick laughs. The other problem is the unsociable hours. &quot;When the moon is up and everybody is asleep, your body tells you it&#x27;s bedtime. But you have to <mark class="highlight-pink_background"><strong>go against nature</strong></mark> and stay awake. Also, I hardly ever see any of my customers, so I do feel rather <mark class="highlight-pink_background"><strong>isolated</strong></mark>.&quot;</p><p id="561928c6-37b0-4c72-886c-2745c84ce503" class="">
+</p><p id="b58d6d27-eab4-4f25-9dab-df92340f2331" class=""><span style="border-bottom:0.05em solid"><strong>E) TED COX – CHIMNEY SWEEP</strong></span></p><p id="51d744a4-3d9d-41c7-aef0-876a53ed702d" class="">&quot;Central heating and gas fires haven&#x27;t done away with us sweeps yet,&quot; says Ted Cox, 64, who was just seven years old when his father, also a sweep, first put him up a chimney where he had to climb up and sweep out the soot. &quot;In fact,&quot; he says, “increasing concerns over carbon monoxide poisoning from <mark class="highlight-pink_background"><strong>faulty</strong></mark> electric and gas fires has increased the demand for chimney sweeps lately. Sweeps don&#x27;t just clean chimneys, you know. They also keep them free from <mark class="highlight-pink_background"><strong>obstructions</strong></mark>, like cobwebs, birds’ nests and leaves to ensure proper <mark class="highlight-pink_background"><strong>ventilation</strong></mark>.&quot; Ted says to be a good sweep, you also need to be a good listener. “When I make house calls, I usually end up staying for a cup of tea and a chat, which I really enjoy. It&#x27;s no use being a sweep if you don&#x27;t like tea!&quot; he says laughing.</p><p id="6c237194-3a44-46bf-9fe0-1f6fb11ebcf4" class="">
+</p><p id="ed554a66-5ac1-453d-9a41-7fe3981209a7" class=""><span style="border-bottom:0.05em solid"><strong>F) MILES REED – YEOMAN OF THE GUARD</strong></span></p><p id="e11bf132-efc6-4f85-8cea-d96e1542cb3a" class="">&quot;You have to be <mark class="highlight-pink_background"><strong>on your guard</strong></mark><strong> </strong>at all times for <mark class="highlight-pink_background"><strong>bomb scares</strong></mark><strong> </strong>or robbery attempts,&quot; says Miles Reed, 58, a Yeoman of the Guard at the Tower of London otherwise known as a ‘Beefeater’. “We’re not just a tourist attraction, you know!&quot; he adds proudly. Miles’ day starts around 9 o&#x27;clock in the morning when the first visitors arrive. He spends most of the day giving guided tours of the Tower of London, answering questions on its history and posing for photographs with tourists in his traditional red and gold uniform. His shift usually ends at around 5.45 when the Tower closes to visitors. Miles doesn&#x27;t have far to go after work because all ‘Beefeaters’ and their families have accommodation in the Tower grounds. “What I enjoy most about the job is meeting and talking to the tourists,” admits Miles. “There must be pictures of me in photo albums all over the world.”</p><p id="e81dc0af-97d1-46bb-a1aa-adb0fea814ad" class="">
+</p><hr id="56fbfa8b-03c8-4390-b835-a34e75e74e03"/><p id="b74bfbbf-3107-42b0-a085-07e6ebc6cc87" class="">
+</p><h3 id="d4d421f1-b769-4791-b1a8-061d877e109d" class="">“<span style="border-bottom:0.05em solid"><strong>Tesla&#x27;s rise made 2020 the year the U.S. auto industry went electric</strong></span>” <em>[Reuters (By: Joseph White), </em><a href="https://www.reuters.com/article/us-autos-electric-yearend-idUSKBN28V0HQ"><em>link</em></a><em>, </em><mark class="highlight-teal"><em>Week 3 Session 1</em></mark><em>]</em></h3><p id="6f9608bc-8454-4165-8f22-68ff9eca3264" class=""><em>DETROIT (Reuters) - Tesla Inc and Wall Street made 2020 the year that the U.S. auto industry decided to go electric.</em></p><p id="a9542afb-6019-4477-ad9c-6f624ecf8422" class="">
+</p><p id="de956db2-26bb-49b3-b890-0f1c034a14e4" class="">Tesla’s market capitalization <mark class="highlight-pink_background"><strong>surged</strong></mark> above $600 billion, making the once wobbly startup founded by billionaire Elon Musk worth more than the five top-selling global vehicle making groups combined. The exclamation point came on Friday when Tesla rose to a record high in <span style="border-bottom:0.05em solid"><strong>frantic</strong></span> trading ahead of the stock’s much <mark class="highlight-pink_background"><strong>anticipated</strong></mark> entrance into the benchmark S&amp;P 500 index..</p><p id="60363dc4-5fda-4efd-b92c-89f4de3cf98d" class="">For 2021, all signs point toward the industry accelerating its shift toward <mark class="highlight-pink_background"><strong>electrification</strong></mark>, a turning point as historically <mark class="highlight-pink_background"><strong>momentous</strong></mark> as the launch of Ford Motor Co’s moving assembly line for the Model T or General Motors ’ 2009 <mark class="highlight-pink_background"><strong>bankruptcy</strong></mark>.</p><p id="47774bf0-bd5d-4596-8ae2-90c21254378b" class="">Tesla’s <mark class="highlight-pink_background"><strong>ascent</strong></mark> came the same year that activist <mark class="highlight-pink_background"><strong>hedge</strong></mark> funds and other investors <mark class="highlight-pink_background"><strong>ratcheted up</strong></mark> pressure on corporations to fight climate change. Evidence is growing that more investors have concluded the century-long dominance of internal <mark class="highlight-pink_background"><strong>combustion</strong></mark> engines - “ICE” in industry slang - is headed toward a close within a decade.</p><p id="c4feb52e-08e5-459f-9c62-1cf3c1806a25" class="">From London to Beijing to California, political leaders also <mark class="highlight-pink_background"><strong>embraced plans</strong></mark> to start phasing out internal combustion engine-only vehicles as early as 2030. Pressure to cut greenhouse gas emissions undermines the logic for significant new investments in ICE engines. Thousands of manufacturing jobs are currently tied to internal combustion in the United States, Britain, Germany, France, Japan and other countries.</p><p id="59e5986c-db22-4b69-975f-9bd601f56b2c" class="">Other powerful forces also shook the auto industry’s status quo this year. The COVID-19 pandemic <mark class="highlight-pink_background"><strong>stripped away</strong></mark> the sales and profits that <mark class="highlight-pink_background"><strong>incumbent automakers</strong></mark> had counted on to fund methodical transitions to electric vehicles. China’s rapid recovery from the pandemic exerted an even more powerful gravitational pull on industry investment.</p><p id="b15b2e42-65e8-49ef-a080-29636051da0c" class=""><strong>WILL CONSUMERS </strong><mark class="highlight-pink_background"><strong>PLUG IN</strong></mark><strong>?</strong></p><p id="529d1c9b-878a-4c43-96a2-1659d19614d4" class="">This was the year GM Chief Executive Mary Barra and other top industry executives began to echo Tesla’s Musk, saying electric vehicle battery costs could soon achieve <mark class="highlight-pink_background"><strong>parity</strong></mark> with internal combustion technology. Still, it remained to be seen whether consumers, particularly in the United States, are ready to say goodbye to petroleum-fueled pickup trucks and SUVs.</p><p id="0f4747b5-bd20-4a58-b1b9-baa54fc63ac8" class="">The best-selling vehicles in the United States remain large, petroleum-burning pickup trucks. Demand for these vehicles powered a recovery for Detroit automakers after the pandemic forced factories to shut down in the spring.</p><p id="c61d8708-a14f-4f0a-8e5a-e42ae9cdc259" class="">The best electric vehicle and battery makers could field models that match internal combustion upfront cost as soon as 2023, brokerage Bernstein wrote in a report.</p><p id="e915ab5c-4767-448a-b44b-47fd0593217d" class="">“ICE game over with BEV ~ 2030,” Bernstein’s auto analysts wrote, using the industry’s acronyms for internal combustion engine and Battery Electric Vehicle.</p><p id="7bffb2af-31e8-4fe0-8112-2067d3beeab2" class="">The shift toward electric vehicles is speeding a parallel transformation of vehicles into largely digital machines that get much of their value from software that powers rich visual displays and features such as automated driving systems.</p><p id="21142b77-88a6-46b2-a06c-c70d1fbfb691" class="">Across the industry, century-old manufacturers such as Daimler AG are <mark class="highlight-pink_background"><strong>scrambling</strong></mark> to hire programmers and artificial intelligence experts.</p><p id="c8a601d9-39ad-4596-858e-5893fb6cd81e" class="">The capability of software to manage autonomous driving systems, electricity flows from batteries and data streaming to and from vehicles is replacing horsepower as a measure of automotive engineering achievement.</p><p id="4609c754-e561-47e2-9937-c151fc4e4b22" class="">Tesla’s use of smartphone-style over-the-air software upgrades was once a unique feature of the Silicon Valley brand. In 2020, the best-selling model line in the United States, the Ford F-150 pickup, was redesigned to offer over-the-air software updates, making the technology as mainstream as it gets.</p><p id="328e1ba1-7329-475e-af7e-c0e2f5e100c6" class=""><strong>THE PANDEMIC AND CHINA</strong></p><p id="74b3c591-a1c1-47b6-922d-15f70d236beb" class="">In the best of times, traditional internal-combustion vehicles would have faced huge costs and disruptions to their workforces to evolve to electric, software-intensive vehicles. But the shock delivered by the coronavirus pandemic gave manufacturers much less money and time to adapt.</p><p id="a140b414-a934-42c3-a310-ab4d90f42293" class=""><mark class="highlight-pink_background"><strong>Consultancy</strong></mark> IHS Markit forecasts that global vehicle production will not match 2019 levels again until 2023. Automakers will have produced 20 million fewer vehicles by 2023 than they could have built had output stayed at 2019 levels.</p><p id="9dd3fb01-30d6-413d-a949-43a1a179e671" class="">“Only the most agile with a Darwinian spirit will survive,” said Carlos Tavares, the Peugeot SA chief who will lead the combined Peugeot and Fiat Chrysler when that merger is completed.</p><p id="2380e754-d19f-48db-bd00-346c3d63af51" class="">The pandemic also <mark class="highlight-pink_background"><strong>elevated</strong></mark> the importance of China to the industry’s future. That country’s swift recovery from the pandemic amplified the gravitational pull of its huge market on automotive investment, despite anti-China rhetoric from U.S. and European politicians.</p><p id="538dc789-0a50-429b-81d9-382cc7c9f862" class="">China’s drive to reduce dependence on petroleum is <mark class="highlight-pink_background"><strong>compelling</strong></mark> automakers to shift investment toward battery electric and <mark class="highlight-pink_background"><strong>hybrid</strong></mark> vehicles, and re-center design and engineering activities to Chinese cities from traditional <mark class="highlight-pink_background"><strong>hubs</strong></mark> in Nagoya, Wolfsburg and Detroit. Tesla said it will establish a design and research center in China.</p><p id="1bf602fd-a615-40d9-aeb9-e253a8d05e16" class="">Daimler AG Chief Executive Ola Kaellenius put it bluntly in October: “We need to look at our production footprint and where it makes sense, shift our production,” he said during a video call. “Last year we sold around 700,000 passenger cars in China. The next biggest market is the U.S. with between 320,000 and 330,000 cars.”</p><p id="e976475f-ddd0-435e-878d-7f50fbe3b1e2" class="">
+</p><hr id="9edb4a4a-44c1-47d6-aa1d-d45a9ae3b192"/><p id="887245b4-6e47-4fdc-b340-7b9aba24b686" class="">
+</p><h3 id="25fb6ccb-f6de-4934-abca-e55ee086e354" class="">“<span style="border-bottom:0.05em solid"><strong>Republished: Princess Fatma Ismail - The woman behind Cairo University</strong></span>” <em>[AhramOnline (By: Amira Noshokaty), </em><a href="https://english.ahram.org.eg/News/259505.aspx"><em>link</em></a><em>, </em><mark class="highlight-teal"><em>Week 3 Session 2</em></mark><em>]</em></h3><p id="fef1a20c-2d9d-4c4f-b406-089779d051fb" class="">While Egypt yet <mark class="highlight-pink_background"><strong>strives</strong></mark> for women&#x27;s right to proper education, let alone higher education, Ahram Online celebrates the woman behind the founding of Cairo University.</p><p id="bb288381-f6aa-4294-884a-47dcf8eb4933" class="">In celebration of the many achievements of Egyptian and Arab women over the years, Ahram Online republishes this article as part of a nine-day special series of <mark class="highlight-pink_background"><strong>gratitude</strong></mark> and pride for women&#x27;s achievements — from 8 March, which is International Women’s day, to 16 March, which is Egyptian Women’s Day.</p><p id="b379cee4-52c7-41fb-9bee-96f665b23e2c" class="">The series aims to refresh the collective memory of our nation of the many, and often forgotten, women who excelled <mark class="highlight-pink_background"><strong>against all odds</strong></mark>.</p><p id="a22c5c1a-751f-4cef-9d41-b184d5cca325" class="">While Egyptian women in the 21st century are still <mark class="highlight-pink_background"><strong>lobbying</strong></mark> for basic human rights, these republished stories serve as a reminder to society that Egyptian and Arab women fought for and enjoyed similar rights as men across many decades.</p><p id="7701c3c0-ac4b-4050-8cbc-d211cafb5210" class="">From the first woman doctor in the world, to the first woman to fly in Egypt and the Middle East, these women&#x27;s stories are <mark class="highlight-pink_background"><strong>interweaved</strong></mark>, and all deserve to be shared with a younger generation that needs to learn the truth about the accomplishments of their grandmothers and great grandmothers.</p><p id="3b1a92b6-208d-4563-b370-02080ee0265b" class="">--------</p><p id="56980c07-16df-4ab6-9c29-f6cf7ce9d748" class="">&quot;This is one of the <mark class="highlight-pink_background"><strong>relics</strong></mark> of her <mark class="highlight-pink_background"><strong>royal highness</strong></mark> Princess Fatma Ismail,&quot; reads a sign crowning the main entrance of the Faculty of Arts building at Cairo University.</p><p id="2bca6d26-37d0-4635-b08c-5e46ac042ffe" class="">Fatma Ismail (1853-1920) was unique among the daughters of Khedive Ismail (1863-1879) for <mark class="highlight-pink_background"><strong>the footprint of philanthropy</strong></mark> and social work she left on Egyptian history, most notably in the form of today&#x27;s Cairo University.</p><p id="7f042765-64d1-4443-9612-1d9374e56746" class="">In the late 19th century, Egyptian intellects called for the creation of a national university to provide modern, professional education to Egyptians. A committee of <mark class="highlight-pink_background"><strong>intellectuals</strong></mark> and <mark class="highlight-pink_background"><strong>public figures</strong></mark> began a <mark class="highlight-pink_background"><strong>fundraising campaign</strong></mark> but were unable to sustain the costs of such a huge project.</p><p id="b1044a66-891b-4f7e-b14e-5d95bae932f1" class="">To meet <mark class="highlight-pink_background"><strong>the pressing need</strong></mark> for funding, Princess Fatma Ismail intervened, providing a waqf (<mark class="highlight-pink_background"><strong>endowment</strong></mark>) of 661 feddans to cover the costs of establishing the Egyptian University. She donated 6 feddans of royal land in Giza&#x27;s Dokki area to expand the university&#x27;s grounds and EGP 18,000 (a significant sum at the time) for its construction.</p><p id="a5a65c71-a284-4994-8aaa-12de69558f3e" class="">The princess ensured that two of the <mark class="highlight-pink_background"><strong>era&#x27;s</strong></mark> most <mark class="highlight-pink_background"><strong>enlightened</strong></mark> sheikhs, as well as the country&#x27;s <mark class="highlight-pink_background"><strong>supreme judge</strong></mark> would sit on the university&#x27;s <mark class="highlight-pink_background"><strong>founding board</strong></mark>.</p><p id="d866633e-4690-4721-ae9a-9d5ce44e9a30" class="">The Egyptian public praised her <mark class="highlight-pink_background"><strong>intervention</strong></mark>, which rescued the dream of an independent institute of higher learning in Egypt.</p><p id="bfc44e04-8753-4ace-ac5b-ff014b548bfe" class="">On 21 December 1908 the Egyptian University opened its gates for the first time.</p><p id="6cd39fd8-5883-460c-8e6a-22889d6068bd" class="">In 1913, Al-Ahram published a piece thanking the princess for her efforts, which read &quot;this is how efforts should be exerted&quot; (hakaza takon al hemam).</p><p id="44ab028a-bc66-4ab1-baf1-9276c790cfdb" class="">The same year, Princess Fatma was <mark class="highlight-pink_background"><strong>applauded</strong></mark> for acting on the wisdom of iconic enlightenment figure Sheikh Mohamed Abdu, who believed Egypt had focused so much on building mosques that the buildings themselves outnumbered those who prayed. He argued instead for educating the people—something the princess <mark class="highlight-pink_background"><strong>took to heart</strong></mark>.</p><p id="708468dd-caa9-4ec9-b62b-9432d135b66e" class="">In 1923, the university established the Fatma Ismail scholarship for students to study Egyptology abroad.</p><p id="66a03528-55f6-4f76-8338-bd78fe21004d" class="">In 1929, the princess&#x27; mansion, located a few blocks from the university, was transformed into the Museum of Agriculture.</p><p id="f416ef12-eaed-4f5e-98a7-ee839a22c39d" class="">In 1940, the university was renamed King Fuad I University, in honor of the lately <mark class="highlight-pink_background"><strong>departed monarch</strong></mark>.</p><p id="6f10ef17-d567-4586-95e0-33d122ecb5ff" class="">After the 1952 revolution, the <mark class="highlight-pink_background"><strong>new regime</strong></mark><strong> </strong>changed the school&#x27;s name to Cairo University. Yet, the iron gates still proclaim its original title, funded and supported by Princess Fatma as an institute for all Egyptians: &quot;The Egyptian University.&quot;</p><p id="fbd2819d-1021-4cf8-8ece-33fce089a193" class="">
+</p><hr id="7e5ff612-af86-486a-954c-1a98c54ff969"/><p id="e7857702-440d-47b3-95ec-22cc04dfe3ff" class="">
+</p><h2 id="c53ef4c9-c177-43fe-ac28-bb7729aa8db9" class="">Extra Reading</h2><h3 id="43afe885-d93e-4623-8a90-170b95a2411d" class="">“<span style="border-bottom:0.05em solid"><strong>Tesla is proof that the next 20 years in the tech industry won&#x27;t be like the last 20</strong></span>” <em>[INSIDER (By: Matthew DeBord), </em><a href="https://www.businessinsider.com/tesla-proof-next-20-years-in-tech-industry-wont-be-like-last-20-2019-3"><em>link</em></a><em>, </em><mark class="highlight-teal"><em>Week 3 Session 1</em></mark><em>]</em></h3><p id="29c9680b-023b-4971-964b-429209abd5e3" class="">
+</p><hr id="b458c2bb-b139-40bc-9da8-83421cff38ac"/><p id="052c583d-cf77-4e85-a093-97c723d6574c" class="">
+</p><h1 id="0894b877-e599-42eb-89ff-59b9b584b489" class="">From Grammarway 4</h1><h3 id="97742547-4e22-479a-9915-7b182aa6d9cc" class=""><mark class="highlight-red_background">Unit 10</mark></h3><figure id="9b7012f9-1428-4b9f-81e3-4ea818b259b9" class="image"><a href="Cycle%204%20(Industry)%209b7012f914284b9f81e34ea818b259b9/Untitled.png"><img style="width:384px" src="Cycle%204%20(Industry)%209b7012f914284b9f81e34ea818b259b9/Untitled.png"/></a></figure><p id="bdc1528c-c6b0-47bb-a9d8-07328e1adcb6" class="">
+</p></div></article>
+<footer style="text-align: center; width: 100%; margin: 1rem 0; height: 50px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+	<p>Made with ❤ by Mikhael Mounay</p>
+</footer>
+</body></html>

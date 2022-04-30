@@ -1,0 +1,776 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Cycle 5 (Culture Diversity)</title>
+<script>
+	window.onload = function() {
+		let text = document.querySelectorAll('table tbody tr td:first-child, table tbody tr td:nth-child(5), table tbody tr td:nth-child(6)');
+		let testbtn = document.getElementById('testbtn');
+		testbtn.onclick = function() {
+			for (let i = 0; i < text.length; i++)
+			{
+				// if (text[i].style.visibility == 'hidden') {
+				// 	text[i].style.visibility = 'visible';
+				// } else {
+				// 	text[i].style.visibility = 'hidden';
+				// }
+				text[i].classList.toggle('hiddenClass');
+			}
+			if (testbtn.innerHTML == 'Start Test') {
+				testbtn.innerHTML = 'End Test';
+				// testbtn.style.backgroundColor = '#ff4a4a';
+				testbtn.classList.add('red');
+			} else {
+				testbtn.innerHTML = 'Start Test'
+				testbtn.classList.remove('red');
+			}
+		}
+	}
+</script>
+<style>
+	table tbody tr td {
+		transition: 0.2;
+		z-index: 1;
+	}
+	table tbody tr td:first-child,
+	table tbody tr td:nth-child(5),
+	table tbody tr td:nth-child(6) {
+		/* visibility: hidden; */
+		transition: 0.3s;
+	}
+
+	.hiddenClass {
+		/* visibility: hidden; */
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	.red {
+		background-color: #ff4a4a !important;
+	}
+
+	.red:hover {
+		background-color: #ff2626 !important;
+	}
+
+	#testbtn {
+		position: fixed;
+		bottom: 2rem;
+		right: 2rem;
+		background-color: rgba(73, 124, 255, 0.999);
+		border: none;
+		border-radius: 4px;
+		font-size: 1.3rem;
+		font-family:Georgia, 'Times New Roman', Times, serif;
+		padding: 7px 15px;
+		cursor: pointer;
+		transition: 0.2s;
+		z-index: 1000;
+		width: 125px;
+	}
+	#testbtn:hover {
+		background-color: #0047ffff;
+	}
+</style>
+<style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body>
+	<button id="testbtn">Start Test</button>
+<article id="4011335d-2260-4b4d-a95b-dd2edf7b36fc" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">5️⃣</span></div><h1 class="page-title"><a style="color: rgb(55, 53, 47); text-decoration: none;" href="../../../index.html">Cycle 5 (Culture Diversity)</a></h1></header><div class="page-body"><h3 id="f72d0c88-06a8-40dd-9347-2ea19401f627" class=""><mark class="highlight-blue"><em>Quick Navigation</em></mark></h3><ol type="1" id="c68d7304-7de3-4961-bbbb-31b295c039c8" class="numbered-list" start="1"><li><strong>Cycle Contents</strong></li></ol><ol type="1" id="db393624-7618-49e7-8438-1ff3052fe8e5" class="numbered-list" start="2"><li><strong>Cycle Vocabulary</strong><ol type="a" id="b27b5e84-2cb4-4785-af9d-493c419eff45" class="numbered-list" start="1"><li>Week 1<ol type="i" id="a60b7770-64ab-4ee6-a41f-375c95b7a78e" class="numbered-list" start="1"><li>Session 1</li></ol></li></ol><ol type="a" id="5fc46a3f-e7a7-4426-aec8-c3314f0afc1f" class="numbered-list" start="2"><li>Week 2<ol type="i" id="b83a08d9-558d-4cb5-bcf4-0a3c9c38e6aa" class="numbered-list" start="1"><li>Session 1</li></ol><ol type="i" id="9b4da3f6-622e-463a-8970-f45f84dc95a2" class="numbered-list" start="2"><li>Session 2</li></ol></li></ol><ol type="a" id="0f23ef1c-9fdf-4c18-9bd4-2e57252f50dd" class="numbered-list" start="3"><li>Week 3<ol type="i" id="cedbcfd1-7cbb-428c-9450-ccd3a4be9bdb" class="numbered-list" start="1"><li>Session 1</li></ol><ol type="i" id="12e26621-a870-45a0-b683-f42e5adf9100" class="numbered-list" start="2"><li>Session 2</li></ol></li></ol></li></ol><ol type="1" id="5864893c-5e9c-403f-bddf-2f89dfba0418" class="numbered-list" start="3"><li><strong>Reading Sections</strong><ol type="a" id="37f407dd-8b54-44d1-8dde-c8807a04ecfe" class="numbered-list" start="1"><li>“Reality Show Fever” <em>[Upstream Unit 5 SB, P:84, </em><mark class="highlight-teal"><em>Week 1 Session 1</em></mark><em>]</em></li></ol><ol type="a" id="65699d67-2fb0-4e22-9eda-cf4161d211ff" class="numbered-list" start="2"><li>“The Magic of Pantomime” <em>[Upstream Unit 5 SB, P:90, </em><mark class="highlight-teal"><em>Week 2 Session 1</em></mark><em>]</em></li></ol><ol type="a" id="794c2ff9-de5c-4242-b87a-d1dccaf33d63" class="numbered-list" start="3"><li>“Solitude, sunshine and sanctuary in The Secret Garden” <em>[The Guardian (By: Aida Edemariam), </em><a href="https://www.theguardian.com/books/2020/nov/05/solitude-sunshine-and-sanctuary-in-the-secret-garden"><em>link</em></a><em>, </em><mark class="highlight-teal"><em>Week 3 Session 1</em></mark><em>]</em></li></ol><ol type="a" id="c4a8aa1e-c162-4119-9649-329791a95b9a" class="numbered-list" start="4"><li>“The Martian review – Matt Damon shines as stranded astronaut” <em>[The Guardian (By: Mark Kermode), </em><a href="https://www.theguardian.com/film/2015/oct/04/the-martian-review-matt-damon-shines-stranded-astronaut"><em>link</em></a><em>, </em><mark class="highlight-teal"><em>Week 3 Session 2</em></mark><em>]</em></li></ol><ol type="a" id="c79e4b7a-0cdd-4253-9d2e-4cf28aafabf3" class="numbered-list" start="5"><li>“The Lion King review – resplendent but pointless” <em>[The Guardian (By: Mark Kermode), </em><a href="https://www.theguardian.com/film/2019/jul/21/the-lion-king-review-remake-jon-favreau-beyonce"><em>link</em></a><em>, </em><mark class="highlight-teal"><em>Week 3 Session 2</em></mark><em>]</em></li></ol></li></ol><ol type="1" id="007a4875-c35c-470a-8ecf-e83dbd0f3386" class="numbered-list" start="4"><li><strong>Extra Reading</strong><ol type="a" id="88d1d8dd-228f-4361-bf8e-253cf9a8db77" class="numbered-list" start="1"><li>“Great Maytham Hall, Kent: the most famous garden in literature” <em>[The National Garden Scheme, </em><a href="https://ngs.org.uk/great-maytham-hall-kent-the-most-famous-garden-in-literature/"><em>link</em></a><em>, </em><mark class="highlight-teal"><em>Week 3 Session 1</em></mark><em>]</em></li></ol></li></ol><ol type="1" id="420f63a6-497c-4e7e-a685-5e8d833408cd" class="numbered-list" start="5"><li><strong>From Grammarway 4</strong><ol type="a" id="238f01e0-abf9-456e-8174-1b9af45d11d1" class="numbered-list" start="1"><li>Unit 6</li></ol></li></ol><p id="62dda3ed-2a02-42bc-a13d-463f7c7962c2" class="">
+</p><hr id="dc7cda31-ffab-4a69-9f98-d5a78b1d86e5"/><p id="141d73d4-248d-40a8-ab0e-1091d52da02b" class="">
+</p><h1 id="85ba47ad-fe7f-465f-af60-a6da0177f8d8" class="">Cycle Content</h1><p id="88cfe0b0-f790-42d2-bf11-bdcfd266e80a" class=""><strong><mark class="highlight-red_background">Week 1</mark></strong></p><ol type="1" id="7e760fdf-5452-4f0c-81a3-9fd606bf2820" class="numbered-list" start="1"><li><strong>Upstream</strong>:<ol type="a" id="0e3c39e0-3d50-43cb-8fbd-90f0bfd5d748" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid"><strong>Unit 5</strong></span>: Modern Living { Reading: “<span style="border-bottom:0.05em solid">Reality Show Fever</span>” <em>[Upstream Unit 3 SB, P:84] </em>}</li></ol></li></ol><ol type="1" id="16bc4926-fe82-43b2-bec0-f140a412f44b" class="numbered-list" start="2"><li><strong>Writing Academic English</strong>:<ol type="a" id="4d75d17e-ed61-481e-9d3a-c15a89f1c50f" class="numbered-list" start="1"><li>Part 3: Sentence Structure, <strong><span style="border-bottom:0.05em solid">Chapter 11</span></strong>: <span style="border-bottom:0.05em solid"><strong>Using Parallel Structures and Fixing Sentence Problems</strong></span></li></ol></li></ol><ol type="1" id="b03a1888-8efd-4386-8a50-49becae5b7a8" class="numbered-list" start="3"><li><em>Some online resources</em></li></ol><p id="a114ca2b-e4a1-4374-a2f4-9180ad69ecef" class=""><strong><mark class="highlight-red_background">Week 2</mark></strong></p><ol type="1" id="85305489-6672-4edb-a4e0-4ff0e37138b7" class="numbered-list" start="1"><li><strong>Upstream</strong>:<ol type="a" id="39aa70ef-0b17-420a-b02e-5f5f037ed1d6" class="numbered-list" start="1"><li><em>(continue)</em> <span style="border-bottom:0.05em solid"><strong>Unit 5</strong></span>: Modern Living { Reading: “<span style="border-bottom:0.05em solid">The Magic of Pantomime</span>” <em>[Upstream Unit 3 SB, P:90] </em>}</li></ol></li></ol><p id="efb5d5fe-d928-4a33-bed1-e40dcf73314a" class=""><strong><mark class="highlight-red_background">Week 3</mark></strong></p><ol type="1" id="5fe9458d-e5f4-4be7-8302-3affce460d8a" class="numbered-list" start="1"><li><strong>New Hello</strong>:<ol type="a" id="171193a7-e597-4062-b94d-29bc6e08f493" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid"><strong>Unit 7</strong></span>: Living Abroad</li></ol><ol type="a" id="17e58412-966d-4a90-a5b1-c6ee4e5dc03a" class="numbered-list" start="2"><li><span style="border-bottom:0.05em solid"><strong>Unit 11</strong></span>: What a performance</li></ol></li></ol><ol type="1" id="7a3d0224-e249-4fb7-889b-7350327d5039" class="numbered-list" start="2"><li><strong>Grammarway 4</strong>:<ol type="a" id="4bd9b58c-b102-47ed-a46b-92a2ba9ffc9d" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid"><strong>Unit 6</strong></span>: The Passive - Have Something Done</li></ol></li></ol><ol type="1" id="d3a19710-346f-4c1c-8bbb-a05c5c03bc1a" class="numbered-list" start="3"><li><em>Some online resources</em></li></ol><p id="dd95234f-18e1-4f25-9b5f-98017eefd471" class="">
+</p><p id="92e1af85-e1ce-456e-a744-06d7fd371d60" class=""><mark class="highlight-orange_background">** All online resources can be found in the cycle file.</mark></p><hr id="b7213aec-4eec-4c39-8ccf-48149a2ec907"/><h1 id="682ae758-a96d-4f30-bd30-a496dbf8a1fa" class="">Cycle Vocabulary</h1><h1 id="5f9eff6c-6178-4621-a8ba-eb3ee1d4be38" class="">Week 1</h1><div id="2cd35358-3a2e-4e90-a58e-07c50aa99067" class="collection-content"><h4 class="collection-title">Session 1</h4><table class="collection-content"><thead style="background-color: lightgrey;"><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Word</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Part of Speech</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning in English</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Example Sentence</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Notes</th></tr></thead style="background-color: lightgrey;"><tbody><tr id="6ca02fa6-dc3b-43ed-91cc-9371bb834115"><td class="cell-LsDC"><mark class="highlight-yellow_background">soaps</mark></td><td class="cell-mQKf"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">مسلسلات</td><td class="cell-EsVE"><em>soap :</em> a series of television or radio programmes about the lives and problems of a particular group of characters. The series continues over a long period and is broadcast (several times) every week.</td><td class="cell-on[V"><em>Janet finished her chores and hurried off to her afternoon soaps.</em></td><td class="cell-ZSfO"></td></tr><tr id="b14816ef-1383-4d32-94cb-151a7b86574b"><td class="cell-LsDC"><mark class="highlight-yellow_background">quiz show</mark></td><td class="cell-mQKf"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">عرض المسابقة</td><td class="cell-EsVE">a broadcast entertainment programme in which people compete in a quiz, typically for prizes.</td><td class="cell-on[V"></td><td class="cell-ZSfO"></td></tr><tr id="1b107e72-c6e3-4474-98ab-6e07b9b40a46"><td class="cell-LsDC"><mark class="highlight-yellow_background">reality show</mark></td><td class="cell-mQKf"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">عرض الواقع</td><td class="cell-EsVE">a program that documents supposedly unscripted real-life situations, often starring unknown individuals rather than professional actors.</td><td class="cell-on[V"></td><td class="cell-ZSfO"></td></tr><tr id="c6d8ad15-59a3-484c-b04f-9d113c7954dc"><td class="cell-LsDC"><mark class="highlight-yellow_background">documentary</mark></td><td class="cell-mQKf"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">وثائقي</td><td class="cell-EsVE">non-fictional, motion picture intended to document reality. The objective is mainly to instruct, educate, or maintain a historical record.</td><td class="cell-on[V"></td><td class="cell-ZSfO"></td></tr><tr id="2fb76236-d4a9-4599-89f0-1aa47894ef74"><td class="cell-LsDC"><mark class="highlight-yellow_background">sitcom</mark></td><td class="cell-mQKf"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">مسلسل كوميدي</td><td class="cell-EsVE">sitcom is short for a situation comedy (situational comedy in the U.S.). It is a genre of comedy that revolves around a fixed set of characters involved in amusing situations in each episode.</td><td class="cell-on[V"></td><td class="cell-ZSfO"></td></tr><tr id="e0feda71-4918-456c-9be8-ec27afeac24c"><td class="cell-LsDC">celebrity</td><td class="cell-mQKf"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">شخص مشهور</td><td class="cell-EsVE">someone who is famous, especially in the entertainment business</td><td class="cell-on[V"><em>Being recognized in the street is part and parcel of being a celebrity.</em></td><td class="cell-ZSfO"></td></tr><tr id="13ff91c3-df55-4275-9281-04bb0b9e8cf7"><td class="cell-LsDC">constant <em>rain</em></td><td class="cell-mQKf"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">مطر مستمر</td><td class="cell-EsVE">staying the same, or not getting less or more</td><td class="cell-on[V"><em>The fridge keeps food at a constant temperature.</em></td><td class="cell-ZSfO"></td></tr><tr id="e10df5ed-a855-4158-9a43-2987439bd5b3"><td class="cell-LsDC">screen [ <em>sth</em> <strong>on </strong>]</td><td class="cell-mQKf"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">شاشة</td><td class="cell-EsVE">to show or broadcast a film or television programme</td><td class="cell-on[V"><em>The programme was not screened on British television.</em></td><td class="cell-ZSfO"></td></tr><tr id="4ee6be85-fdcd-4e45-97ec-27d4ef4915f4"><td class="cell-LsDC">intense</td><td class="cell-mQKf"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">شديد</td><td class="cell-EsVE">extreme and forceful or (of a feeling) very strong</td><td class="cell-on[V"><em>He suddenly felt an intense pain in his back.</em></td><td class="cell-ZSfO"></td></tr><tr id="9e0913c5-f486-46ad-a324-83ce8f975673"><td class="cell-LsDC">smuggle</td><td class="cell-mQKf"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">تهريب</td><td class="cell-EsVE">to take things or people to or from a place secretly and often illegally</td><td class="cell-on[V"><em>She was caught trying to smuggle 26 kilos of heroin out of/into the country.</em></td><td class="cell-ZSfO"></td></tr><tr id="6a37846a-0284-47cd-90e2-dba4e6296fd4"><td class="cell-LsDC">swooping</td><td class="cell-mQKf"></td><td class="cell-EJZS">انقضاض</td><td class="cell-EsVE"><em>swoop :</em> to move very quickly and easily through the air, especially down from a height in order to attack</td><td class="cell-on[V"><em>The eagle swooped down to snatch a young rabbit.</em></td><td class="cell-ZSfO"></td></tr><tr id="f28a150b-4622-4d2d-851f-43c2a74998d6"><td class="cell-LsDC">down-to earth</td><td class="cell-mQKf"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">بسيط / واقعي</td><td class="cell-EsVE">practical and sensible</td><td class="cell-on[V"><em>She&#x27;s a down-to-earth sort of woman with no pretensions.</em></td><td class="cell-ZSfO"></td></tr><tr id="8123cb00-ad39-430d-b19c-312704285c40"><td class="cell-LsDC">glossiness</td><td class="cell-mQKf"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">لمعان</td><td class="cell-EsVE"><em>glossy (adj.) :</em> looking attractive, but often not having serious value or quality</td><td class="cell-on[V">T<em>he glossiness detracts from what should be a down-to-earth show about life on a desert island.</em></td><td class="cell-ZSfO"></td></tr><tr id="70ff0703-4d63-4623-8794-9bdf783368ae"><td class="cell-LsDC">detract [ <strong>from</strong> <em>sth </em>]</td><td class="cell-mQKf"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">ينتقص</td><td class="cell-EsVE">to make something seem less valuable or less deserving of admiration than it really is or was thought to be</td><td class="cell-on[V"><em>All that make-up she wears actually detracts from her beauty, I think.</em></td><td class="cell-ZSfO"></td></tr><tr id="30906087-7e0c-4c50-916f-7269199ccf2e"><td class="cell-LsDC">delight</td><td class="cell-mQKf"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">يبهج</td><td class="cell-EsVE">to give someone great pleasure or satisfaction</td><td class="cell-on[V"><em>Peter&#x27;s success at college delighted his family.</em></td><td class="cell-ZSfO"></td></tr><tr id="1fc8e8f5-a5dd-4ce8-afbf-f82e5c19a69d"><td class="cell-LsDC">sympathize</td><td class="cell-mQKf"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">تتعاطف</td><td class="cell-EsVE">to support and agree with someone or something</td><td class="cell-on[V"><em>I sympathize with the general aims of the party, but on this particular issue I&#x27;m afraid I disagree.</em></td><td class="cell-ZSfO"></td></tr><tr id="42fca3f3-3247-40d1-8587-a50b57b2bee1"><td class="cell-LsDC">potential</td><td class="cell-mQKf"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">محتمل / كامن</td><td class="cell-EsVE">possible when the necessary conditions exist</td><td class="cell-on[V"><em>A number of potential buyers have expressed interest in the company.</em></td><td class="cell-ZSfO"></td></tr><tr id="98fd1abc-6967-422f-af87-c4eb6848c89b"><td class="cell-LsDC">formula</td><td class="cell-mQKf"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">معادلة / صيغة</td><td class="cell-EsVE">a standard or accepted way of doing or making something, the things needed for it</td><td class="cell-on[V"><em>We have changed the formula of the washing powder.</em></td><td class="cell-ZSfO"></td></tr><tr id="6b5b4b1f-c144-4722-94d5-f0e23c9a1275"><td class="cell-LsDC">tempers</td><td class="cell-mQKf"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">الغضب</td><td class="cell-EsVE">when someone becomes angry very quickly</td><td class="cell-on[V"><em>He&#x27;s got a really bad temper.</em></td><td class="cell-ZSfO"></td></tr><tr id="78cf5cd4-e4dd-49ed-be34-46f5ff262321"><td class="cell-LsDC">merchandizing</td><td class="cell-mQKf"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">تسويق</td><td class="cell-EsVE"><em>merchandize :</em> to encourage the sale of goods by advertising them or by making certain that they are noticed</td><td class="cell-on[V"><em>She is thinking of going into fashion merchandising or design.</em></td><td class="cell-ZSfO"></td></tr><tr id="dc4fe0c0-e2d9-4710-99e9-c14d4601cf98"><td class="cell-LsDC">contestant</td><td class="cell-mQKf"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">متسابق</td><td class="cell-EsVE">someone who competes in a contest</td><td class="cell-on[V"><em>In tonight&#x27;s quiz, our contestants have come from all over the country.</em></td><td class="cell-ZSfO"></td></tr><tr id="5e9cdd85-63d0-4a78-b2d0-5f427d26482a"><td class="cell-LsDC"><mark class="highlight-yellow_background">break the rule</mark></td><td class="cell-mQKf"></td><td class="cell-EJZS">كسر القاعدة</td><td class="cell-EsVE"></td><td class="cell-on[V">Their success is based on innovative products and the confidence to break the rules.</td><td class="cell-ZSfO"></td></tr><tr id="bb3f6cb9-5eb1-4b69-9e15-7bc57e2c440a"><td class="cell-LsDC">sarcastic</td><td class="cell-mQKf"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">ساخر</td><td class="cell-EsVE">using sarcasm <mark class="highlight-red">;</mark> <em>sarcasm : </em>the use of remarks which clearly mean the opposite of what they say, and which are made in order to hurt someone&#x27;s feelings or to criticize something in a humorous way</td><td class="cell-on[V"><em>In fact, the only laughter he had heard from her was either scornful or sarcastic, and was usually directed at him.</em></td><td class="cell-ZSfO"></td></tr></tbody></table></div><p id="9ffcfcdb-ca83-4a7d-9725-85481f470645" class="">
+</p><hr id="75f39186-2265-4d5c-8d57-eb8613e2dcac"/><h1 id="5325823a-29df-48a1-89ab-f57539c10db3" class="">Week 2</h1><div id="5ebe1150-345e-4a74-9fb4-65fe37601f6c" class="collection-content"><h4 class="collection-title">Session 1</h4><table class="collection-content"><thead style="background-color: lightgrey;"><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Word</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Part of Speech</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning in English</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Example Sentence</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Notes</th></tr></thead style="background-color: lightgrey;"><tbody><tr id="8a6d675c-4415-4252-a8c5-66ae6e9ae664"><td class="cell-=c&lt;&lt;">exaggerate</td><td class="cell-N=L="><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">مبالغة</td><td class="cell-DY?_"><em>exaggerate :</em> to make something seem larger, more important, better or worse than it really is</td><td class="cell-PcGY"><em>Comedians, singers and dancers perform in hilariously exaggerated ways.</em></td><td class="cell-oqfB"></td></tr><tr id="a4f9cf64-054f-4a04-91d6-aec39fe5dcea"><td class="cell-=c&lt;&lt;">fairy story</td><td class="cell-N=L="><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">قصة خرافية</td><td class="cell-DY?_">a traditional story written for children which usually involves imaginary creatures and magic;
+<em>fairy :</em> an imaginary creature with magical powers, usually represented as a very small person with wings</td><td class="cell-PcGY"><em>The shows are mostly aimed at children and are based on popular fairy stories and folk legends.</em></td><td class="cell-oqfB"></td></tr><tr id="69007344-e783-4a47-9f1d-294c784d19fd"><td class="cell-=c&lt;&lt;">folk <em>legend</em></td><td class="cell-N=L="><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">الأساطير الشعبية</td><td class="cell-DY?_">believed or transmitted by the common people; not academically correct or rigorous.</td><td class="cell-PcGY"><em>The shows are mostly aimed at children and are based on popular fairy stories and folk legends.</em></td><td class="cell-oqfB"></td></tr><tr id="d8dee10c-1f48-499b-a5c2-8a79a7e54a1c"><td class="cell-=c&lt;&lt;"><em>much-needed</em> profits</td><td class="cell-N=L="><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">الأرباح اللازمة</td><td class="cell-DY?_">money which is earned in trade or business, especially after paying the costs of producing and selling goods and services</td><td class="cell-PcGY"><em>She makes a big profit from selling waste material to textile companies.</em></td><td class="cell-oqfB"></td></tr><tr id="06359569-3c2e-4786-a4ef-8cfbdc8a4ccb"><td class="cell-=c&lt;&lt;">battle <strong>against</strong></td><td class="cell-N=L="><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">يتعارك / يتنافس ضد</td><td class="cell-DY?_">to try hard to achieve something in a difficult situation</td><td class="cell-PcGY"><em>He had to battle against prejudice to get a job.</em></td><td class="cell-oqfB"></td></tr><tr id="e050afb2-4335-49b3-825e-5577d850bd8d"><td class="cell-=c&lt;&lt;">plot</td><td class="cell-N=L="><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">حبكة</td><td class="cell-DY?_">the story of a book, film, play, etc</td><td class="cell-PcGY"><em>The plots of his books are basically all the same.</em></td><td class="cell-oqfB"></td></tr><tr id="27600e8b-fcf0-4319-be05-fefbcd3063a3"><td class="cell-=c&lt;&lt;">trend</td><td class="cell-N=L="><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">اتجاه</td><td class="cell-DY?_">a general development or change in a situation or in the way that people are behaving</td><td class="cell-PcGY"><em>Surveys show a trend away from home-ownership and towards rented accommodation.</em></td><td class="cell-oqfB"></td></tr><tr id="ee4904b7-8107-45f1-8241-58edcbb2141b"><td class="cell-=c&lt;&lt;">cross-dressing</td><td class="cell-N=L="><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">لبس ملابس الجنس الاخر</td><td class="cell-DY?_">the practice of wearing the clothes of the opposite sex</td><td class="cell-PcGY"><em>There&#x27;s a lot of cross-dressing in British pantomimes, where men dress up as Dames and a woman plays the part of the young hero.</em></td><td class="cell-oqfB"></td></tr><tr id="8ecd456c-ea78-4a39-bf55-4c33e7ff4a8f"><td class="cell-=c&lt;&lt;">costumes</td><td class="cell-N=L="><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">ازياء خاصة</td><td class="cell-DY?_">a set of clothes worn in order to look like someone or something else, especially for a party or as part of an entertainment</td><td class="cell-PcGY"><em>The children were dressed in halloween costumes.</em></td><td class="cell-oqfB"></td></tr><tr id="b0dd7ce5-5910-483d-a64b-662f76728da6"><td class="cell-=c&lt;&lt;">chorus</td><td class="cell-N=L="><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">ازياء خاصة</td><td class="cell-DY?_">a group of people who are trained to sing together</td><td class="cell-PcGY"><em>He&#x27;ll become a part of the chorus and sing a song for his friends.</em></td><td class="cell-oqfB"></td></tr><tr id="2b50fc7e-0c01-47b4-b496-c545b9a3e72e"><td class="cell-=c&lt;&lt;">youngsters</td><td class="cell-N=L="><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">الشباب</td><td class="cell-DY?_">a young person, usually an older child</td><td class="cell-PcGY"><em>The scheme is for youngsters between the ages of 10 and 16.</em></td><td class="cell-oqfB"></td></tr><tr id="52850a22-ceae-4206-91fd-8e3e1aaf1606"><td class="cell-=c&lt;&lt;">theatrical</td><td class="cell-N=L="><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">مسرحي</td><td class="cell-DY?_">belonging or relating to the theatre, or to the performance or writing of plays</td><td class="cell-PcGY"><em>I&#x27;m sure that he has appeared in many fine theatrical productions during his long career as actor.</em></td><td class="cell-oqfB"></td></tr></tbody></table></div><p id="cd37bd71-ea31-4fde-ad7c-f038c80ca45d" class="">
+</p><div id="4c1b2821-fd29-4e89-869e-76c9c4816f1e" class="collection-content"><h4 class="collection-title">Session 2</h4><table class="collection-content"><thead style="background-color: lightgrey;"><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Word</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Part of Speech</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning in English</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Example Sentence</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Notes</th></tr></thead style="background-color: lightgrey;"><tbody><tr id="890c6cd4-5d87-4c09-a9a3-850d41f5430a"><td class="cell-&gt;cHF">biodiversity</td><td class="cell-`N_v"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">التنوع البيولوجي</td><td class="cell-DY?_">the number and types of plant and animal species that exist in a particular environmental area or in the world generally, or the problem of protecting this</td><td class="cell-]g;e"><em>There’s a new National Biological Survey to protect species habitat and biodiversity.</em></td><td class="cell-oqfB"></td></tr><tr id="70468919-e9c7-4ba9-af14-15ea01a0da7f"><td class="cell-&gt;cHF">organism</td><td class="cell-`N_v"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">كائن حي</td><td class="cell-DY?_">a single living plant, animal, virus, etc</td><td class="cell-]g;e"><em>Amoebae and bacteria are single-celled organisms.</em></td><td class="cell-oqfB"></td></tr><tr id="3252d882-cf55-400a-8325-fe798d18fecc"><td class="cell-&gt;cHF">species</td><td class="cell-`N_v"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">نوع / صنف</td><td class="cell-DY?_">a set of animals or plants in which the members have similar characteristics to each other and can breed with each other</td><td class="cell-]g;e"><em>Mountain gorillas are an endangered species.</em></td><td class="cell-oqfB">singular : a <mark class="highlight-red"><strong>species </strong></mark>,
+plural : <mark class="highlight-red"><strong>species</strong></mark> ;
+<span style="border-bottom:0.05em solid"><strong>[C]</strong></span></td></tr><tr id="7ac5dacc-fe13-41d6-a3e2-f556f838b9a6"><td class="cell-&gt;cHF">extinction</td><td class="cell-`N_v"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">انقراض</td><td class="cell-DY?_">a situation in which something no longer exists</td><td class="cell-]g;e"><em>The extinction of the dinosaurs occurred millions of years ago.</em></td><td class="cell-oqfB"></td></tr><tr id="7f4c2ca7-dfef-41bd-be78-67d0ba0620ce"><td class="cell-&gt;cHF"><mark class="highlight-yellow_background">habitant</mark></td><td class="cell-`N_v"></td><td class="cell-EJZS"></td><td class="cell-DY?_"></td><td class="cell-]g;e"></td><td class="cell-oqfB"></td></tr><tr id="b2bb1a49-5747-4df0-8299-16a8f2703fd8"><td class="cell-&gt;cHF">ecosystem</td><td class="cell-`N_v"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">النظام البيئي</td><td class="cell-DY?_">all the living things in an area and the way they affect each other and the environment</td><td class="cell-]g;e"><em>Pollution can have disastrous effects on the delicately balanced ecosystem.</em></td><td class="cell-oqfB"></td></tr></tbody></table></div><p id="23ff94ac-5553-4dff-9cb1-dd8bbaf1d4a7" class="">
+</p><hr id="e8570727-725f-4997-ab0c-22032603bdfd"/><h1 id="84eb1d57-cef0-4249-99b8-26739ca4b0f5" class="">Week 3</h1><div id="6ff74d73-9520-4d1c-ae73-3ca0e82f1a11" class="collection-content"><h4 class="collection-title">Session 1</h4><table class="collection-content"><thead style="background-color: lightgrey;"><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Word</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Part of Speech</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning in English</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Example Sentence</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Notes</th></tr></thead style="background-color: lightgrey;"><tbody><tr id="5a465532-5441-4f7a-8196-de94a1c24dc0"><td class="cell-nq&gt;i">solitude</td><td class="cell-Qpbp"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">العزلة</td><td class="cell-osb&lt;">the state of being completely alone, especially when this is pleasant or relaxing</td><td class="cell-on[V"><em>After months of solitude at sea it felt strange to be in company.</em></td><td class="cell-XUBS"></td></tr><tr id="13ecc4d3-796c-475f-ad75-f33fd216c3ac"><td class="cell-nq&gt;i">sanctuary</td><td class="cell-Qpbp"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">مأوى</td><td class="cell-osb&lt;">a place where you can be safe or comfortable</td><td class="cell-on[V"><em>Illegal immigrants took sanctuary in a local church.</em></td><td class="cell-XUBS"></td></tr><tr id="ca8df33f-99e0-4eb2-b7c4-5dd18820fca4"><td class="cell-nq&gt;i">wind-buffeted <em>house</em></td><td class="cell-Qpbp"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">منزل مصفوف بالرياح</td><td class="cell-osb&lt;">Repeatedly hit by wind</td><td class="cell-on[V"><em>I live in a wind-buffeted house near the sea.</em></td><td class="cell-XUBS"></td></tr><tr id="5b162a0e-89e3-4590-aa95-9f4ef757a69f"><td class="cell-nq&gt;i">robin</td><td class="cell-Qpbp"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">عصفور ابو الحناء</td><td class="cell-osb&lt;">a small brown European bird with a red chest. Robins are often used as a symbol of winter and are often shown on Christmas cards and decorations</td><td class="cell-on[V"><em>Robins mostly appear in the winter and are commonly pictured on Christmas cards.</em></td><td class="cell-XUBS"></td></tr><tr id="19a59330-ec81-4f68-a8a3-a1996aac658a"><td class="cell-nq&gt;i">transcendent</td><td class="cell-Qpbp"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">فائق</td><td class="cell-osb&lt;">not limited or influenced by negative attitudes, thoughts, or feelings</td><td class="cell-on[V"><em>He describes seeing Stanley Matthews play football as one of the transcendent moments of his life.</em></td><td class="cell-XUBS"></td></tr><tr id="6957a347-192f-4c83-9eaa-ebcb42c7daef"><td class="cell-nq&gt;i">bedridden</td><td class="cell-Qpbp"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">طريح الفراش</td><td class="cell-osb&lt;">unable to get out of bed because you are too weak or ill</td><td class="cell-on[V">His aunt was 93 and bedridden.</td><td class="cell-XUBS"></td></tr><tr id="d78acdcc-c841-4fa6-b3bc-35ecbb610f53"><td class="cell-nq&gt;i">moors</td><td class="cell-Qpbp"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">مستنقع / أرض بور</td><td class="cell-osb&lt;">a large area of high land covered with grass, bushes, and heather, with soil that is not good for growing crops</td><td class="cell-on[V"><em>Diversionary feeding involves leaving dead rats and other carrion on the moor for the harriers to eat.</em></td><td class="cell-XUBS"></td></tr><tr id="930f82f2-1a56-4669-a9a6-58c86a9f79e9"><td class="cell-nq&gt;i">underpin</td><td class="cell-Qpbp"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">يدعم</td><td class="cell-osb&lt;">to be an important basic part of something, allowing it to succeed or continue to exist</td><td class="cell-on[V"><em>He presented the figures to underpin his argument.</em></td><td class="cell-XUBS"></td></tr><tr id="6c4cdacd-3106-4e92-97de-723693a35fb4"><td class="cell-nq&gt;i">auction</td><td class="cell-Qpbp"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">مزاد علني</td><td class="cell-osb&lt;">a public occasion when things are sold to the people who offer the most money for them</td><td class="cell-on[V"><em>They bought the paintings at auction in 1989.</em></td><td class="cell-XUBS"></td></tr><tr id="1367b3d8-b19b-4429-b2ee-b6b407362085"><td class="cell-nq&gt;i">breadwinner</td><td class="cell-Qpbp"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">المُعيل (كاسب الرزق لعياله)</td><td class="cell-osb&lt;">the person who earns the money to support a family</td><td class="cell-on[V"><em>Men are often expected to be the breadwinner in a family.</em></td><td class="cell-XUBS"></td></tr><tr id="936e6f46-e46b-48fa-828a-601a70328664"><td class="cell-nq&gt;i"><em>dress-buying</em> habit</td><td class="cell-Qpbp"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">عادة شراء الملابس</td><td class="cell-osb&lt;">the habit of buying clothes frequently</td><td class="cell-on[V"><em>Many girls develop a dress-buying habit at a very young age.</em></td><td class="cell-XUBS"></td></tr><tr id="bec41aa2-adad-437b-9a2b-b3b341ca97da"><td class="cell-nq&gt;i">unmitigated</td><td class="cell-Qpbp"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">غير مخفف</td><td class="cell-osb&lt;">used for emphasizing how bad or how unpleasant something is</td><td class="cell-on[V"><em>Biofuels have become an almost unstoppable and unmitigated disaster.</em></td><td class="cell-XUBS"></td></tr><tr id="a26d3618-959a-4140-a7c9-3a6901f8e0a2"><td class="cell-nq&gt;i">tyranny</td><td class="cell-Qpbp"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">استبداد</td><td class="cell-osb&lt;">cruel and unfair treatment by someone in a position of power</td><td class="cell-on[V"><em>She finally escaped from the tyranny of her father.</em></td><td class="cell-XUBS"></td></tr><tr id="e7010165-d0d2-4da2-bdf7-df1b97bf5b36"><td class="cell-nq&gt;i">vividly</td><td class="cell-Qpbp"><span class="selected-value select-value-color-default">(adv)</span></td><td class="cell-EJZS">بوضوح</td><td class="cell-osb&lt;">clearly</td><td class="cell-on[V"><em>I vividly remember my first day at school.</em></td><td class="cell-XUBS"></td></tr><tr id="b4dec3fe-7671-4683-a43e-2ce6e883d09b"><td class="cell-nq&gt;i">hunchback</td><td class="cell-Qpbp"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">أحدب</td><td class="cell-osb&lt;">someone who has a large round part on their back that is caused by an unusual curve in their spine</td><td class="cell-on[V"><em>She had a hunchback, a great misshapen hump of bone on her back, and walked with a stick.</em></td><td class="cell-XUBS"></td></tr><tr id="de500f05-fa87-43ed-9d0a-47bd9b890801"><td class="cell-nq&gt;i">hysterical lump</td><td class="cell-Qpbp"><span class="selected-value select-value-color-blue">(adj)</span><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">نتوء / ورم بسبب الهيستيريا</td><td class="cell-osb&lt;">a lump made because of hysterics <mark class="highlight-red">;</mark>
+<em>lump (n) :</em> a hard swelling found in or on the body, especially because of illness or injury</td><td class="cell-on[V"><em>It was only a hysterical lump. Hysterics make lump</em></td><td class="cell-XUBS"></td></tr><tr id="c86a46f8-5fd0-42af-93ee-048e11927fac"><td class="cell-nq&gt;i">potent</td><td class="cell-Qpbp"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">قوي</td><td class="cell-osb&lt;">powerful and effective</td><td class="cell-on[V"><em>Images from the war are still potent today.</em></td><td class="cell-XUBS"></td></tr><tr id="2879de67-3ced-435b-812e-786d50a78fce"><td class="cell-nq&gt;i">sanguine</td><td class="cell-Qpbp"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">متفائل</td><td class="cell-osb&lt;">(of someone or their character) positive and hopeful</td><td class="cell-on[V"><em>They are less sanguine about the prospects for peace.</em></td><td class="cell-XUBS"></td></tr><tr id="8f29b7e9-6a47-40a9-82c9-f4708173b1d5"><td class="cell-nq&gt;i">credo</td><td class="cell-Qpbp"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">عقيدة</td><td class="cell-osb&lt;">a set of beliefs which expresses a particular opinion and influences the way you live</td><td class="cell-on[V"><em>A creed is meant to summarize the explicit teachings or articles of faith, to imbed and thus protect and transmit the beliefs.</em></td><td class="cell-XUBS"><mark class="highlight-red"><strong>credo</strong></mark> = <mark class="highlight-red"><strong>creed</strong></mark></td></tr><tr id="809fd722-7c98-46c4-a4f0-6ab2b2ec81a8"><td class="cell-nq&gt;i">indulge</td><td class="cell-Qpbp"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">يدلل</td><td class="cell-osb&lt;">to allow yourself or another person to have something enjoyable, especially more than is good for you</td><td class="cell-on[V"><em>I love champagne but I don&#x27;t often indulge myself.</em></td><td class="cell-XUBS"></td></tr><tr id="191d2a33-766b-4241-8c37-192c97121c9e"><td class="cell-nq&gt;i">elude</td><td class="cell-Qpbp"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">يتملص / يفوت</td><td class="cell-osb&lt;">if a piece of information eludes you, you cannot remember it</td><td class="cell-on[V"><em>I know who you mean but her name eludes me.</em></td><td class="cell-XUBS"></td></tr><tr id="e7ae6897-a502-48d6-8ea8-70c516d9fbea"><td class="cell-nq&gt;i">quotidian <em>raptures</em></td><td class="cell-Qpbp"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">بهجة / فرحة يومية</td><td class="cell-osb&lt;">quotidian (adj) : ordinary - everyday <mark class="highlight-red">;</mark>
+raptures : an expression of extreme pleasure and happiness or excitement</td><td class="cell-on[V"><em>The Secret Garden is movingly accurate about the quotidian raptures, the feeling of wellbeing and purpose that can be made possible by a day of weeding.</em></td><td class="cell-XUBS"></td></tr><tr id="e8f1edf7-b692-44eb-9508-6fe57d05928e"><td class="cell-nq&gt;i"><mark class="highlight-yellow_background">well-gardened mind</mark></td><td class="cell-Qpbp"></td><td class="cell-EJZS"></td><td class="cell-osb&lt;"></td><td class="cell-on[V"><em>The Well-Gardened Mind </em>(book) <em>provides a new perspective on the power of gardening to change people&#x27;s lives.</em></td><td class="cell-XUBS"></td></tr></tbody></table></div><p id="9c40819e-642d-46e5-b406-1d7883118fed" class="">
+</p><div id="47712b6d-4836-4143-94b7-e5bf09ef1949" class="collection-content"><h4 class="collection-title">Session 2</h4><table class="collection-content"><thead style="background-color: lightgrey;"><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Word</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Part of Speech</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning in English</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Example Sentence</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Notes</th></tr></thead style="background-color: lightgrey;"><tbody><tr id="ab7a5382-fe9f-425f-855b-baf264f26a3a"><td class="cell-Wf[j">conclusively</td><td class="cell-V^h]"><span class="selected-value select-value-color-default">(adv)</span></td><td class="cell-EJZS">بشكل قاطع</td><td class="cell-eY}I">without any doubt</td><td class="cell-on[V"><em>It is impossible to demonstrate/prove conclusively that the factory is responsible for the pollution.</em></td><td class="cell-}sNL"></td></tr><tr id="57515fb0-a558-4ddf-b888-a61a4c66d0da"><td class="cell-Wf[j">creakiness</td><td class="cell-V^h]"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">صرير</td><td class="cell-eY}I">when a door or floorboard, etc. <em>creaks</em>, it makes a long low sound when it moves or is moved</td><td class="cell-on[V"><em>This is just one area in which the creakiness of the plot is obvious, this theme is never developed.</em></td><td class="cell-}sNL"></td></tr><tr id="bd686a23-c0d7-408a-9b41-c3b2eacdf26c"><td class="cell-Wf[j">contrivance</td><td class="cell-V^h]"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">اختراع</td><td class="cell-eY}I">when someone contrives something <mark class="highlight-red">;</mark>
+<em>contrive :</em> to invent and/or make a device or other object in a clever and possibly unusual way</td><td class="cell-on[V">Successful navigation was almost entirely due to the skill of the crew as opposed to any man-made contrivance.</td><td class="cell-}sNL"></td></tr><tr id="1a195842-79db-4bfe-b7d0-1bd40d316044"><td class="cell-Wf[j">anomalous</td><td class="cell-V^h]"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">غريب</td><td class="cell-eY}I"><em>anomaly (n) :</em> a person or thing that is different from what is usual, or not in agreement with something else and therefore not satisfactory</td><td class="cell-on[V"><em>In a multicultural society is it not anomalous to have a blasphemy law which only protects one religious faith?</em></td><td class="cell-}sNL"></td></tr><tr id="ac104ecf-057d-4f79-9442-eb0180554b46"><td class="cell-Wf[j">anachronistic</td><td class="cell-V^h]"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">مفارقة تاريخية</td><td class="cell-eY}I">anachronism (n) : a person, thing or idea which exists out of its time in history, especially one which happened or existed later than the period being shown, discussed, etc. </td><td class="cell-on[V"><em>He described the law as anachronistic  </em>(= more suitable for an earlier time)<em>  and ridiculous.</em></td><td class="cell-}sNL"></td></tr><tr id="913ea10e-1dba-4859-9c0b-9b2721bf64e4"><td class="cell-Wf[j">soliloquy</td><td class="cell-V^h]"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">مناجاة</td><td class="cell-eY}I">a speech in a play which the character speaks to him- or herself or to the people watching rather than to the other characters</td><td class="cell-on[V"><em>Hamlet&#x27;s soliloquy ‘To be or not to be’</em></td><td class="cell-}sNL"></td></tr><tr id="140fd850-c131-42ef-b988-2e83663e968b"><td class="cell-Wf[j">portentous</td><td class="cell-V^h]"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">رزين</td><td class="cell-eY}I">too serious and trying to be very important</td><td class="cell-on[V"><em>The problem with the book is that it sometimes descends into portentous philosophizing.</em></td><td class="cell-}sNL"></td></tr><tr id="11ea50e9-5ef9-40f9-8c05-7a55aa73a3c9"><td class="cell-Wf[j">resplendent</td><td class="cell-V^h]"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">متألق</td><td class="cell-eY}I">having a very bright or splendid appearance</td><td class="cell-on[V"><em>I saw Anna at the other end of the room, resplendent in a red sequined cocktail dress.</em></td><td class="cell-}sNL"></td></tr><tr id="f1812ca3-8dc2-4e49-898b-723118f241d6"><td class="cell-Wf[j">photorealistic</td><td class="cell-V^h]"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">واقعية</td><td class="cell-eY}I"><em>photorealism (n) :</em> a very realistic style in art in which a painting or drawing is virtually indistinguishable from a photograph</td><td class="cell-on[V"><em>Rather than achieving a photorealistic likeness, I try to capture the feeling I get from a mental visualization of my subject.</em></td><td class="cell-}sNL"></td></tr><tr id="b7345d37-c43c-43d5-bea5-f422c9f556dd"><td class="cell-Wf[j">gamboling</td><td class="cell-V^h]"><span class="selected-value select-value-color-purple">(gerund)</span></td><td class="cell-EJZS">وثب / قفز</td><td class="cell-eY}I">to run and jump in a happy and playful way</td><td class="cell-on[V">Lambs were gamboling (about/around) in the spring sunshine.</td><td class="cell-}sNL">(-ing form) : <strong><mark class="highlight-red">gamboling</mark></strong> (US) / <mark class="highlight-red"><strong>gambolling</strong></mark> ;
+past simple : <mark class="highlight-red"><strong>gamboled</strong></mark> / <mark class="highlight-red"><strong>gambolled</strong></mark></td></tr><tr id="b67cb5e4-70a3-4220-bd30-71379e2c0a8c"><td class="cell-Wf[j">tangibility</td><td class="cell-V^h]"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">قابلية اللمس</td><td class="cell-eY}I">the ability of being tangible <mark class="highlight-red">;</mark> 
+<em>tangible (adj) :</em> real or not imaginary<mark class="highlight-red">;</mark> able to be shown, touched or experienced</td><td class="cell-on[V"><em>In my mind the success of a production depends largely on the tangibility created by the musical score.</em></td><td class="cell-}sNL"></td></tr><tr id="7a077091-c8f3-472b-a0fb-6da3d966247a"><td class="cell-Wf[j">venture</td><td class="cell-V^h]"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">يغامر</td><td class="cell-eY}I">to risk going somewhere or doing something that might be dangerous or unpleasant, or to risk saying something that might be criticized</td><td class="cell-on[V"><em>She rarely ventured outside, except when she went to stock up on groceries at the corner shop.</em></td><td class="cell-}sNL"></td></tr><tr id="7ec367b1-77dc-4eff-afd2-96d7ada75851"><td class="cell-Wf[j">carcass</td><td class="cell-V^h]"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">جثة / هيكل</td><td class="cell-eY}I">the body of a dead animal, especially a large one that is soon to be cut up as meat or eaten by wild animals</td><td class="cell-on[V"><em>Vultures flew around in the sky waiting to pick at the rotting carcass of the deer.</em></td><td class="cell-}sNL"></td></tr><tr id="10d67aab-1636-47ff-a755-df405f4988af"><td class="cell-Wf[j">inherent</td><td class="cell-V^h]"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">متأصل</td><td class="cell-eY}I">existing as a natural or basic part of something</td><td class="cell-on[V"><em>There are dangers/risks inherent in almost every sport.</em></td><td class="cell-}sNL"></td></tr><tr id="41611a28-4f98-4e25-bef4-445da19fc9f5"><td class="cell-Wf[j">industrial</td><td class="cell-V^h]"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">صناعي</td><td class="cell-eY}I">in or related to industry, or having a lot of industry and factories, etc</td><td class="cell-on[V"><em>He has an industrial background.</em> (= He has worked in industry).</td><td class="cell-}sNL"></td></tr><tr id="e26d5dc9-84f2-4f32-ac1e-a1447ef83c1a"><td class="cell-Wf[j">strength</td><td class="cell-V^h]"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">قوة</td><td class="cell-eY}I">the degree to which something is strong or powerful</td><td class="cell-on[V"><em>You can gauge </em>(= measure) <em>the strength of a democracy by the way it treats its minorities.</em></td><td class="cell-}sNL"></td></tr><tr id="1467a173-78ea-4860-b5f2-251b7b56d976"><td class="cell-Wf[j">augment</td><td class="cell-V^h]"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">زيادة</td><td class="cell-eY}I">to increase the size or value of something by adding something to it</td><td class="cell-on[V"><em>He would have to find work to augment his income.</em></td><td class="cell-}sNL"></td></tr><tr id="e74cb9df-ce9b-4350-a4e2-c6b7ebb93471"><td class="cell-Wf[j">nothingness</td><td class="cell-V^h]"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">العدم</td><td class="cell-eY}I">a state where nothing is present, or where nothing exists that is important or gives meaning to life</td><td class="cell-on[V"><em>The never-ending flow of mental activity started as consciousness abruptly exploded from the void of nothingness.</em></td><td class="cell-}sNL"></td></tr><tr id="17fc2e45-0ad7-46f0-a255-170413719611"><td class="cell-Wf[j">dissolve</td><td class="cell-V^h]"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">يختفي</td><td class="cell-eY}I">to disappear</td><td class="cell-on[V"><em>the traditional distinctions between live action and animation have dissolved into nothingness.</em></td><td class="cell-}sNL"></td></tr></tbody></table></div><p id="2a4be9b6-5886-48ef-ba70-e413e2449eec" class="">
+</p><hr id="c5fd6510-8f09-42f0-9272-7817c4a624ec"/><p id="6b0e3898-cf91-4905-9c0c-82a7401434a0" class="">
+</p><h1 id="c63179c2-f8f1-4c7b-a220-24d6777a8374" class="">Reading</h1><h3 id="bb475e32-cd45-4880-a506-0f3078e26e11" class="">“<span style="border-bottom:0.05em solid">Reality Show Fever</span>” <em>[Upstream Unit 5 SB, P:84, </em><mark class="highlight-teal"><em>Week 1 Session 1</em></mark><em>]</em></h3><p id="76414479-bc06-408a-b290-93a5e2d3a8cf" class="">The attraction of the genre is hard to explain. But perhaps it could be that reality TV seems to tell stories of &quot;ordinary&quot; people with real lives, real emotions - people like us. And often, thankfully, people unlike us. Whether it is delighting or sympathising in the pain of others, everyone loves watching a tragedy played out, don&#x27;t they? We review the top six tabloid headline grabbing shows here.</p><p id="402c0439-a089-49aa-894f-a513a8040792" class=""><strong>A) I’m a </strong><mark class="highlight-pink_background"><strong>celebrity</strong></mark><strong> - get me out of here!</strong></p><p id="2f8a6e67-0fbe-4383-83c5-5545b49be6fe" class="">ITV’s show scored its highest ratings last night as almost 7 million viewers <mark class="highlight-pink_background"><strong>tuned in</strong></mark>. The stress of spending nearly a week in close contact with other minor celebrities in almost <mark class="highlight-pink_background"><strong>constant rain</strong></mark> in the Australian jungle is beginning to show, with comedienne Rhona Cameron falling out with almost all the fellow participants.</p><p id="52732a10-19c3-4d60-a853-0a4dc9d29fc0" class="">Ratings rose to just over 8 million after 10 pm as more viewers tuned in to see Uri Geller being chosen to take the daily <mark class="highlight-pink_background"><strong>challenge</strong></mark> of eating worms! In this show viewers vote to send someone home every three days.</p><p id="6d4eeace-98d6-4801-818a-7f94549ac883" class=""><strong>B) Big Brother</strong></p><p id="294b61b0-6e1c-42c5-b109-c52778f7a535" class="">Big Brother is a new series in which ten volunteers spend up to two months in a house in an environment where every single activity is monitored on camera. Their lives are <mark class="highlight-pink_background"><strong>screened</strong></mark> 24 hours a day, seven days a week on the web, every weekday on Channel 4, with a finale each Friday where one or two participants, chosen by their housemates, are ceremoniously thrown out of the game if they lose viewers&#x27; votes. Their lives and personal moments become the property of all!</p><p id="2f7f577e-a5ea-440f-90ec-94d7de9ed8b5" class="">The Big Brother formula includes camera work, video, <mark class="highlight-pink_background"><strong>chat-rooms</strong></mark> to discuss the latest issues and <mark class="highlight-pink_background"><strong>updates</strong></mark> through phones and e-mail. It is set to become the most <mark class="highlight-pink_background"><strong>intense</strong></mark> live experience ever seen on the web.</p><p id="d473ff24-1364-4865-ab78-5db18c91ff33" class=""><strong>C) Fame Academy</strong></p><p id="0946a874-d57d-4f9c-9e41-decff424c809" class="">In this particular show the contestants sing in order to be allowed to stay in a mansion which is heavily guarded, working 17-hour days. The luxurious residence <mark class="highlight-pink_background"><strong>hosts</strong></mark> the BBC&#x27;s new multi-million pound show Fame Academy which is the latest in a wave of talent shows that has flooded our screens in the last eighteen months. The show <mark class="highlight-pink_background"><strong>features</strong></mark> a group of hopeful popstars under the watchful eye of TV cameras around the clock. Viewers vote for one contestant to remain in the academy, while two other contestants then choose which one of the remaining contestants is <mark class="highlight-pink_background"><strong>shown the door</strong></mark>.</p><p id="708268a7-9cb2-473f-8b42-a71b79194c41" class=""><strong>D) Survivor</strong></p><p id="dcd717b3-501e-44f4-98a8-ca9a9eb68685" class="">Survivor brings us reality TV with some particularly weird contestants, one of whom was caught <mark class="highlight-pink_background"><strong>smuggling</strong></mark> meat onto the island in his clothing! In fact, out of the sixteen people marooned on the South Sea island competing to win the prize money, there wasn&#x27;t one you would feel completely safe sitting next to!</p><p id="7810007f-97eb-4a0d-bd81-ce2e005752f8" class="">The programme is actually all the better for it. Unless there is a sudden <mark class="highlight-pink_background"><strong>wave</strong></mark> against reality TV, it should be a great hit. With <mark class="highlight-pink_background"><strong>swooping</strong></mark> helicopter shots and timelapse photography, the millions spent on the series is evident. The large budget, however, might not be to its advantage as the glossiness detracts from what should be a <mark class="highlight-pink_background"><strong>down-to-earth</strong></mark> show about life on a desert island.</p><p id="24401cc3-4a0f-4c1d-9119-dd9009d96d09" class=""><strong>E) American Idol</strong></p><p id="97fc1d54-5a61-487a-af73-0e0b72e1f2a5" class="">This show is the US version of the huge British TV hit, Pop Idol. Simon Cowell, in his role as judge, has been up to his old tricks with contestants, fellow judges and the show’s presenters. Mr <mark class="highlight-pink_background">Nasty</mark> is a hit with viewers after delighting and horrifying the American public with his ironic sense of humour.</p><p id="b3e5688f-587d-40f6-b32b-65ba00787b3b" class="">Nine out of the ten finalists have now been chosen, leaving Cowell, Randy Jackson and Paula Abdul to make the final choice for the tenth place by selecting one of the twenty-one unsuccessful contestants. A <mark class="highlight-pink_background"><strong>spokeswoman</strong></mark> for ITV said American Idol underlined the global appeal of big entertainment events combining the drama of live performance with interactive participation.</p><p id="0202bfc8-8b38-43fb-9ed2-55dc667217a4" class=""><strong>F) Popstars</strong></p><p id="904a9bfe-6f04-4c8c-99bd-b789f7cfc63c" class="">Popstars returns to television screens tonight, aiming to bring fame to another group of <mark class="highlight-pink_background"><strong>potential</strong></mark> stars. Tonight&#x27;s new Popstars show will begin the process of narrowing down more than 10,000 hopeful youngsters in order to create a boy-band and girl-band of ten members each. Viewers will then vote for five to leave each group, leaving two bands that will <mark class="highlight-pink_background"><strong>race</strong></mark> to reach number one in the charts.</p><p id="306ed891-ecee-4c71-9f25-649adaf96274" class="">The show should produce huge profits through the usual <mark class="highlight-pink_background"><strong>formula</strong></mark><strong> </strong>of tears, tempers and endless put-downs from judges working in show business. The producers will be taking a share of telephone call charges from viewers’ votes and are sure to make even more money through the sale of singles and albums as well as merchandising.</p><p id="fa878ba0-2978-4192-8d46-37f53fd61d62" class="">
+</p><hr id="6b947233-6a63-4740-b9dd-145bc760d06e"/><p id="64195875-7b13-46bd-b41b-1d69205c3aee" class="">
+</p><h3 id="3cadfcfa-244f-4bf8-a545-a9edfbe1bf90" class="">“<span style="border-bottom:0.05em solid">The Magic of Pantomime</span>” <em>[Upstream Unit 5 SB, P:90, </em><mark class="highlight-teal"><em>Week 2 Session 1</em></mark><em>]</em></h3><p id="a39dbcef-3516-440a-86a0-089c3d27de4d" class="">The Christmas season in the UK would be nothing without the traditional ‘Panto’. These funny musical plays date back to the Middle Ages and are based on a <mark class="highlight-pink_background"><strong>combination</strong></mark> of Italian comedy and British Music Hall.</p><p id="05f583bf-bc96-48c6-8f91-19ae75f3d6f8" class="">Comedians, singers and dancers perform in hilariously <mark class="highlight-pink_background"><strong>exaggerated</strong></mark> ways. The shows are mostly aimed at children and are based on popular <mark class="highlight-pink_background"><strong>fairy stories</strong></mark> and <mark class="highlight-pink_background"><strong>folk legends</strong></mark>. The most popular stories tend to be Cinderella, Snow White, Sleeping Beauty and Aladdin.</p><p id="ec682cec-6f96-4b9b-ae1e-880dd855723f" class="">Pantomime has become big business in the UK. Large theatres are in competition with each other for the best fairy stories as well as star performers who will help bring in large crowds to cover expenses.</p><p id="b6b100e5-b4af-4e11-88f3-1cd61a5e3475" class="">Pantomimes can often run for six to eight weeks. This obviously means they provide <mark class="highlight-pink_background"><strong>much-needed profits</strong></mark> for theatres up and down the country. Over the years, it has combined many different features of theatre and so, in <mark class="highlight-pink_background"><strong>adapting</strong></mark>, has managed to avoid extinction of a kind. The novelty aspect too has always been important to its survival. Traditional pantomime, in order to remain popular, had to keep up-to-date with events and new <mark class="highlight-pink_background"><strong>trends</strong></mark>. In doing so, it remains one of the most popular forms of entertainment in the country.</p><p id="edb57a5e-df35-4567-a9b6-9f16cb0d9c40" class="">To be described as traditional, a pantomime needs to have a strong story line and include all the important <mark class="highlight-pink_background"><strong>elements</strong></mark> of ‘good’ battling against ‘evil’, with the good guy always being the winner. Even today, the pantomime ‘baddie’ is always the first to come in stage from the dark side, followed by his competitor, the ‘goodie’ from the right side.</p><p id="c2596cb8-6a62-4bce-a5dd-b994e923a5fa" class="">Song and dance are also important to support the traditional <mark class="highlight-pink_background"><strong>plot</strong></mark>, with influences from Italian comedy and characters performing various situations to delight audiences. These comic chases and situation have come to be known as ‘Slapstick’ comedy. This form of comedy takes its name from a <mark class="highlight-pink_background"><strong>device</strong></mark> that was carried by a pantomime character and used as both a weapon and a magic wand. It made a loud ‘slapping’ noise when used, for example by the star comedian, in order to create a more <mark class="highlight-pink_background"><strong>theatrical</strong></mark> effect when hitting fellow actors.</p><p id="22247a79-0b32-4a4d-aa8c-8dc5c1b683fc" class="">The most famous of those pantomime clowns was Joseph Grimaldi, making his first appearance in 1800. He had such an effect on his audiences that they would leave the theatre singing his songs. Pantomime now had its first real star. The elements of comedy, song and slapstick that have become the basic <mark class="highlight-pink_background"><strong>ingredients</strong></mark> of successful pantomime had been established.</p><p id="70d01760-896d-490f-a054-9e8fff5d6077" class="">Grimaldi also succeeded in setting up another tradition. The tradition of cross-dressing, where men play female roles and women play male roles. This comes from the early days of theatre, when it was not acceptable for women to become actresses. Another example of this role reversal is the all-important pantomime dame, a comic old lady, played by a male actor, which was a role created during the Victorian <mark class="highlight-pink_background"><strong>era</strong></mark>. Audiences love seeing their favourite comedian playing the part. The dame is warm and comic, but never plays dirty tricks. Often the <mark class="highlight-pink_background"><strong>costumes</strong></mark> are used to good effect by copying different fashions in an exaggerated way.</p><p id="be3ad105-1d6b-4e54-9cdc-f2a177afa3fe" class="">The other element of pantomime during the first and second world wars was, in contrast, the role of the ‘principal’ boy traditionally played by a girl. By the 1950s, famous male actors began playing the part followed by pop stars until finally ladies began, once again, to return to the role. Pantomime has always tended to adapt to the times by taking on the ‘popular’ stars of the day as well as other famous groups of performers. Pantomime could not survive, of course, without one particular <mark class="highlight-pink_background"><strong>chorus</strong></mark> of dancers. Today, for reasons of economy, the average group can number between six or eight dancers. Some have as few as two or four professional dancers with ‘extra’ <mark class="highlight-pink_background"><strong>youngsters</strong></mark> known as ‘babes’.</p><p id="711e54dc-c725-4845-b838-9bb349d2428e" class="">Despite the general competition from other forms of entertainment, traditional pantomime has survived and a visit to a show may be a child’s first experience of live theatre. If that experience is magical enough, it may leave a lasting <mark class="highlight-pink_background"><strong>impression</strong></mark>. In a world where children are surrounded by computer games, DVDs and television, a visit to a pantomime could well change their view of theatre. It is hoped that this unique tradition will continue long into the future, with actors shouting, “Oh no it&#x27;s not!” and children in the audience responding “Oh yes it is!” as loudly as ever.</p><p id="1e2daac4-09d0-461b-812c-0c6d839b750f" class="">
+</p><hr id="907cb6d3-6d3a-4a46-8426-67135253fc8b"/><p id="eb59eeb6-c915-4dd8-8b74-271022a06541" class="">
+</p><h3 id="ac13611d-1b49-493f-ac64-58541d05108c" class="">“<mark class="highlight-pink_background"><span style="border-bottom:0.05em solid"><strong>Solitude</strong></span></mark><span style="border-bottom:0.05em solid"><strong>, sunshine and </strong></span><mark class="highlight-pink_background"><span style="border-bottom:0.05em solid"><strong>sanctuary</strong></span></mark><span style="border-bottom:0.05em solid"><strong> in The Secret Garden</strong></span>” <em>[The Guardian (By: Aida Edemariam), </em><a href="https://www.theguardian.com/books/2020/nov/05/solitude-sunshine-and-sanctuary-in-the-secret-garden"><em>link</em></a><em>, </em><mark class="highlight-teal"><em>Week 3 Session 1</em></mark><em>]</em></h3><p id="0e619d43-02a3-4b3c-9783-986a606582fa" class=""><em>From its interrogation of the ways illness changes and defines us to the tranquility found in nature, Frances Hodgson Burnett’s book is a story for our times</em></p><p id="5c8e4c25-b936-4aec-821c-f753afa13afa" class="">If the last time you encountered Frances Hodgson Burnett’s The Secret Garden was in childhood, you probably think of Mary, a sour little girl, waking up in a house in India to find herself orphaned and alone; a vast <mark class="highlight-pink_background"><strong>wind-buffeted house</strong></mark> on the Yorkshire <mark class="highlight-pink_background"><strong>moors</strong></mark>, and the sound of crying; a <mark class="highlight-pink_background"><strong>robin</strong></mark>, a key, and a hidden garden; the <mark class="highlight-pink_background"><strong>transcendent</strong></mark> scene in that garden, one of the most famous in children’s literature, in which Colin, a previously <mark class="highlight-pink_background"><strong>bedridden</strong></mark> child, stands and learns to walk. So far, so magical. But rereading the book in adulthood reveals that it is also a story about neglect, remiss parenting and mental illness; a book that, for all its light, is <mark class="highlight-pink_background"><strong>underpinned</strong></mark> by darkness. In fact, the novel offers such practical ways of coping, and even of healing that it was once suggested it should be prescribed on the NHS.</p><p id="10607db5-b24f-4a0a-ba69-afb924ddd391" class="">When Burnett wrote The Secret Garden – “a sort of children’s Jane Eyre”, as one of her friends described it, a characterisation that has been taken to heart by the latest film adaptation, directed by Marc Munden and starring Colin Firth, Julie Walters and Dixie Egerickx – she was 61, and had been a famous author for more than 40 years. She was so famous that, as her biographer Gretchen Gerzina notes in Frances Hodgson Burnett: The Unpredictable Life of the Author of The Secret Garden, she crossed the Atlantic 33 times and on nearly every arrival was met by reporters. Oscar Wilde (who of course wrote his own story about children and a garden, “The Selfish Giant”) came to see her in Washington, where at one point one of her gloves was <mark class="highlight-pink_background"><strong>auctioned</strong></mark>; in London she lived on Park Lane and was friends with Henry James. We do not read them much now, but – apart from Little Lord Fauntleroy (1886) – she was known mainly for her books for adults. The Secret Garden in fact started life, in 1910, as a serial in a grown-up magazine called the American.</p><p id="923afcd5-1d74-44fc-aca8-80e754107241" class="">Burnett began writing for publication because her family was very poor; her mother could not make ends meet after her husband’s death, and emigrated with her five children from Manchester to Tennessee when Frances was 15. By 18 Frances was the main <mark class="highlight-pink_background"><strong>breadwinner</strong></mark>, and remained so for the next 56 years, her 52 books and 13 plays further supporting two husbands (after divorcing Swan Burnett she married Stephen Townsend in 1900), two children, grand houses on both sides of the Atlantic, and a highly developed <mark class="highlight-pink_background"><strong>dress-buying habit</strong></mark>. The contrast between rich and poor in, for instance, A Little Princess (1905), is deeply felt; the details that appealed to children were those that Burnett had personally observed.</p><p id="f4ced727-fc6e-43ea-bf5c-ecd03e5a2517" class="">Independence, while satisfying, was <mark class="highlight-pink_background"><strong>unmitigatedly</strong></mark> hard work, and lonely. Burnett was often ill, frequently with depression; it became particularly bad after her second pregnancy, through which she worked and cared for her small son. In 1884 she suffered what Gerzina describes as a full-blown nervous breakdown and, by the age of 35, a friend wrote of her that “she was like something mended that can never be used as if it had not been broken”.</p><p id="3ad4bfeb-aac9-497f-9792-0e20bdb0a5e7" class="">Burnett is brilliant, in The Secret Garden, on the <mark class="highlight-pink_background"><strong>tyranny</strong></mark> of the ill and those who are seen as weak. She <mark class="highlight-pink_background"><strong>vividly</strong></mark> captures how an entire household fears Colin’s rages and dances attendance on him; the way he uses something overheard (that he won’t live until adulthood) as both identity and threat: “I’m not as selfish as you, because I’m always ill … And I am going to die besides.” Mary refuses to be cowed. “You just say that to make people sorry. I believe you’re proud of it.”</p><p id="1d396ac3-cc7b-47ee-8f1d-e0e92bc1a12c" class="">Colin turns out to suffer what we might now describe as Munchausen syndrome by proxy, symptoms planted in his mind by a <mark class="highlight-pink_background"><strong>hunchbacked</strong></mark> father who fears his son will be the same, then nurtured by a weak and overattentive doctor. Mary has little truck with this: “It was only a <mark class="highlight-pink_background"><strong>hysterical lump</strong></mark>. Hysterics make lumps,” she snarls at Colin. But while Colin is portrayed, in the main, as a spoiled brat, there is also a deep understanding and sympathy at work. Burnett was a veteran of long periods of enforced bed rest, and she came to believe it was actively harmful. She also thought that there was nothing on earth more <mark class="highlight-pink_background"><strong>potent</strong></mark> than the human mind, and that its healthiness, or otherwise, was written on the body. Earlier in her life she had attempted (like Louisa May Alcott, who had also suffered burnout) the Boston “mind cure” , which emphasised the healing power of positive thought. She had read Hindu philosophy and been swayed by Mary Baker Eddy’s Christian Science, and eventually came to her own conclusion: that a <mark class="highlight-pink_background"><strong>sanguine</strong></mark> mind, trained, moreover, to look outside itself and to care for others, could make a person well.</p><p id="a3355e4e-5081-41cf-9890-919396ae6a32" class="">Late in The Secret Garden she writes: “Mere thoughts are as powerful as electric batteries and as good for one as sunlight. To let a sad thought or a bad one into your mind is as dangerous as letting a scarlet fever get into your body.” There are obvious issues with this belief, not least those that Barbara Ehrenreich has so trenchantly observed in our present-day attitudes to cancer: the patient who “fights bravely” and positively should get well, while decline and disease are equated with moral failure. No amount of positive thinking could stop Burnett’s son dying of tuberculosis in his mid-teens – though perhaps the degree to which she came to insist on her <mark class="highlight-pink_background"><strong>credo</strong></mark> merely reflects how much she wished it could have. Thankfully, in The Secret Garden, her close observation of detail and psychological insights tether her ideas to believable processes: Colin is taken outside, into the fresh air. He exercises, and develops an appetite. His mind begins to heal.</p><p id="5ec58c55-3aad-4ba7-a89c-c42ccc6a1567" class="">He also begins, at the end, to develop a relationship with his father. Burnett is in no doubt as to what is at the root of Colin’s ills. Both Colin and Mary have absent parents. The children are <mark class="highlight-pink_background"><strong>indulged</strong></mark>, given every material comfort, but are unloved. As Dickon, the brother of a housemaid at the grand house, tells Mary: “Mother, she says that’s th’ worst thing on earth to a child: them as is not wanted scarce ever thrives.” Dickon is a model of emotional balance and quiet confidence. We might these days couch such thoughts in terms of self-esteem and attachment – Dickon is as securely attached as Colin and Mary are insecure, with the behaviour, and in Colin’s case the illnesses, to match. The Secret Garden can be read as a sophisticated study of the varieties of both intentional and unintentional emotional neglect. “She sets that up to be the root cause of illness and trauma,” Gerzina says. Though “I don’t think she would have admitted it to herself.”</p><p id="3887ac36-42dc-49ef-977b-2c1c4a820b41" class="">Burnett had a complex relationship with motherhood. When her own two boys, Lionel and Vivian, were small they played quietly under the table as she worked. “Being good – somehow there is something sad in it to me,” she wrote to a friend. Later, when she was ill, the boys tried to help and protect her; even though they were very young, they nursed her and hid their own troubles, in Lionel’s case, both TB and serious depression. As she became more famous and her relationship with their father, Swan Burnett, began to break down, she spent months at a time in England without them. When her son Lionel died, Gerzina writes, Burnett “wandered Europe for months” (as Archibald Craven does in The Secret Garden), writing journal entries about Lionel, or addressing him directly in letters he would never read.</p><p id="15e93717-8ccd-4227-bca1-37aca6eced8f" class="">In 1897, at the age of 48, Burnett walked into Maytham Hall, in Kent, and felt at once at home, in the house, but especially in the gardens. Digging, pruning, planning, caring, watching, she began to find a calm that had <mark class="highlight-pink_background"><strong>eluded</strong></mark><strong> </strong>her for years; and in the book she wrote more than a decade later she gives this tranquil garden and a robin she befriended to Mary, Dickon and Colin. The Secret Garden is movingly accurate about the <mark class="highlight-pink_background"><strong>quotidian raptures</strong></mark>, the feeling of wellbeing and purpose that can be made possible by a day of weeding. Lockdown has brought many of us to the idea of what Sue Stuart-Smith, in her recent book, called the “<mark class="highlight-pink_background"><strong>well-gardened mind</strong></mark>”. The Secret Garden carefully and vividly evokes the benefits; we can almost feel Burnett’s garden working on us too. When spring arrives, in a burst of sunshine after weeks of rain, Mary, who at 10 has finally learned to dress herself, wakes early and lets herself out into the dawn. She runs to the garden, where crocuses are pushing up out of the earth, the robin is building his nest, and a green film cloaks the grey trees. “Oh, Dickon! Dickon!” Mary cries to the boy, who is already there. “I’m so happy I can scarcely breathe!”</p><p id="b9441599-9a14-4e19-be07-4d91be266ff3" class="">
+</p><hr id="85fbfd4a-6649-4c79-a668-eb7673966e8a"/><p id="3a0d1c8b-2d0f-4412-884b-66be46bf6aa8" class="">
+</p><h3 id="910fba9d-9325-4a67-941a-e49ccb5357d7" class="">“<span style="border-bottom:0.05em solid"><strong>The Martian review – Matt Damon shines as stranded astronaut</strong></span>” <em>[The Guardian (By: Mark Kermode), </em><a href="https://www.theguardian.com/film/2015/oct/04/the-martian-review-matt-damon-shines-stranded-astronaut"><em>link</em></a><em>, </em><mark class="highlight-teal"><em>Week 3 Session 2</em></mark><em>]</em></h3><p id="141c3058-5300-420b-b82f-c83f1053802a" class=""><em>Director Ridley Scott makes the most of an excellent script and a first-rate star for a scintillating sci-fi trip to the red planet</em></p><p id="7b53db55-bb18-4572-b74f-83b7067fa535" class="">Proving <mark class="highlight-pink_background"><strong>conclusively</strong></mark> that it really is all about the writing, Ridley Scott’s most enjoyable film in years reassures us that the <mark class="highlight-pink_background"><strong>creakiness</strong></mark> of Prometheus, the cack-handed <mark class="highlight-pink_background"><strong>contrivance</strong></mark> of The Counsellor and the sheer stodginess of Exodus: Gods and Kings were genetically rooted in their respective screenplays. Scott may not have the best eye for a decent script (he thought A Good Year read like a charming Russell Crowe vehicle), but when the right words are on the page he can visualise them like no other. From the creative back and forth of Hampton Fancher and David Peoples on Blade Runner, through the genius of Callie Khouri’s Thelma and Louise screenplay, to this terrifically crowd-pleasing adaptation of Andy Weir’s book by The Cabin in the Woods creator Drew Goddard, Scott’s greatest debt has always been to his writers. The director may have earned a justified reputation as a “world-building visionary”, but his audiences always demand a good story and that’s exactly what they’ve got here.</p><p id="3d95e10f-a3db-4219-8bd2-a554f4bbe670" class="">Left for dead on the red planet following a scientifically <mark class="highlight-pink_background"><strong>anomalous</strong></mark> but narratively necessary windstorm, botanist Mark Watney (Matt Damon, giving Cast Away-era Tom Hanks a run for his money) must hunker down for the long haul, knowing that any rescue mission is years away. Luckily, he is quite literally “the best botanist on the planet”, and after declaring that he’ll have to “science the shit” out of his Robinson Crusoe situation, he discovers that it is indeed possible to grow potatoes in his own poo.</p><p id="1dfb888b-60e7-4782-bd28-d56ae982d2da" class="">This is just the first of many self-help survivalist discoveries that find Watney entertainingly facing up to the challenge of “not dying”. Armed only with recordings of Happy Days and his captain’s collection of old-school floor-fillers (like Guardians of the Galaxy, The Martian takes great delight in its <mark class="highlight-pink_background"><strong>anachronistic</strong></mark> retro-pop stylings), our lonely starman pitches his skills against the inhospitable elements, counting the solar days (“sols”) until help arrives even as mission control fight their own battles, practical and geopolitical.</p><blockquote id="bb1e5fb4-e202-4ae9-a6a7-2f9b6c85b728" class="">The film revels in the sheer absurdist pleasure of watching human beings outwit the universe with Sellotape and string</blockquote><p id="09248cbc-4a9d-4a4e-bf41-85d5051f0f63" class="">Lifting underlying riffs from Doug Trumbull’s Silent Running and third-act visuals from Alfonso Cuarón’s Gravity, with coincidental hints of Interstellar (Damon is once again stranded on a distant planet, a world away from Jessica Chastain – what are the chances?), The Martian delivers on both intergalactic spectacle and feet-in-the-soil character drama. Like Duncan Jones’s Moon, much of the film’s running time finds its leading man basically talking to himself, with video diaries and delayed digital communications providing a handy dramatic framework for his quip-filled <mark class="highlight-pink_background"><strong>soliloquies</strong></mark>. Damon makes the most of this “me time”, engaging our interest, winning our sympathy and teasing our anxieties about his perilous predicament. Meanwhile, his former crewmates wrestle with the guilt of his unexpected survival (Jessica Chastain does a very practical line in understated angst and heroic mutiny), while on Earth, Chiwetel Ejiofor, Sean Bean, Jeff Daniels, Kristen Wiig et al argue the whys and wherefores of bringing him home.</p><p id="8093df51-3592-42d8-aac1-08d953799c29" class="">Crisply shot by Ridley regular Dariusz Wolski, who also photographed this week’s other eye-catching release, The Walk, The Martian keeps its visual palette positive, the ochre sands of Jordan’s Wadi Rum blending with vast Budapest soundstage interiors to provide a glowing backdrop for the space-suited action. With its seductive blend of hi-tech Nasa chic and Apollo 13-style DIY, the production design creates a lived-in feel that echoes the industrial environments of Alien. For all its technical liberties, the pop science convinces just enough to be both credible and intriguing – younger viewers in particular will be sent away with renewed (if slightly skewed) interests in chemistry, biology and astronomy, the latter further boosted by last week’s real-life Martian news stories, providing the kind of publicity of which PR androids can only dream.</p><p id="5a4227a3-c2cd-45d8-a458-be1818a8450d" class="">Most important, however, is just how much fun Scott seems to be having with The Martian.. Whether forthcoming projects such as Alien: Paradise Lost or the proposed Blade Runner sequel will be half as entertaining remains to be seen, but for now let’s just be thankful that there is plenty of life on Mars.</p><p id="f11e667b-7c97-4687-873d-2fc834ef26db" class="">
+</p><hr id="7ebe6539-33b3-4c29-9200-d6248fae98d3"/><p id="9bb27d15-cc21-484d-bfeb-0c199f524c24" class="">
+</p><h3 id="ee7494bc-3809-487d-bb1e-17388bd5f06b" class="">“<span style="border-bottom:0.05em solid"><strong>The Lion King review – </strong></span><span style="border-bottom:0.05em solid"><mark class="highlight-pink_background"><strong>resplendent</strong></mark></span><span style="border-bottom:0.05em solid"><strong> but pointless</strong></span>” <em>[The Guardian (By: Mark Kermode), </em><a href="https://www.theguardian.com/film/2019/jul/21/the-lion-king-review-remake-jon-favreau-beyonce"><em>link</em></a><em>, </em><mark class="highlight-teal"><em>Week 3 Session 2</em></mark><em>]</em></h3><p id="325b9050-d1ac-4dc4-b6ee-049158a3ed92" class=""><em>Jon Favreau’s </em><mark class="highlight-pink_background"><em><strong>photorealistic</strong></em></mark><em> copy of the classic 1994 animated feature is a virtual triumph – but why go to the effort?</em></p><p id="d1969549-0e1c-472a-99df-17511f08d6df" class="">Disney’s money-spinning mission to recycle its animated back catalogue with “live action” remakes continues apace. In the past few years we’ve had Tim Burton’s Alice in Wonderland and Dumbo, Kenneth Branagh’s Cinderella, Bill Condon’s Beauty and the Beast and Guy Ritchie’s Aladdin. Coming up are Niki Caro’s Mulan, Rob Marshall’s The Little Mermaid, and many, many more.</p><p id="9a4ddc07-13ec-4e2f-9e60-1af9e77c2b6e" class="">Although consistently profitable, the reason for these reboots’ existence remains questionable. Did Emma Watson make a better Belle than the drawn star of Disney’s 1991 animation just because she’s “real”? With this new (and peculiarly faithful) version of The Lion King, however, the question is not whether a “live action” remake can improve on an animated classic. Rather, it’s what we should call an animated movie that eerily mimics reality while featuring no “live action” whatsoever.</p><p id="fdffcc80-faf5-4fdf-ab0e-cd1658581101" class="">Anyone who’s enjoyed an effects-laden 21st-century superhero movie will know that entire sequences (and indeed characters) are effectively hi-tech animations. Iron Man director Jon Favreau’s 2016 remake of The Jungle Book was billed as part of Disney’s “live action” slate, but beyond the figure of Neel Sethi’s Mowgli, almost nothing in the film was “live”. For The Lion King, which features no human characters, Favreau has simply taken things to their logical conclusion, using cutting-edge technology to create something that looks absolutely real while remaining absolutely unreal.</p><p id="f6a8c2de-99b9-4759-b0a3-a6f5bb07beb2" class="">We open with a carnival of bewilderingly lifelike creatures (from “the crawling ant to the leaping antelope”), merrily <mark class="highlight-pink_background"><strong>gambolling</strong></mark> through the Circle of Life. Remember that sense of wonder you felt seeing the majestic herds of dinosaurs for the first time in Jurassic Park? I got that same sensation gazing at these frolicking beasts, as they follow the familiar story of a young lion’s struggle to live up to his idolised father, wondering whether I should be applauding the animators or animal trainers. While Aslan in the Chronicles of Narnia movies may have shimmered with an air of digital artificiality a decade ago, Mufasa’s mane looks so natural you feel you could reach out and stroke it.</p><p id="0c2b9eec-ab94-40d2-9c7c-c11a34d4780c" class="">As for the savanna landscapes, their apparent <mark class="highlight-pink_background"><strong>tangibility</strong></mark> seems perfectly suited to the phrase that echoes throughout The Lion King: “everything the light touches”. It’s as if cinematographer Caleb Deschanel had physically <mark class="highlight-pink_background"><strong>ventured</strong></mark> into another world, bathed in the honeydew glow of an everlasting “magic hour”. Equally well evoked are the haunting hues of the expedition to find the elephants’ graveyard, and the barren landscapes of the post-Mufasa pride lands, “heavy on the <mark class="highlight-pink_background"><strong>carcass</strong></mark>”.</p><p id="4c836052-73ab-464f-9575-8cfa2e592d64" class="">All these settings were designed within a game engine, then rendered as virtual environments through which a “camera crew” could move, mimicking the angles and imperfections of live-action shooting. The effect is impressive, lending an apparent human touch to a computer-generated world, creating the reassuringly physical illusion of happenstance.</p><p id="17b0c58a-f81e-4b65-a0ed-685a1454ca32" class="">There are problems with this format. It’s one thing seeing a cartoon lion sing, but watching photorealist recreations of animals speaking and bursting into song is altogether harder to swallow. As ever, the mouth movements are an issue, but the main stumbling block is conceptual rather than technical. Does photorealism actually serve such an inherently fantastical narrative? On stage, The Lion King became a huge hit because the theatrical techniques used to tell this sturdy story required the audience to use their imagination. There’s little space left for that kind of collaborative experience here, as every detail is filled in, down to the very last pixel.</p><p id="15e32803-00f8-4454-9119-6765c98a626c" class="">In the voice cast, Donald Glover and Beyoncé Knowles-Carter make the roles of Simba and Nala their own, while John Oliver takes over from Rowan Atkinson as news-reading hornbill Zazu. Once again, Scar’s <mark class="highlight-pink_background"><strong>inherent</strong></mark> wickedness is signalled not only by his lanky gait but by the fact that he’s played by a British actor with impressive Shakespearean credentials – Chiwetel Ejiofor giving Jeremy Irons a run for his money in the evil uncle stakes. Seth Rogen and Billy Eichner have fun as warthog Pumbaa and meerkat Timon, respectively, reminding us that Hakuna Matata is basically The Bare Necessities with bells on as they teach Simba to chill out and eat grubs, concluding that life is not a self-sustaining circle but a “meaningless line of indifference”. Meanwhile, original star James Earl Jones retains his title as Most Trusted Voice in the World in the role of Mufasa, delivering <mark class="highlight-pink_background"><strong>industrial</strong></mark>-<mark class="highlight-pink_background"><strong>strength</strong></mark> words of syrupy wisdom about our ancestors looking down from the sky.</p><p id="66a89d1f-80f3-4730-9c91-2d85334621c1" class="">New songs <mark class="highlight-pink_background"><strong>augment</strong></mark> the old favourites, while Hans Zimmer’s score doesn’t so much rewrite the original as subtly reconfigure its architecture. I’m still not sure what the point of it all is, but it does offer a vision of a future in which the traditional distinctions between live action and animation have <mark class="highlight-pink_background"><strong>dissolved</strong></mark> into <mark class="highlight-pink_background"><strong>nothingness</strong></mark>.</p><p id="1f4f4ffb-6473-4a73-bd51-1e679cbf3059" class="">
+</p><hr id="59f1bba5-f44d-4ec0-9404-2f1b4244f437"/><p id="82fa3ec2-4ef2-4a4a-87a0-53d40e9f5976" class="">
+</p><h2 id="401e1ef4-c982-4d13-8eef-eeebcec93ac8" class="">Extra Reading</h2><h3 id="17eb3b5c-d7ac-477b-9239-5477bc29b269" class="">“<span style="border-bottom:0.05em solid"><strong>Great Maytham Hall, Kent: the most famous garden in literature</strong></span>” <em>[The National Garden Scheme, </em><a href="https://ngs.org.uk/great-maytham-hall-kent-the-most-famous-garden-in-literature/"><em>link</em></a><em>, </em><mark class="highlight-teal"><em>Week 3 Session 1</em></mark><em>]</em></h3><p id="a0fb71ef-3ea0-48d2-93f3-af4e5098567c" class="">
+</p><hr id="2a3afab3-7794-48d1-8e47-2642b4cc2981"/><p id="00ae7815-01fe-4436-a326-2066c37b1962" class="">
+</p><h2 id="7474535a-fcee-42ad-894b-432d5a53dbf2" class="">From Grammarway 4</h2><h3 id="46b39040-ed68-4144-8052-81c3b3e02855" class=""><mark class="highlight-red_background">Unit 6</mark></h3><figure id="0af200c3-8d76-492c-b358-94e6c2d6b61f" class="image"><a href="Cycle%205%20(C%200af20/Untitled.png"><img style="width:384px" src="Cycle%205%20(C%200af20/Untitled.png"/></a></figure><p id="6befbd11-18cf-4b13-a94e-41502eb338ca" class="">
+</p></div></article>
+<footer style="text-align: center; width: 100%; margin: 1rem 0; height: 50px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+	<p>Made with ❤ by Mikhael Mounay</p>
+</footer>
+</body></html>

@@ -1,0 +1,767 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Cycle 6 (Planet Issues)</title>
+<script>
+	window.onload = function() {
+		let text = document.querySelectorAll('table tbody tr td:first-child, table tbody tr td:nth-child(5), table tbody tr td:nth-child(6)');
+		let testbtn = document.getElementById('testbtn');
+		testbtn.onclick = function() {
+			for (let i = 0; i < text.length; i++)
+			{
+				// if (text[i].style.visibility == 'hidden') {
+				// 	text[i].style.visibility = 'visible';
+				// } else {
+				// 	text[i].style.visibility = 'hidden';
+				// }
+				text[i].classList.toggle('hiddenClass');
+			}
+			if (testbtn.innerHTML == 'Start Test') {
+				testbtn.innerHTML = 'End Test';
+				// testbtn.style.backgroundColor = '#ff4a4a';
+				testbtn.classList.add('red');
+			} else {
+				testbtn.innerHTML = 'Start Test'
+				testbtn.classList.remove('red');
+			}
+		}
+	}
+</script>
+<style>
+	table tbody tr td {
+		transition: 0.2;
+		z-index: 1;
+	}
+	table tbody tr td:first-child,
+	table tbody tr td:nth-child(5),
+	table tbody tr td:nth-child(6) {
+		/* visibility: hidden; */
+		transition: 0.3s;
+	}
+
+	.hiddenClass {
+		/* visibility: hidden; */
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	.red {
+		background-color: #ff4a4a !important;
+	}
+
+	.red:hover {
+		background-color: #ff2626 !important;
+	}
+
+	#testbtn {
+		position: fixed;
+		bottom: 2rem;
+		right: 2rem;
+		background-color: rgba(73, 124, 255, 0.999);
+		border: none;
+		border-radius: 4px;
+		font-size: 1.3rem;
+		font-family:Georgia, 'Times New Roman', Times, serif;
+		padding: 7px 15px;
+		cursor: pointer;
+		transition: 0.2s;
+		z-index: 1000;
+		width: 125px;
+	}
+	#testbtn:hover {
+		background-color: #0047ffff;
+	}
+</style>
+<style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body>
+	<button id="testbtn">Start Test</button>
+<article id="57f4157f-ba63-49c1-bbc2-06bd3077e9e4" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">6️⃣</span></div><h1 class="page-title"><a style="color: rgb(55, 53, 47); text-decoration: none;" href="../../../index.html">Cycle 6 (Planet Issues)</a></h1></header><div class="page-body"><h3 id="6e5bc4a2-7a10-4c70-a5d5-1e4b8d862181" class=""><mark class="highlight-blue"><em>Quick Navigation</em></mark></h3><ol type="1" id="f62bb432-ee2e-4d17-8c71-a0e7fcd719f8" class="numbered-list" start="1"><li><strong>Cycle Contents</strong></li></ol><ol type="1" id="fbda559b-570c-4b3a-bc48-7ca9458dcfa8" class="numbered-list" start="2"><li><strong>Cycle Vocabulary</strong><ol type="a" id="11dde401-c97b-40b1-8578-66b90ed9f55b" class="numbered-list" start="1"><li>Week 1<ol type="i" id="fd92edd3-e3ee-48d3-81e6-56ca87ac34e6" class="numbered-list" start="1"><li>Session 1</li></ol></li></ol><ol type="a" id="c67da6b3-b1bf-49be-8a91-642b55832684" class="numbered-list" start="2"><li>Week 2<ol type="i" id="55ae6053-a310-4ccd-b7eb-0d13f749239c" class="numbered-list" start="1"><li>Session 1</li></ol></li></ol><ol type="a" id="36de5de6-4d1b-4a94-9af6-dd449e0b8d64" class="numbered-list" start="3"><li>Week 3<ol type="i" id="7295e8e0-0dff-425a-b578-2eb06433f781" class="numbered-list" start="1"><li>Session 1</li></ol></li></ol></li></ol><ol type="1" id="d063487d-395c-4291-8fb3-17fd8f183115" class="numbered-list" start="3"><li><strong>Reading Sections</strong><ol type="a" id="4bfdd7f2-1a2e-4aab-a802-5ce9eb5ed3a4" class="numbered-list" start="1"><li>“Living For a Century” <em>[Upstream Unit 10 SB, P:176, </em><mark class="highlight-teal"><em>Week 1 Session 1</em></mark><em>]</em></li></ol><ol type="a" id="e4d8dbf7-b249-4c51-b786-835e10e5288d" class="numbered-list" start="2"><li> “Little Women” <em>[Upstream Unit 10 SB, P:182, </em><mark class="highlight-teal"><em>Week 2 Session 1</em></mark><em>]</em></li></ol><ol type="a" id="b3c95b8c-ddea-4440-bdf1-da60cbf5f083" class="numbered-list" start="3"><li>“Understanding Conservation” <em>[NWF , </em><a href="https://www.nwf.org/Educational-Resources/Wildlife-Guide/Understanding-Conservation"><em>link</em></a><em>, </em><mark class="highlight-teal"><em>Week 3 Session 1</em></mark><em>]</em></li></ol></li></ol><ol type="1" id="405d02e6-884a-4e84-9c0e-8fe984b56853" class="numbered-list" start="4"><li><strong>Extra Reading</strong><ol type="a" id="3952e08f-06ec-404c-b387-db95a8a8b574" class="numbered-list" start="1"><li>“Ethics of Wildlife Management and Conservation: What Should We Try to Protect?” <em>[Nature (By: Christian Gamborg), </em><a href="https://www.nature.com/scitable/knowledge/library/ethics-of-wildlife-management-and-conservation-what-80060473/"><em>link</em></a><em>, </em><mark class="highlight-teal"><em>Week 3 Session 1</em></mark><em>]</em></li></ol></li></ol><p id="0838c3d1-837c-4236-b435-24213741b286" class="">
+</p><hr id="8dfae071-35ae-4012-ac91-3a8c4403607b"/><p id="2cc64a12-c683-49d6-9fc3-8cf74fe37ab1" class="">
+</p><h1 id="f3ce295f-ec85-40c0-960d-f4c4ff676ada" class="">Cycle Content</h1><p id="b29597b1-252c-4306-8a78-6cad64a7654b" class=""><strong><mark class="highlight-red_background">Week 1</mark></strong></p><ol type="1" id="9af1c140-a6d1-4199-aa9f-84a156842b39" class="numbered-list" start="1"><li><strong>Upstream</strong>:<ol type="a" id="411e85e9-de26-4e1a-97a0-93cb0fe38d84" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid"><strong>Unit 10</strong></span>: The Cycle of Life</li></ol></li></ol><ol type="1" id="661cefe9-6ee5-4c9d-9243-fbce6e946653" class="numbered-list" start="2"><li><strong>Writing Academic English</strong>:<ol type="a" id="82c3a463-9108-4b5a-90ae-3ae9ba092043" class="numbered-list" start="1"><li>Part 2: Sentence Structure, <span style="border-bottom:0.05em solid"><strong>Chapter 12</strong></span>: <span style="border-bottom:0.05em solid"><strong>Noun Clauses</strong></span></li></ol><ol type="a" id="febec544-1e85-4017-ab29-0892356b48d9" class="numbered-list" start="2"><li>Part 2: Sentence Structure, <span style="border-bottom:0.05em solid"><strong>Chapter 13</strong></span>: <span style="border-bottom:0.05em solid"><strong>Adverb Clauses</strong></span></li></ol><ol type="a" id="2d8ca8fe-b9ec-45c4-9f86-241c7346ceee" class="numbered-list" start="3"><li>Part 2: Sentence Structure, <span style="border-bottom:0.05em solid"><strong>Chapter 14</strong></span>: <span style="border-bottom:0.05em solid"><strong>Adjective Clauses</strong></span></li></ol><ol type="a" id="9ebda5b0-72f7-420c-94a8-dea724932801" class="numbered-list" start="4"><li>Part 2: Sentence Structure, <span style="border-bottom:0.05em solid"><strong>Chapter 15</strong></span>: <span style="border-bottom:0.05em solid"><strong>Participial Phrases</strong></span></li></ol></li></ol><ol type="1" id="6a9b0d66-712b-465b-9e2a-143cb691f965" class="numbered-list" start="3"><li><em>Some online resources</em></li></ol><p id="e371f8a5-b05f-4802-90d4-5a94e991667e" class=""><strong><mark class="highlight-red_background">Week 2</mark></strong></p><ol type="1" id="057aec50-a2a1-4102-8563-c6f4ac1390fd" class="numbered-list" start="1"><li><strong>Upstream</strong>:<ol type="a" id="47604aec-5603-4f3c-9a2c-c1345e7aa2cd" class="numbered-list" start="1"><li><em>(continue)</em> <span style="border-bottom:0.05em solid"><strong>Unit 10</strong></span>: The Cycle of Life</li></ol></li></ol><ol type="1" id="9207ae75-1a1e-4f65-a9ac-9f6136f67551" class="numbered-list" start="2"><li><em>Some online resources</em></li></ol><p id="ad6bd125-4cd9-41ff-85bb-aea33a8672a9" class=""><strong><mark class="highlight-red_background">Week 3</mark></strong></p><ol type="1" id="fc354c1e-647f-4586-997a-9733b06aca59" class="numbered-list" start="1"><li><strong>New Hello</strong>:<ol type="a" id="4a8ca6ec-49a6-41e8-802d-c0631ecb9b61" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid"><strong>Unit 9</strong></span>: Conservation</li></ol><ol type="a" id="29f462bf-fefc-48a8-b23b-d7525d91b56c" class="numbered-list" start="2"><li><span style="border-bottom:0.05em solid"><strong>Unit 10</strong></span>: The News</li></ol></li></ol><ol type="1" id="e4a84783-237b-46f0-b277-030c85e1c185" class="numbered-list" start="2"><li><em>Some online resources</em></li></ol><p id="0ef4f194-1be1-42f4-aa91-3395aa72ee7c" class="">
+</p><p id="128e4da7-f9fe-4908-ba51-ab5ba1bd5590" class=""><mark class="highlight-orange_background">** All online resources can be found in the cycle file.</mark></p><p id="491deb4f-cfed-421c-bad8-593b6350058d" class="">
+</p><hr id="d33786e9-6f8b-4ac5-9856-70704769728b"/><h1 id="ddc89065-29d8-4c0c-9d19-642170110348" class="">Cycle Vocabulary</h1><h1 id="dacacbce-de22-4109-8cef-2a57082b7ea8" class="">Week 1</h1><div id="f3dc6f32-babc-48fe-b5b3-361a434319ee" class="collection-content"><h4 class="collection-title">Session 1</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Word</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Part of Speech</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning in English</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Example Sentence</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Notes</th></tr></thead><tbody><tr id="80d7a829-c02d-4a19-b744-c11aa8de3be0"><td class="cell-=ZyI"><em>life</em> expectancy</td><td class="cell-SADq"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">متوسط العمر المتوقع</td><td class="cell-EsVE">the length of time that a living thing, especially a human being, is likely to live</td><td class="cell-on[V"><em>Life expectancy in Europe has increased greatly in the 20th century.</em></td><td class="cell-ZSfO"></td></tr><tr id="69e6560c-0838-4830-ace3-5f3cc26b717f"><td class="cell-=ZyI">double</td><td class="cell-SADq"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">ضاعف</td><td class="cell-EsVE">to become twice as much or as many, or to make something twice as much or many</td><td class="cell-on[V"><em>The government aims to double the number of students in higher education within 25 years.</em></td><td class="cell-ZSfO"></td></tr><tr id="7bb0e1e3-ee76-4e51-896f-8999efadbc9a"><td class="cell-=ZyI">lifespan</td><td class="cell-SADq"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">فترة الحياة</td><td class="cell-EsVE">the length of time for which a person, animal or thing exists</td><td class="cell-on[V"><em>The average human lifespan in the developed countries has increased over the last hundred years.</em></td><td class="cell-ZSfO"></td></tr><tr id="80af5b36-1f73-431c-bbc6-e08f827537ae"><td class="cell-=ZyI">longevity</td><td class="cell-SADq"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">طول العمر</td><td class="cell-EsVE">living for a long time</td><td class="cell-on[V"><em>His longevity was remarkable considering he had been so sick when he was a child</em></td><td class="cell-ZSfO"></td></tr><tr id="8dac0d9a-e717-4f52-afe6-6e67fb5231c5"><td class="cell-=ZyI">intake</td><td class="cell-SADq"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">المدخول</td><td class="cell-EsVE">the amount of a particular substance which is eaten or drunk during a particular time</td><td class="cell-on[V"><em>It says on the packet that four slices of this bread contains one half of your recommended daily intake of fibre.</em></td><td class="cell-ZSfO"></td></tr><tr id="f40c9ae8-2d93-410b-bd6f-28656afc0a9f"><td class="cell-=ZyI">centenarians</td><td class="cell-SADq"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">مئوي (البالغ من العمر مائة سنة)</td><td class="cell-EsVE">someone who is a hundred years old or more</td><td class="cell-on[V"><em>About a year ago, at age 72, his hope of becoming a centenarian 
+was shattered when he was diagnosed with Stage IV pancreatic cancer, a devastating discovery.</em></td><td class="cell-ZSfO"></td></tr></tbody></table></div><p id="e2524f00-b626-486c-a36c-6a85d48c6428" class="">
+</p><hr id="dbc67392-0a6d-4891-87f6-949467452685"/><h1 id="7dbecb30-5a45-45fe-a1cc-a07203ecde35" class="">Week 2</h1><div id="029dafc0-e043-4377-8fd0-6683321e4175" class="collection-content"><h4 class="collection-title">Session 1</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Word</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Part of Speech</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning in English</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Example Sentence</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Notes</th></tr></thead><tbody><tr id="474e3c98-0c06-49c2-8eeb-3b0fceae9d0f"><td class="cell-PPd\"><em>laugh</em> inaudibly</td><td class="cell-YG@K"><span class="selected-value select-value-color-default">(adv)</span></td><td class="cell-EJZS">تضحك بصوت غير مسموع</td><td class="cell-DY?_"><em>inaudible (adj) :</em> unable to be heard</td><td class="cell-on[V"><em>She spoke so quietly that she was almost inaudible.</em></td><td class="cell-oqfB"></td></tr><tr id="1d9237a7-38ea-4755-a506-7d3b8249fbcb"><td class="cell-PPd\">amiable</td><td class="cell-YG@K"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">ودي</td><td class="cell-DY?_">describes a person or their behaviour that is pleasant and friendly</td><td class="cell-on[V"><em>He seemed an amiable young man.</em></td><td class="cell-oqfB"></td></tr><tr id="3fccb5ca-3999-4a2a-ade1-9ca9dbf495a3"><td class="cell-PPd\">burdens</td><td class="cell-YG@K"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">أعباء</td><td class="cell-DY?_">something difficult or unpleasant that you have to deal with or worry about</td><td class="cell-on[V"><em>My elderly mother worries that she&#x27;s a burden to me.</em></td><td class="cell-oqfB"></td></tr><tr id="c8a3b23e-c7a0-4361-8b4f-eb0fb702381c"><td class="cell-PPd\">mischief</td><td class="cell-YG@K"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">الأذى</td><td class="cell-DY?_">behaviour, especially a child&#x27;s, which is slightly bad but is not intended to cause serious harm or damage</td><td class="cell-on[V"><em>He needs a hobby to keep him busy and stop him from getting into mischief.</em></td><td class="cell-oqfB"></td></tr><tr id="85fa71f5-f78f-44b9-bf13-51a3a906836e"><td class="cell-PPd\">fuss [ <strong>over</strong> ]</td><td class="cell-YG@K"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">إهتم أكثر</td><td class="cell-DY?_">to give too much attention to small matters which are not important, usually in a way which shows that you are worried and not relaxed</td><td class="cell-on[V"><em>She&#x27;s always fussing over that son of hers as if he were a little boy.</em></td><td class="cell-oqfB"></td></tr><tr id="7b5a8be6-e8f9-44a5-8a2d-b5ac60d82904"><td class="cell-PPd\">leisure</td><td class="cell-YG@K"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">وقت فراغ (راحة)</td><td class="cell-DY?_">the time when you are not working or doing other duties</td><td class="cell-on[V"><em>Most people only have a limited amount of leisure time.</em></td><td class="cell-oqfB"></td></tr><tr id="2bb28e47-4298-4ff6-b4af-023ea6b3808d"><td class="cell-PPd\">resolution</td><td class="cell-YG@K"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">قرار</td><td class="cell-DY?_">a promise to yourself to do or to not do something</td><td class="cell-on[V"><em>I made a resolution to give up chocolate.</em></td><td class="cell-oqfB"></td></tr><tr id="71c10cfa-1a30-4317-aea7-ac12d2599325"><td class="cell-PPd\">heroically</td><td class="cell-YG@K"><span class="selected-value select-value-color-default">(adv)</span></td><td class="cell-EJZS">بشكل بطولي</td><td class="cell-DY?_"><em>heroic (adj) :</em> very brave or great</td><td class="cell-on[V"><em>She fought heroically against the disease.</em></td><td class="cell-oqfB"></td></tr><tr id="f88fbe42-e687-4e29-ba5d-51494c56332f"><td class="cell-PPd\">buttonholes</td><td class="cell-YG@K"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">عروات</td><td class="cell-DY?_">a hole that a button is pushed through to fasten a shirt, coat, etc.</td><td class="cell-on[V"><em>He was wearing a carnation in his buttonhole.</em></td><td class="cell-oqfB"></td></tr><tr id="135d193f-c140-49ed-84e1-ccc297f29ad5"><td class="cell-PPd\">slave</td><td class="cell-YG@K"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">عبد</td><td class="cell-DY?_">a person who is legally owned by someone else and has to work for them</td><td class="cell-on[V"><em>Black slaves used to work on the cotton plantations of the southern United States.</em></td><td class="cell-oqfB"></td></tr><tr id="2cd61c87-60b5-41c8-a3d4-e470b743f91d"><td class="cell-PPd\">good-natured</td><td class="cell-YG@K"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">لطيف / ودي</td><td class="cell-DY?_">pleasant or friendly</td><td class="cell-on[V"><em>Ben says his father was good-natured, a man not quickly roused to anger or harsh opinions.</em></td><td class="cell-oqfB"></td></tr><tr id="3a53540d-ba61-457a-8a62-8bd600ec505f"><td class="cell-PPd\">delicate</td><td class="cell-YG@K"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">دقيق - حساس</td><td class="cell-DY?_">(1) able to measure very small changes
+—-
+(2) needing careful treatment, especially because easily damaged</td><td class="cell-on[V">(1) <em>Weather-forecasters have extremely delicate equipment which helps them predict what the weather is going to be like.</em>
+—-
+(2) <em>Molly&#x27;s health has always been delicate </em>(= She becomes ill easily).</td><td class="cell-oqfB"></td></tr><tr id="e3593ee4-f066-41df-b1ce-c44cb478f727"><td class="cell-PPd\">semi-autobiographical</td><td class="cell-YG@K"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">شبه سيرة ذاتية</td><td class="cell-DY?_">partly autobiography and partly fiction : being a fictionalized account of the author&#x27;s life</td><td class="cell-on[V"><em>James Herriott&#x27;s semiautobiographical story of his return from WWII to family and friends.</em></td><td class="cell-oqfB"></td></tr></tbody></table></div><p id="0e460763-1c54-462e-b644-b8ab7ea5fdc8" class="">
+</p><hr id="8b36a0fd-3862-47fc-887c-0e43706096dc"/><h1 id="e8906629-538a-4bca-9cfb-a9b3744e4c69" class="">Week 3</h1><div id="641d9149-308a-4dca-af62-20903ee2dfc2" class="collection-content"><h4 class="collection-title">Session 1</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Word</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Part of Speech</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Meaning in English</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Example Sentence</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Notes</th></tr></thead><tbody><tr id="fc634cd5-68e6-446d-8eef-5e8bfadaf53e"><td class="cell-w&lt;l]">phenology</td><td class="cell-ccU]"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">الفينولوجيا</td><td class="cell-osb&lt;">a branch of science dealing with the relations between climate and periodic biological phenomena (such as bird migration or plant flowering)</td><td class="cell-on[V"><em>There are also shifts in phenology, or the seasonal timing of biological events, such as when deer are born or when birds return from migration.</em></td><td class="cell-XUBS"></td></tr><tr id="b236e020-5b6a-4d6f-bebd-e9f6f67a9448"><td class="cell-w&lt;l]"><em>like</em> clockwork</td><td class="cell-ccU]"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">تصورها</td><td class="cell-osb&lt;">very regularly, or at exactly the planned times</td><td class="cell-on[V"><em>Since the recent improvements to the service, the buses are running like clockwork.</em></td><td class="cell-XUBS"></td></tr><tr id="8049ef17-a779-4345-9e52-7514ba8b3312"><td class="cell-w&lt;l]">precipitation</td><td class="cell-ccU]"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">ترسب (مطر)</td><td class="cell-osb&lt;">water which falls from the clouds towards the ground, especially as rain or snow</td><td class="cell-on[V">The forecast is for dry, cloudy weather with no precipitation expected.</td><td class="cell-XUBS"></td></tr><tr id="44a9c0dc-d054-4c6c-889e-80cb18704109"><td class="cell-w&lt;l]">migratory</td><td class="cell-ccU]"><span class="selected-value select-value-color-blue">(adj)</span></td><td class="cell-EJZS">مهاجرة</td><td class="cell-osb&lt;"><em>migrate (v) :</em> when an animal migrates, it travels to a different place, usually when the season changes</td><td class="cell-on[V"><em>In September, these birds migrate 2000 miles south to a warmer climate.</em></td><td class="cell-XUBS"></td></tr><tr id="2e00b26b-4643-407a-9bee-f2a53aa405c8"><td class="cell-w&lt;l]">bioaccumulation</td><td class="cell-ccU]"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">التراكم البيولوجي</td><td class="cell-osb&lt;">the accumulation over time of a substance and especially a contaminant (such as a pesticide or heavy metal) in a living organism</td><td class="cell-on[V"><em>This work was an attempt to investigate cadmium bioaccumulation
+ in various tissues of bay scallop Argopecten irradians and the factors influencing cadmium bio.</em></td><td class="cell-XUBS"></td></tr><tr id="aad235aa-7def-4623-b179-6ccf41427a17"><td class="cell-w&lt;l]">disturbance</td><td class="cell-ccU]"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">اضطراب</td><td class="cell-osb&lt;">violence or trouble</td><td class="cell-on[V"><em>A natural disturbance is any event that causes a disruption to the current state of an ecosystem.</em></td><td class="cell-XUBS"></td></tr><tr id="1bdb5254-80e6-43d8-b605-7008d7c2e7b1"><td class="cell-w&lt;l]">fluctuation</td><td class="cell-ccU]"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">تقلب</td><td class="cell-osb&lt;"><em>fluctuate (v) :</em> to change, especially continuously and between one level or thing and another</td><td class="cell-on[V"><em>Continual weight fluctuation
+ increases the risk of heart disease and early death.</em></td><td class="cell-XUBS"></td></tr><tr id="0ebce096-e384-4b1e-b3b0-558847611ae5"><td class="cell-w&lt;l]">clear-cutting</td><td class="cell-ccU]"><span class="selected-value select-value-color-brown">(v)</span></td><td class="cell-EJZS">قطع الأشجار</td><td class="cell-osb&lt;">to cut down all the trees in (an area of forest)</td><td class="cell-on[V"><em>He says there has been a massive deforestation as the Chinese have clear-cut millions of acres of Tibetan Forests to sell lumber on the export market.</em></td><td class="cell-XUBS"></td></tr><tr id="67bd18a0-a0d2-42cd-8ed3-881d5fda09b4"><td class="cell-w&lt;l]">dieback</td><td class="cell-ccU]"><span class="selected-value select-value-color-green">(n)</span></td><td class="cell-EJZS">موت</td><td class="cell-osb&lt;">a condition in woody plants in which peripheral parts are killed (as by parasites)</td><td class="cell-on[V"><em>Overall, the Amazon rainforest is becoming much less resilient – raising the risk of widespread dieback, the research shows.</em></td><td class="cell-XUBS"></td></tr></tbody></table></div><p id="899c17d6-136a-4922-bcf7-0fd2509b65fa" class="">
+</p><hr id="c18cc149-af84-4603-be5e-eb7fe7e97d82"/><h1 id="14718d93-ac62-492c-8329-d5190d68e3eb" class="">Reading</h1><h3 id="c7b5969f-4e7b-4670-8010-10ba7b39990a" class="">“<span style="border-bottom:0.05em solid">Living For a Century</span>” <em>[Upstream Unit 10 SB, P:176, </em><mark class="highlight-teal"><em>Week 1 Session 1</em></mark><em>]</em></h3><p id="41c7f5bd-1ea6-469d-b044-5b8a332b8572" class=""><em>The good news is that we can all expect to live both longer and healthier lives than any other </em><mark class="highlight-pink_background"><em><strong>generation</strong></em></mark><em> in history. How well we age, however, is basically up to us!</em></p><p id="4f63bcd9-542d-4f0c-9c8b-6992ae257913" class="">The 20th century will probably be largely remembered for having the highest increase in life <mark class="highlight-pink_background"><strong>expectancy</strong></mark> in recorded history. The average <mark class="highlight-pink_background"><strong>lifespan</strong></mark> for men and women has now almost <mark class="highlight-pink_background"><strong>doubled</strong></mark>. What&#x27;s more, this seems to be a continuing <mark class="highlight-pink_background"><strong>trend</strong></mark>.</p><p id="e9df540a-4c17-4bdc-8c4e-8e1562e69525" class="">Not only are we living longer, but we are also living a far healthier lifestyle. With record numbers of fit, healthy people reaching the age of 90 and over, it is becoming clear that negative predictions of a greying population, troubled by increasing numbers of diseases as well as huge medical bills, have been exaggerated.</p><p id="a7e1279a-7a15-4534-82ee-63a5aaf28b0b" class="">Our view of what old age actually means has changed <mark class="highlight-pink_background"><strong>dramatically</strong></mark>. Many of today&#x27;s pensioners, compared to the elderly in days gone by, tend to enjoy a quality of life without stress, travelling here, there and everywhere, learning new skills, taking up different sports, starting businesses and actively looking forward to each new day. Our actual opinion of what is old and what is not old tends to change with the passing of time as well as higher levels of <mark class="highlight-pink_background"><strong>longevity</strong></mark>.</p><p id="4b90deae-25c3-42b3-a91f-3aa3b4108c25" class="">We can see that there are many different aspects affecting the ageing process, including lifestyle, attitude, social circumstances and diet. Studies carried out on mice, for example, have shown that <mark class="highlight-pink_background"><strong>intake</strong></mark> of fewer <mark class="highlight-pink_background"><strong>calories</strong></mark> allowed mice to live up to 40% longer than those who ate as much as they wanted. In human years this is equal to 30 or 40 more years of life. The mice also stayed energetic longer, had better memories and lower levels of <mark class="highlight-pink_background"><strong>cancer</strong></mark>. Japanese people living on the island of Okinawa, in fact, <mark class="highlight-pink_background"><strong>consume</strong></mark> 20 percent fewer calories than the rest of the population of Japan and, as a result, have the highest population of <mark class="highlight-pink_background"><strong>centenarians</strong></mark> anywhere in the world!</p><p id="eeb53ce4-f7c1-43c2-a6a4-75a669413bd0" class="">The <mark class="highlight-pink_background"><strong>challenge</strong></mark> the rest of us now face is how to delay the ageing process. There are, in fact, two different aspects to ageing that we need to be aware of, the one involving the natural passing of time and the other involving the natural, <mark class="highlight-pink_background"><strong>physical</strong></mark> ageing of the body. While we have no control over our <mark class="highlight-pink_background"><strong>chronological</strong></mark> age, we can, up to a point, do a lot to slow down <mark class="highlight-pink_background"><strong>biological</strong></mark> ageing by taking the following advice.</p><p id="083554fd-a4ae-4621-ab7a-9bec5dbf37fd" class="">
+</p><hr id="6dd50081-4cc0-4b81-98df-6c92a46d76d1"/><p id="5664c92c-7230-40d3-9fbf-23ad9953b5c7" class="">
+</p><h3 id="85aa557d-3548-4586-9969-261453facc89" class="">“<span style="border-bottom:0.05em solid">Little Women</span>” <em>[Upstream Unit 10 SB, P:182, </em><mark class="highlight-teal"><em>Week 2 Session 1</em></mark><em>]</em></h3><p id="7e45252f-8e00-4b00-b834-e95e7559b81c" class="">“Are you satisfied with your experiment, girls, or do you want another week of it?&quot; she asked, as Beth nestled up to her and the rest turned toward her with brightening faces, as flowers turn toward the sun.</p><p id="3c0d1528-19b4-4e93-ac75-c5126d7d5912" class="">“I don&#x27;t!” cried Jo decidedly.</p><p id="b835b211-7d7c-4c4f-bcdb-9d28b4300bae" class="">“Nor I,&quot; echoed the others.</p><p id="c1c74c5f-2f56-4555-9ea1-1c4a891c4272" class="">“You think then, that it is better to have a few <mark class="highlight-pink_background"><strong>duties</strong></mark> and live a little for others, do you?”</p><p id="95502bc5-cfca-45cb-a46f-296fecd9e2ba" class="">“Being lazy and fooling around all day doesn&#x27;t pay. And I intend to go to work at something right now,” said Jo, shaking her head.</p><p id="b5d66af6-7371-446a-9cd9-41fe3102baae" class="">“Suppose you learn plain cooking. That’s a useful accomplishment, which no woman should be without.” said Mrs. March, <mark class="highlight-pink_background"><strong>laughing inaudibly</strong></mark> at the recollection of Jo&#x27;s dinner party, for she had met Miss Crocker and heard her account of it.</p><p id="5eef481a-f2b2-4891-9496-fe56c52de126" class="">“Mother, did you go away and let everything be, just to see how we&#x27;d get on?” cried Meg. She had had suspicions about that all day.</p><p id="72e1faa1-d0e0-442f-a8cc-e4910feea11c" class="">“Yes, I wanted you to see how the comfort of all depends on each doing her share faithfully. While Hannah and I did your work, you got on pretty well though I don&#x27;t think you were very happy or <mark class="highlight-pink_background"><strong>amiable</strong></mark>. So I thought, as a little lesson, I would show you what happens when everyone thinks only of herself. Don&#x27;t you feel that it is more pleasant to help one another, to have daily duties which make <mark class="highlight-pink_background"><strong>leisure</strong></mark> sweet when it comes, and make our home comfortable and lovely to us all?”</p><p id="eeb6e645-5eea-4861-b4a2-1c8743032490" class="">“We do, Mother we do!” cried the girls.</p><p id="a07b1395-9e22-4fef-adb6-f10646376134" class="">“Then let me advise you to take up your little <mark class="highlight-pink_background"><strong>burdens</strong></mark> again, for though they seem heavy sometimes, they are good for us, and lighten as we learn to carry them. Work is wholesome, and there is plenty for everyone. It keeps us from boredom and <mark class="highlight-pink_background"><strong>mischief</strong></mark>, is good for health and spirits, and gives us a sense of power and independence better than money or fashion.&quot;</p><p id="8d826022-5233-4201-ba4e-9cb114e9e063" class="">“We&#x27;ll work like bees, and love it too, see if we don&#x27;t,” said Jo. “I’ll learn plain cooking for my holiday task, and the dinner party I have shall be a success.”</p><p id="d70cfde4-4bce-4451-845e-16662b0035c3" class="">“I’ll make the set of shirts for father, instead of letting you do it, Marmee. I can and I will, though I’m not fond of sewing. That will be better than <mark class="highlight-pink_background"><strong>fussing</strong></mark> over my own things, which are plenty nice enough as they are,” said Meg.</p><p id="cecc0dbf-96dc-4e4a-8595-a29c432ff9ac" class="">“I’ll do my lessons every day, and not spend so much time with my music and dolls. I’ve been silly, and ought to be studying, not playing.” was Beth&#x27;s <mark class="highlight-pink_background"><strong>resolution</strong></mark>, while Amy followed their example by heroically declaring, “I shall learn to make <mark class="highlight-pink_background"><strong>buttonholes</strong></mark>, and attend to my parts of speech.”</p><p id="b98be599-28d2-42eb-ba7d-15f8fb6b99aa" class="">“Very good! Then I am quite satisfied with the experiment, and fancy that we shall not have to repeat it, only don&#x27;t go to the other extreme and work like <mark class="highlight-pink_background"><strong>slaves</strong></mark>. Have regular hours for work and play, make each day both useful and pleasant, and prove that you understand and worth of time by employing it well. Then youth will be delightful, old age will bring few regrets, and life become a beautiful success, in spite of poverty.”</p><p id="5ca78423-d9c6-4615-b778-20e67cda3215" class="">“We’ll remember, Mother!” And they did.</p><p id="794328ea-13ad-45cc-84c6-2213e9da7fa5" class="">
+</p><hr id="bb846496-7436-49d2-9bbd-16e19257e4f2"/><p id="1a215bff-66c5-4fdc-8cfe-40c22e648014" class="">
+</p><h3 id="b309c807-b7a3-4c13-af71-6f0c3ae74781" class="">“<span style="border-bottom:0.05em solid"><strong>Understanding Conservation</strong></span>” <em>[NWF , </em><a href="https://www.nwf.org/Educational-Resources/Wildlife-Guide/Understanding-Conservation"><em>link</em></a><em>, </em><mark class="highlight-teal"><em>Week 3 Session 1</em></mark><em>]</em></h3><p id="9a4ee417-c178-4bba-83b4-12138c9664c1" class=""><em>Wildlife conservation is the preservation and protection of animals, plants, and their habitats. By conserving wildlife, we&#x27;re ensuring that future generations can enjoy our natural world and the incredible species that live within it. To help protect wildlife, it&#x27;s important to understand how species interact within their ecosystems, and how they&#x27;re affected by environmental and human influences.</em></p><p id="dc364391-82a9-49d7-9d8b-7173eb27ca1a" class=""><mark class="highlight-pink_background"><strong>Phenology</strong></mark></p><p id="211a77fd-ae98-4126-888f-5ecfe45532b0" class="">Plants and animals have life events that seemingly occur like <mark class="highlight-pink_background"><strong>clockwork</strong></mark> every year. Birds can migrate, mammals may hibernate, flowers bloom, and leaves change colors. The study of how the biological world times these natural events is called phenology. Scientists now understand that plants and animals take their cues from their local climate (long-term weather patterns). Climate is impacted by non-biological factors—temperature, <mark class="highlight-pink_background"><strong>precipitation</strong></mark>, and available sunlight. Species use the predictable yearly changes in the climate to determine when they start natural events such as breeding or flowering.</p><p id="32fe17ea-ccbe-4c4e-9e13-afb1bb906aa4" class="">Climate change is slowly increasing average annual temperatures. One of the most noticeable ways that climate change is impacting wildlife is by disrupting the timing of natural events. With warmer temperatures, flowering plants are blooming earlier in the year and <mark class="highlight-pink_background"><strong>migratory</strong></mark> birds are returning from their wintering grounds earlier in the spring. Phenology is an important subject for conservationists to study because it helps us understand the patterns of specific species and overall ecosystem health. Every species has an impact on those in its food chain and community, and the timing of one species&#x27; phenological events can be very important to the survival of another species.</p><p id="06302f24-a80d-4317-aa2c-9193040654d5" class=""><strong>Food Webs and </strong><mark class="highlight-pink_background"><strong>Bioaccumulation</strong></mark></p><p id="6fca5b57-2db8-495c-bff2-fc87af59229a" class="">The energy we receive from food can be traced back to the sun. As the sun shines, it radiates light energy. Plants absorb the light energy, convert it to sugars (photosynthesis), and produce energy for other wildlife. The energy from the sun moves its way through ecosystems by predators eating their prey. A food web breaks down how all the producers, consumers, and decomposers interact in an ecosystem and how energy is transferred between species.</p><p id="7b6aa9ce-9344-46ca-85db-848360e1029f" class="">When animals eat their prey, they consume more than just energy. They also absorb all the chemicals and nutrients inside the prey. Sometimes animals ingest pollutants that can become stored in their fat and tissues. Human-caused pollution has added heavy metals, oil, and industrial and pharmaceutical chemicals to the environment. Plants, fish, and other species absorb these toxins, and as they are eaten by predators, the toxins are then absorbed into the predators’ tissues. As the chain of predator and prey continues up the food web, the toxins become more concentrated and move higher and higher up the food web. The process that causes the concentration of a substance to increase as it moves up the food web is called bioaccumulation. The pollutants can have a disastrous effect on the food web and potentially kill species.</p><p id="b412f248-652f-4481-8cc5-258aca51b460" class=""><strong>Natural </strong><mark class="highlight-pink_background"><strong>Disturbances</strong></mark></p><p id="90ae3eaa-549c-4698-931b-73044f90b1fd" class="">A natural disturbance is any event that causes a disruption to the current state of an ecosystem. Natural disturbances are caused by forces of nature, including weather, geology, and biological <mark class="highlight-pink_background"><strong>fluctuations</strong></mark>. This may include fires, floods, earthquakes, diseases, and droughts. After a disturbance impacts an ecosystem, there can be devastation, but healthy ecosystems have an amazing ability to bounce back. Some ecosystems even depend on disturbances, such as the threatened longleaf pine ecosystem. Sometimes the ecosystem will go back to its former structure, with the same plant and animal species. Other times, the disturbance will create something new by allowing new species to populate the area.</p><p id="3645626a-cb7b-4f19-8005-5cf6bfa7b4aa" class="">Not all disturbances are natural. Human actions have contributed to many disturbances seen in ecosystems today. While natural disturbances happen on occasion, human disturbances are putting constant pressure on ecosystems and dramatically impacting species. Human disturbances, including <mark class="highlight-pink_background"><strong>clear-cutting</strong></mark>, habitat fragmentation, and pollution, are continuously affecting ecosystems. The moment the ecosystem begins adjusting to one stress, another appears. Many ecosystems that we depend on are not given enough time to adapt to the new conditions. The natural cycle of disturbances—growth, <mark class="highlight-pink_background"><strong>dieback</strong></mark>, and growth—cannot properly function because too many disturbances are putting pressure on the ecosystem at once.</p><p id="51a0a441-175c-4c41-87ef-77220ae83b09" class=""><strong>Corridors and Flyways</strong></p><p id="6e619912-3206-4d5c-84f0-c1aff6437c56" class="">Wild animals are always on the move. They move from place to place in search of food, mates, shelter, and water. Many animals do not have to move far in order to have all their needs met, but other animals—for example migratory birds, wolves, mountain lions, or butterflies—require much more space. Currently many species with large territories, including gray wolves, are threatened because habitat loss and fragmentation have limited their available space. Roads, fences, and buildings cut off habitat and force wildlife into smaller areas. Conservationists have to take into account the different spatial needs of wildlife when designing plans to protect them. They have to think about the territory size, different habitat types, and migration routes that wildlife need.</p><p id="89c28d7e-cace-46d7-b2b3-29dfb054deee" class="">A wildlife corridor is a tract of land that connects different wildlife habitats (such as refuges, parks, or rivers) that might otherwise be separated by human development. Wildlife corridors provide many benefits to wildlife. With corridors, animals have a better opportunity of finding the basic necessities they need—food, water, shelter, and places to raise their young. Animals that require larger territories can access new habitats and maintain a healthy territory size. Wildlife corridors also promote genetic biodiversity. When more individuals of a species are interconnected, the gene pool becomes larger and more viable. Migratory wildlife benefit from corridors because they can move safely over long distances without having to come into contact with human developments or cars. Species are more likely to survive disturbances by having more undisturbed areas.</p><p id="acfabeae-1562-4d6f-868c-9a95c7514e74" class="">The National Wildlife Federation, in partnership with the Santa Monica Mountains Fund, is working to create a wildlife crossing for mountain lions in California. By linking protected habitat on either side of a freeway, mountain lions and other wildlife can the access to green space they need to survive. The Liberty Canyon Wildlife Crossing, when built, will be the largest such crossing in the world, and a model for urban wildlife conservation.</p><p id="7547f9a2-d45f-416d-982d-fa51916fd9eb" class="">Unlike mammals, birds and butterflies travel from one place to another by flying, so they face different kinds of challenges. Not only do we have to protect their winter and summer habitat, but also key rest stops that migratory wildlife use along the way. Conservationists can help threatened bird and butterfly populations by protecting habitat along major migratory flyways—pathways used by migratory birds and insects. Birds tend to take predictable routes to get from the winter feeding grounds to the summer breeding grounds and back. Flyways usually occur along coastlines, major rivers, and near mountains. The United States has four main migratory flyways.</p><p id="28dd20dc-2127-469f-8911-368546671d60" class="">Pacific Flyway: Along the Pacific coast, west of the Rocky Mountains</p><p id="e3115d41-208c-4cbb-a392-d86fa8c0588a" class="">Central Flyway: Over the Great Plains, east of the Rocky Mountains</p><p id="bc013e23-d360-485b-b548-1ac4c26e71cf" class="">Mississippi Flyway: Along the Mississippi River</p><p id="01b069d9-30fd-4b72-9c0e-b09894491579" class="">Atlantic Flyway: Along the Atlantic coast</p><p id="210a70c1-b6be-44c7-a90c-837a7fdd19fb" class="">A great way to help birds and butterflies migrate is by building a Certified Wildlife Habitat in your backyard or balcony. Learn how to provide a critical resting place and food source to help migratory birds reach their destination.</p><p id="eef81c65-eeca-4629-b9da-102ada741bc4" class="">
+</p><hr id="15a97525-dc43-4d2d-ba2d-33a728fdc88a"/><p id="fb282cff-56cd-4cf0-a695-d9a1f87e3cf5" class="">
+</p><h2 id="9e6a077a-e464-4a95-bf82-8f0442079d11" class="">Extra Reading</h2><h3 id="6bcf1581-f057-42f0-bab6-9d54235d370c" class="">“<span style="border-bottom:0.05em solid"><strong>Ethics of Wildlife Management and Conservation: What Should We Try to Protect?</strong></span>” <em>[Nature (By: Christian Gamborg), </em><a href="https://www.nature.com/scitable/knowledge/library/ethics-of-wildlife-management-and-conservation-what-80060473/"><em>link</em></a><em>, </em><mark class="highlight-teal"><em>Week 3 Session 1</em></mark><em>]</em></h3><p id="1ed1c1a0-3544-44d9-a33b-4f4b66c168cf" class="">
+</p></div></article>
+<footer style="text-align: center; width: 100%; margin: 1rem 0; height: 50px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+	<p>Made with ❤ by Mikhael Mounay</p>
+</footer>
+</body></html>
