@@ -49,7 +49,8 @@ window.onload = function() {
                 }
             }
         }
-        let text = document.querySelectorAll(txtchoice);
+        let txtchoicetemp = txtchoice;
+        let text = document.querySelectorAll(txtchoicetemp);
         for (let i = 0; i < text.length; i++) {
             // if (text[i].style.visibility == 'hidden') {
             // 	text[i].style.visibility = 'visible';
@@ -67,7 +68,7 @@ window.onload = function() {
             startbtn.classList.remove('red');
         }
         if (startbtn.innerHTML == 'Start Test') {
-            txtchoice = '';
+            txtchoicetemp = '';
         } else {
 
         }
