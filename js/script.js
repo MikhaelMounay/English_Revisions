@@ -9,6 +9,9 @@ window.onload = function() {
         settingstab.classList.toggle('hiddenClass');
     };
 
+    
+    let txtchoicetemp;
+
     startbtn.onclick = function() {
         for (let i = 0; i < chkboxs.length; i++) {
             if (chkboxs[i].checked == true && i == 0) {
@@ -49,8 +52,20 @@ window.onload = function() {
                 }
             }
         }
-        let txtchoicetemp = txtchoice;
-        let text = document.querySelectorAll(txtchoicetemp);
+        // console.log(txtchoice);
+        // console.log(txtchoicetemp);
+        let text = startbtn.innerHTML == 'Start Test' ? document.querySelectorAll(txtchoice) : document.querySelectorAll(txtchoicetemp);
+        txtchoicetemp = startbtn.innerHTML == 'Start Test' ? txtchoice : '';
+        // console.log(txtchoicetemp);
+        
+        // if (startbtn.innerHTML == 'Start Test') {
+        //     // txtchoicetemp = txtchoice;
+        //     console.log(txtchoicetemp);
+        //     text = document.querySelectorAll(txtchoice);
+        // } else {
+        //     text = document.querySelectorAll(txtchoicetemp);
+        //     console.log(txtchoicetemp);
+        // }
         for (let i = 0; i < text.length; i++) {
             // if (text[i].style.visibility == 'hidden') {
             // 	text[i].style.visibility = 'visible';
@@ -68,7 +83,7 @@ window.onload = function() {
             startbtn.classList.remove('red');
         }
         if (startbtn.innerHTML == 'Start Test') {
-            txtchoicetemp = '';
+            // txtchoicetemp = '';
         } else {
 
         }
