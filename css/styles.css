@@ -88,3 +88,14 @@ footer {
     color: white;
     background-color: var(--mycolor);
 }
+
+.content ul li a.disabled {
+    opacity: 0.5;
+    user-select: none;
+}
+
+.content ul li a.disabled:hover {
+    cursor: not-allowed;
+    color: currentColor;
+    background-color: transparent;
+}
