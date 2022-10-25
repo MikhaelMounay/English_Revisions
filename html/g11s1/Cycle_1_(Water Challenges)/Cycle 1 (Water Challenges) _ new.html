@@ -1,0 +1,693 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Cycle 1 (Water Challenges)</title>
+	<link rel="shortcut icon" href="../../../img/revision_icon.png" type="image/x-icon">
+	<link rel="stylesheet" href="../../../css/testbtn.css">
+	<script src="../../../js/script.js"></script>
+<style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><div id="testbtn"><button id="startbtn">Start Test</button><button id="settingsbtn">⚙</button></div><div id="settingstab" class="hiddenClass"><span>Columns To Hide!</span><br><input type="checkbox" name="chkbox" id="word" checked>Word<br><input type="checkbox" name="chkbox" id="meaning">Meaning<br><input type="checkbox" name="chkbox" id="meaninginenglish">Meaning in English<br><input type="checkbox" name="chkbox" id="examplesentence" checked>Equals<br><input type="checkbox" name="chkbox" id="notes" checked>Notes</div><article id="c68777da-daa5-4ead-978d-7f93899412f8" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">1️⃣</span></div><h1 class="page-title"><a style="color: rgb(55, 53, 47); text-decoration: none;" href="../../../">Cycle 1 (Water Challenges)</a></h1></header><div class="page-body"><h1 id="e83a2bef-e0bd-4d6f-bb8d-7bbf79611713" class="">Cycle Content</h1><p id="f599bad4-0c8f-4f34-9839-2d1b55348efd" class=""><strong><mark class="highlight-red_background">Week 1</mark></strong></p><ol type="1" id="e77ec51f-d351-4944-8acf-0bb348b8377b" class="numbered-list" start="1"><li><strong>Writing Academic English</strong>:<ol type="a" id="3e359797-8f82-4dfd-8b1a-5b30846c89b4" class="numbered-list" start="1"><li>Part 2: Writing an Essay, <span style="border-bottom:0.05em solid"><strong>Chapter 5</strong></span> Chronological Order: <span style="border-bottom:0.05em solid"><strong>Process Essays</strong></span></li></ol><ol type="a" id="e2e4576a-3ab7-4815-ad53-0b964f025524" class="numbered-list" start="2"><li>Part 3: Sentence Structure, <span style="border-bottom:0.05em solid"><strong>Chapter 10</strong></span>: <span style="border-bottom:0.05em solid"><strong>Types of Sentences</strong></span></li></ol></li></ol><ol type="1" id="a86ed0bc-f88e-44be-97f2-4ba9a2be7a30" class="numbered-list" start="2"><li><em>Some online resources</em></li></ol><p id="c97beb10-e9c9-400a-bffb-c37e1a262d4a" class=""><strong><mark class="highlight-red_background">Week 2</mark></strong></p><ol type="1" id="f6687afd-ed4f-42f2-8539-7d6f3a02f078" class="numbered-list" start="1"><li><strong>New Hello</strong>:<ol type="a" id="12641c30-4fda-4c55-b43e-09f5ffbf4a2a" class="numbered-list" start="1"><li><em>Literature</em>: King Lear <span style="border-bottom:0.05em solid">Act 1</span> (5 scenes)</li></ol></li></ol><ol type="1" id="5705731f-c3e7-4e29-8e55-f87a5d1bbf65" class="numbered-list" start="2"><li><em>Some online resources</em></li></ol><p id="db537a9d-4aa6-4794-b50e-8137aba23d02" class=""><strong><mark class="highlight-red_background">Week 3</mark></strong></p><ol type="1" id="4a98adc0-1ce1-423b-a148-9a7b337bc541" class="numbered-list" start="1"><li><strong>New Hello</strong>:<ol type="a" id="5fab55e0-a4bf-4125-b1ae-70c7acc4fffa" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid"><strong>Unit 1</strong></span>: Staying healthy</li></ol><ol type="a" id="0a4cda66-0fe2-4b5b-8dfb-f6a04eb8cc7e" class="numbered-list" start="2"><li><span style="border-bottom:0.05em solid"><strong>Unit 2</strong></span>: Eating around the world</li></ol></li></ol><ol type="1" id="7100a7ad-262d-4c3d-b88a-2f659fba247e" class="numbered-list" start="2"><li><strong>Grammarway 4</strong>:<ol type="a" id="fff29e40-d341-4ae7-b7b2-3734e5bd7fa7" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid"><strong>Unit 5</strong></span>: Modal verbs</li></ol><ol type="a" id="239d2d2d-b409-48c6-87f6-84a8bdcc1d7b" class="numbered-list" start="2"><li><span style="border-bottom:0.05em solid"><strong>Unit 3</strong></span>: Comparisons</li></ol></li></ol><ol type="1" id="7070d22e-6dbb-46af-a43a-c3370f3aaf34" class="numbered-list" start="3"><li><em>Some online resources</em></li></ol><p id="8c5ca75a-04ce-4402-801a-3088aaba6898" class="">
+</p><p id="201815b7-d976-42a4-8ec7-7fe1b4a0d11c" class=""><mark class="highlight-orange_background">** All online resources can be found in the cycle file.</mark></p><hr id="1818e10b-ea80-48e2-85bf-4acaf47e186d"/><h1 id="630a72fb-e27f-41ad-b85f-f31eeeb0ae87" class="">Cycle Vocabulary</h1><h2 id="aea3f0a2-a829-48ae-8cf5-0cece96c3940" class=""><mark class="highlight-red_background">Week 1</mark></h2><div id="d7c6e519-63bf-46d5-8180-155bf0434991" class="collection-content"><h4 class="collection-title">Session 1</h4><table class="collection-content"><thead style="background-color: lightgray;"><tr><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>Word</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Meaning</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Meaning in English</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Equals</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Notes</th></tr></thead><tbody><tr id="f499e313-c0ca-43e3-94b9-1f61d287469e"><td class="cell-title">diarrhea</td><td class="cell-EJZS">إسهال</td><td class="cell-EsVE"></td><td class="cell-on[V"></td><td class="cell-ZSfO"></td></tr><tr id="731f5ac0-afb8-4940-a590-f8189b8b09f3"><td class="cell-title">provision</td><td class="cell-EJZS">توفير</td><td class="cell-EsVE"></td><td class="cell-on[V"></td><td class="cell-ZSfO">(<em>n. of</em> provide)</td></tr><tr id="0aec6f1f-e548-44f8-95b6-d52ec50a40bd"><td class="cell-title">contemplate</td><td class="cell-EJZS">تفكر / تأمل</td><td class="cell-EsVE"></td><td class="cell-on[V"></td><td class="cell-ZSfO"></td></tr><tr id="7c87a857-2019-4c1e-91c8-b36f22790192"><td class="cell-title">flee</td><td class="cell-EJZS">هرب / فر</td><td class="cell-EsVE"></td><td class="cell-on[V"></td><td class="cell-ZSfO"></td></tr><tr id="2a8dd9e9-de98-4a4d-92ad-59616ea8c615"><td class="cell-title">contaminated</td><td class="cell-EJZS">ملوث</td><td class="cell-EsVE"></td><td class="cell-on[V"></td><td class="cell-ZSfO"></td></tr><tr id="194a0c98-2c33-43b3-8da9-a9b0f17ec0d3"><td class="cell-title">hurricane</td><td class="cell-EJZS">إعصار</td><td class="cell-EsVE"></td><td class="cell-on[V"></td><td class="cell-ZSfO"></td></tr><tr id="965d2024-f305-4750-a549-36b9f502df4c"><td class="cell-title">dismay</td><td class="cell-EJZS">الفزع</td><td class="cell-EsVE"></td><td class="cell-on[V"></td><td class="cell-ZSfO"></td></tr><tr id="fb0d142b-a1df-4318-9b4c-1b91d7409ca5"><td class="cell-title">demonstration</td><td class="cell-EJZS">شرح / برهنة</td><td class="cell-EsVE"></td><td class="cell-on[V"></td><td class="cell-ZSfO"></td></tr><tr id="56fad986-9d8c-4b81-91f6-4b176813f9f9"><td class="cell-title">runoff</td><td class="cell-EJZS">جريان المياه</td><td class="cell-EsVE"></td><td class="cell-on[V"></td><td class="cell-ZSfO"></td></tr><tr id="c59bf9bf-0776-488f-8a17-7b7260ebd181"><td class="cell-title">sewage</td><td class="cell-EJZS">مياه المجاري</td><td class="cell-EsVE"></td><td class="cell-on[V"></td><td class="cell-ZSfO"></td></tr><tr id="8dc93b73-0db2-414a-bab2-21a09e597e93"><td class="cell-title">failsafe technology</td><td class="cell-EJZS">تقنية آمنة من الفشل</td><td class="cell-EsVE"></td><td class="cell-on[V"></td><td class="cell-ZSfO"></td></tr><tr id="9a05d345-e357-4cc1-9a3f-2577a3d571ff"><td class="cell-title">perpetuating</td><td class="cell-EJZS">يديم / يخلّد</td><td class="cell-EsVE"></td><td class="cell-on[V"></td><td class="cell-ZSfO"></td></tr><tr id="c518168c-7615-4a49-8ca7-58cfee5a70b5"><td class="cell-title">sterile</td><td class="cell-EJZS">معقم - عاقر</td><td class="cell-EsVE"></td><td class="cell-on[V"></td><td class="cell-ZSfO"></td></tr><tr id="b8f42c5b-c018-4bcb-94e6-8e5280b15d1a"><td class="cell-title">desalinate</td><td class="cell-EJZS">تحلية</td><td class="cell-EsVE"></td><td class="cell-on[V"></td><td class="cell-ZSfO"></td></tr></tbody></table></div><div id="fb8627c4-df8e-414c-b5aa-e601f45b3345" class="collection-content"><h4 class="collection-title">Session 2</h4><table class="collection-content"><thead style="background-color: lightgray;"><tr><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>Word</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Meaning</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Meaning in English</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Equals</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Notes</th></tr></thead><tbody><tr id="0d58a42e-8ec2-449f-be2c-5eef7e153054"><td class="cell-title">aquifer</td><td class="cell-EJZS">طبقة المياه الجوفية</td><td class="cell-U^?n"></td><td class="cell-on[V"></td><td class="cell-&lt;cLp"></td></tr><tr id="299994b4-fc78-43fd-a03b-5cd71a3beb3a"><td class="cell-title">brine</td><td class="cell-EJZS">محلول ملحي</td><td class="cell-U^?n"></td><td class="cell-on[V"></td><td class="cell-&lt;cLp"></td></tr><tr id="4ec38425-8cc3-45ec-bd8c-16b511cb3feb"><td class="cell-title">confluence</td><td class="cell-EJZS">التقاء نهرين</td><td class="cell-U^?n"></td><td class="cell-on[V"></td><td class="cell-&lt;cLp"></td></tr><tr id="d3526880-5b63-4b12-8bb3-7b619e10dc4c"><td class="cell-title">drizzle</td><td class="cell-EJZS">رذاذ / قطرات</td><td class="cell-U^?n"></td><td class="cell-on[V"></td><td class="cell-&lt;cLp"></td></tr><tr id="f76adf67-47be-406d-a776-87031860607a"><td class="cell-title">effluent</td><td class="cell-EJZS">تصريف (المياه)</td><td class="cell-U^?n"></td><td class="cell-on[V"></td><td class="cell-&lt;cLp"></td></tr><tr id="c55c80d6-a407-475f-b344-601807b33190"><td class="cell-title">fluvial</td><td class="cell-EJZS">نهري</td><td class="cell-U^?n"></td><td class="cell-on[V"></td><td class="cell-&lt;cLp"></td></tr><tr id="ed5a3b5e-36dd-420e-8e7d-8031d4f69e88"><td class="cell-title">impermeable</td><td class="cell-EJZS">غير منفذة</td><td class="cell-U^?n"></td><td class="cell-on[V"></td><td class="cell-&lt;cLp"></td></tr><tr id="870ceb19-d0fa-46f0-8aa7-c22ed9eb8bbc"><td class="cell-title">meander</td><td class="cell-EJZS">تعرج / تلوى</td><td class="cell-U^?n"></td><td class="cell-on[V"></td><td class="cell-&lt;cLp"></td></tr><tr id="87aae6d8-b683-431f-8b29-807ed5025ee5"><td class="cell-title">precipitation</td><td class="cell-EJZS">ترسب</td><td class="cell-U^?n"></td><td class="cell-on[V"></td><td class="cell-&lt;cLp"></td></tr><tr id="d19e2031-6c58-412c-8039-b08c38edd91b"><td class="cell-title">slush</td><td class="cell-EJZS">طين - ثلج في مرحلة الذوبان</td><td class="cell-U^?n"></td><td class="cell-on[V"></td><td class="cell-&lt;cLp"></td></tr><tr id="dfe32c83-dfa3-4a0c-90e7-2cc274c5caa6"><td class="cell-title">waterlogged</td><td class="cell-EJZS">مشبع بالمياه</td><td class="cell-U^?n"></td><td class="cell-on[V"></td><td class="cell-&lt;cLp"></td></tr></tbody></table></div><hr id="4d8a79b2-5efb-4e37-b2aa-acdace0370de"/><h2 id="201be94e-68f0-42ae-948c-4513329224a5" class=""><mark class="highlight-red_background">Week 2</mark></h2><div id="4f1708f3-2b9a-48e5-96bf-b4378e631bcc" class="collection-content"><h4 class="collection-title">Session 1</h4><table class="collection-content"><thead style="background-color: lightgray;"><tr><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>Word</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Meaning</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Meaning in English</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Equals</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Notes</th></tr></thead><tbody><tr id="5b36313a-85bc-4b4e-948d-d8eef2fa95bb"><td class="cell-title">erosion</td><td class="cell-EJZS">تعرية / تآكل</td><td class="cell-DY?_"></td><td class="cell-on[V"></td><td class="cell-oqfB"></td></tr><tr id="dd645209-8d9b-42b2-a9cc-2eb3e1aa0e5e"><td class="cell-title">weathering</td><td class="cell-EJZS">التجوية (التعرض لعوامل الجو)</td><td class="cell-DY?_"></td><td class="cell-on[V"></td><td class="cell-oqfB"></td></tr><tr id="6b44f0a3-f169-45a9-8fd2-96ee91902a0c"><td class="cell-title">wear away</td><td class="cell-EJZS"></td><td class="cell-DY?_"><em>to gradually disappear or to cause (something) to gradually disappear or become thinner, smaller, etc.</em></td><td class="cell-on[V">erode</td><td class="cell-oqfB"></td></tr><tr id="197d5e22-b8e0-43f4-bd03-a4ccf2da568f"><td class="cell-title">desertification</td><td class="cell-EJZS">التصحر</td><td class="cell-DY?_"></td><td class="cell-on[V"></td><td class="cell-oqfB"></td></tr><tr id="6d5b8133-e7e8-4ba4-947f-e676914f1581"><td class="cell-title">culprit</td><td class="cell-EJZS">مجرم / متهم</td><td class="cell-DY?_"></td><td class="cell-on[V"></td><td class="cell-oqfB"></td></tr><tr id="359bbcad-d704-4d35-a2d3-d3710cf18f9e"><td class="cell-title">unsustainable</td><td class="cell-EJZS">غير مستدام</td><td class="cell-DY?_"></td><td class="cell-on[V"></td><td class="cell-oqfB"></td></tr><tr id="af92a3a4-edda-452c-a82a-07547eb86851"><td class="cell-title">industrialization</td><td class="cell-EJZS">تصنيع</td><td class="cell-DY?_"></td><td class="cell-on[V"></td><td class="cell-oqfB"></td></tr><tr id="4b23f63c-c677-4d13-9421-22b4d78416af"><td class="cell-title">labor-intensive</td><td class="cell-EJZS">صناعة ثقيلة (العمل الذي يتطلب عمالة كثيرة)</td><td class="cell-DY?_"></td><td class="cell-on[V"></td><td class="cell-oqfB"></td></tr><tr id="53f3060a-fae2-4764-8357-f0c8a35783e3"><td class="cell-title">affluent</td><td class="cell-EJZS">غني - وافر</td><td class="cell-DY?_"></td><td class="cell-on[V"></td><td class="cell-oqfB"></td></tr><tr id="53663f6b-e91a-4144-bfcf-f19a9f960b63"><td class="cell-title">wash away</td><td class="cell-EJZS"></td><td class="cell-DY?_"><em>to carry (something) away by the movement of water</em></td><td class="cell-on[V"></td><td class="cell-oqfB"></td></tr><tr id="f8537f41-e53b-4d43-8a2c-e54b7842b703"><td class="cell-title">amplify</td><td class="cell-EJZS">يضخم / يوسع / يبالغ</td><td class="cell-DY?_"></td><td class="cell-on[V"></td><td class="cell-oqfB"></td></tr><tr id="ca59508b-f379-4cef-8835-90c4488aa0cd"><td class="cell-title">devastating</td><td class="cell-EJZS">مدمر / مخرب</td><td class="cell-DY?_"></td><td class="cell-on[V"></td><td class="cell-oqfB"></td></tr><tr id="abeca4d9-883d-442d-8f5f-4a0dbb9a5271"><td class="cell-title">deforestation</td><td class="cell-EJZS">إزالة الغابات</td><td class="cell-DY?_"></td><td class="cell-on[V"></td><td class="cell-oqfB"></td></tr><tr id="f0cc42d5-8f80-41e6-91db-cdd96eee84b6"><td class="cell-title">integrity</td><td class="cell-EJZS">نزاهة - كمال</td><td class="cell-DY?_"></td><td class="cell-on[V"></td><td class="cell-oqfB"></td></tr><tr id="38c2cb64-0bbf-4ee1-bb4f-ecaa6153157d"><td class="cell-title">measures</td><td class="cell-EJZS">إجراءات - مقاييس</td><td class="cell-DY?_"></td><td class="cell-on[V"></td><td class="cell-oqfB"></td></tr></tbody></table></div><div id="e7be769a-ce68-4e3c-b7ef-e6cf0be0ce80" class="collection-content"><h4 class="collection-title">Session 2</h4><table class="collection-content"><thead style="background-color: lightgray;"><tr><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>Word</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Meaning</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Meaning in English</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Equals</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Notes</th></tr></thead><tbody><tr id="4e5bd410-c62e-4c49-8e3a-3799411176ca"><td class="cell-title">linguistic</td><td class="cell-EJZS">لغوي</td><td class="cell-TcVY"></td><td class="cell-on[V"></td><td class="cell-Atkf"></td></tr><tr id="b7847e9d-085c-4b2a-9d59-216a105cd52c"><td class="cell-title">pursuing</td><td class="cell-EJZS">ملاحقة / مطاردة</td><td class="cell-TcVY"></td><td class="cell-on[V"></td><td class="cell-Atkf"></td></tr><tr id="1fe3cb12-26e5-4c48-9895-ef9a72c0e1ab"><td class="cell-title">make puns</td><td class="cell-EJZS">يلعب بالكلام
+</td><td class="cell-TcVY"><em>tell a joke exploiting the different possible meanings of a word or the fact that there are words which sound alike but have different meanings</em></td><td class="cell-on[V"></td><td class="cell-Atkf"></td></tr><tr id="e9aec0cb-d904-490c-90ae-62c5ae0a8896"><td class="cell-title">doodle</td><td class="cell-EJZS">رسم عابث</td><td class="cell-TcVY"></td><td class="cell-on[V"></td><td class="cell-Atkf"></td></tr><tr id="4daca568-1b27-4a78-b4dc-879cca3fb2b1"><td class="cell-title">intriguing</td><td class="cell-EJZS">مثير للاهتمام</td><td class="cell-TcVY"></td><td class="cell-on[V"></td><td class="cell-Atkf"></td></tr></tbody></table></div><hr id="72605294-f004-4f79-865d-b816a288b6b9"/><h2 id="53d3dbad-5b0b-4625-8996-e461f1290d8b" class=""><mark class="highlight-red_background">Week 3</mark></h2><div id="a8eae85d-175f-45e0-aead-18ec6dbbaae7" class="collection-content"><h4 class="collection-title">Session 1</h4><table class="collection-content"><thead style="background-color: lightgray;"><tr><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>Word</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Meaning</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Meaning in English</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Equals</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Notes</th></tr></thead><tbody><tr id="e9db4177-dcff-471e-a225-9e7c1fecd3fe"><td class="cell-title">infection</td><td class="cell-EJZS">عدوى</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="262fcb26-0549-4ff2-8326-383f39b58429"><td class="cell-title">perform</td><td class="cell-EJZS">يؤدي</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="f9790238-cf09-4f85-9a67-f1c761d9eaec"><td class="cell-title">react</td><td class="cell-EJZS">يتفاعل</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="6501f19b-880b-49ac-a69e-a023032b00a7"><td class="cell-title">technique</td><td class="cell-EJZS">تقنية / أسلوب</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="4abe9914-5c75-425f-8969-e7c956788f38"><td class="cell-title">severe</td><td class="cell-EJZS">شديد / حاد</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="15233171-c954-4d1d-81aa-447f59944d38"><td class="cell-title">bystander</td><td class="cell-EJZS">المتفرغ (متفرج غير متدخل بشىء)</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="f1da7859-32c5-4d18-8f21-a521a093dcac"><td class="cell-title">breathlessly</td><td class="cell-EJZS">لاهث</td><td class="cell-osb&lt;"><em>in a way that involves gasping for breath, typically due to exertion</em></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="5ea3f7b5-073b-4fc1-8224-bf2f3e85efe9"><td class="cell-title">plead</td><td class="cell-EJZS">الترافع (في محكمة)
+-
+تضرع</td><td class="cell-osb&lt;"><em>present and argue</em>
+-
+<em>make an emotional appeal</em></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="869f5efa-b04f-4ab6-8b62-19c854b7b719"><td class="cell-title">crisis</td><td class="cell-EJZS">مصيبة</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="b8d47481-32c7-4a39-a70e-bb26a1e290ae"><td class="cell-title">crises</td><td class="cell-EJZS">مصائب</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS">(<em>plural of</em> crisis)</td></tr><tr id="7d2a54ba-7123-4491-b668-f20532f5a677"><td class="cell-title">eminent</td><td class="cell-EJZS">بارز / مشهور / مرموق</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="c3965908-1e1c-4302-8aba-60c365ddf4e6"><td class="cell-title">psychosis</td><td class="cell-EJZS">هواس</td><td class="cell-osb&lt;"><em>a severe mental disorder in which thought and emotions are so impaired that contact is lost with external reality</em></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="2cc72a00-fbf0-4ee6-8918-1dbfeb930b60"><td class="cell-title">impend</td><td class="cell-EJZS">وشيك</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="23f665d5-d4a2-467d-9f05-33e4bd51bd8f"><td class="cell-title">intervene</td><td class="cell-EJZS">تدخل</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="8c7ea486-353c-47e4-8a79-475822f50fa3"><td class="cell-title">streetwise</td><td class="cell-EJZS"></td><td class="cell-osb&lt;"><em>able to deal successfully with dangerous or difficult situations in big towns or cities where there is a lot of crime
+-
+reflective of modern urban life, especially that of urban youth</em></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="3c35ccec-4db4-4832-a4d1-1ee7c16d7fe5"><td class="cell-title">impatient</td><td class="cell-EJZS">قليل الصبر</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="488bac89-8b14-4f57-ae30-dabeac8a08ff"><td class="cell-title">inpatient</td><td class="cell-EJZS"></td><td class="cell-osb&lt;"><em>a patient who stays for one or more nights in a hospital for treatment</em></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="72542cf6-d237-4a91-80cd-c5d2887bf210"><td class="cell-title">psychiatric</td><td class="cell-EJZS">نفسية</td><td class="cell-osb&lt;"><em>relating to mental illness or its treatment</em></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="cd1cf027-b5d8-40fc-842c-48ff19c9c69c"><td class="cell-title">agitated</td><td class="cell-EJZS">مضطرب / منفعل</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="782f7bf0-475a-4679-a8e9-b80abee4d958"><td class="cell-title">empathetic</td><td class="cell-EJZS">متعاطف</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="31339ca7-9278-4edf-985a-23f471fc1617"><td class="cell-title">alley</td><td class="cell-EJZS">زقاق / حارة</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="5cdaaa62-c29d-4534-950e-31a91f2b8923"><td class="cell-title">vicious</td><td class="cell-EJZS">وحشي / شرير</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="702f0db2-a6b4-4eb6-a70c-318ffe751fc0"><td class="cell-title">stereotype</td><td class="cell-EJZS">الصورة النمطية</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="20869935-c016-4909-a810-cffc8ce2d5d3"><td class="cell-title">stereotypical</td><td class="cell-EJZS">النمطية</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="8bd8b58e-3e37-4c1c-9172-ec4a64a473e1"><td class="cell-title">petrify</td><td class="cell-EJZS">تحجر
+-
+تسمر في مكانه (من الخوف)</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="b9e80bd0-4c6e-414f-a478-1d2cdd471360"><td class="cell-title">assault</td><td class="cell-EJZS">يعتدي / يتهجم</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="c54abc48-4014-4e4e-8399-fbef52af43d8"><td class="cell-title">rumor</td><td class="cell-EJZS">شائعة (إشاعة)</td><td class="cell-osb&lt;"><em>a currently circulating story or report of uncertain or doubtful truth</em></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="f8de1ca7-bed5-4d49-b7e2-0a4e9d0cf838"><td class="cell-title">disproportionately</td><td class="cell-EJZS">بشكل غير متناسب</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="59fb9d6c-ab03-4d7b-a686-191bc04643b6"><td class="cell-title">perpetrator</td><td class="cell-EJZS">مرتكب الجريمة</td><td class="cell-osb&lt;"><em>a person who carries out a harmful, illegal, or immoral act</em></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="0e7eed29-713c-45b0-a58e-5399ddee00c0"><td class="cell-title">mnemonic</td><td class="cell-EJZS"></td><td class="cell-osb&lt;"><em>a device such as a pattern of letters, ideas, or associations that assists in remembering something</em></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="f80bc3af-467a-4917-9291-35ab46e17bca"><td class="cell-title">hallucination</td><td class="cell-EJZS">هلوسة</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="f203d750-6f14-45ca-93db-759cf6b83cc3"><td class="cell-title">accreditation</td><td class="cell-EJZS">الاعتماد الاكاديمي</td><td class="cell-osb&lt;"></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="78a37aa1-8123-40a2-a1ff-40b18af6efde"><td class="cell-title">triage</td><td class="cell-EJZS"></td><td class="cell-osb&lt;"><strong><em>(in medical use)</em></strong><em> the assignment of degrees of urgency to wounds or illnesses to decide the order of treatment of a large number of patients or casualties</em></td><td class="cell-on[V"></td><td class="cell-XUBS"></td></tr><tr id="5dcff15f-0a70-469a-9436-4e51812e800d"><td class="cell-title">stigma</td><td class="cell-EJZS"></td><td class="cell-osb&lt;"><em>a visible sign or characteristic of a disease
+</em>-
+<em>a mark of disgrace or dishonor</em></td><td class="cell-on[V"></td><td class="cell-XUBS">(<em>plural:</em> stigmas / stigmata)</td></tr></tbody></table></div><div id="be967c29-2010-4da6-a338-5ca5e7c714f1" class="collection-content"><h4 class="collection-title">Session 2</h4><table class="collection-content"><thead style="background-color: lightgray;"><tr><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>Word</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Meaning</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Meaning in English</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Equals</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Notes</th></tr></thead><tbody><tr id="f99ec76d-50ac-4260-9689-eb8f20bbbb1c"><td class="cell-title">get together</td><td class="cell-EJZS">يتجمع / يلتقى</td><td class="cell-eY}I"></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="e304074e-e1de-4acc-811f-15fdd9853b98"><td class="cell-title">amount</td><td class="cell-EJZS">كمية</td><td class="cell-eY}I"></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="03d094b6-ef1f-449e-9b87-b211679a0844"><td class="cell-title">traditional</td><td class="cell-EJZS">تقليدي</td><td class="cell-eY}I"></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="5dbf2d8f-9e8d-4d35-ae47-139f73721669"><td class="cell-title">prepare</td><td class="cell-EJZS">يعد / يجهز</td><td class="cell-eY}I"></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="acb91470-12c4-4af7-a555-56f82ce2a3fa"><td class="cell-title">serve</td><td class="cell-EJZS">يخدم</td><td class="cell-eY}I"></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="c698a5c2-c8be-4e1d-a441-0158ee5ab9ee"><td class="cell-title">occasion</td><td class="cell-EJZS">مناسبة / فرصة</td><td class="cell-eY}I"></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="84d5c359-e395-4c7c-a617-bf2906c0a95a"><td class="cell-title">celebrate</td><td class="cell-EJZS">يحتفل</td><td class="cell-eY}I"></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="8b75333a-28e0-4e66-9bfc-743651d7796a"><td class="cell-title">newfound</td><td class="cell-EJZS"></td><td class="cell-eY}I"><mark class="highlight-red"><em>recently discovered or established</em></mark></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="a3fccc81-b11f-4429-b930-0895b59a6bc9"><td class="cell-title">tease</td><td class="cell-EJZS">يضايق / يثير</td><td class="cell-eY}I"></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="28d0b5cc-6e74-4fc7-acaa-d17ebca5a93e"><td class="cell-title">primarily</td><td class="cell-EJZS">في المقام الأول</td><td class="cell-eY}I"><em>for the most part</em></td><td class="cell-on[V">mainly</td><td class="cell-}sNL"></td></tr><tr id="1a69e8f3-6695-4e4f-8f0d-3f052571dabe"><td class="cell-title">disrespectful</td><td class="cell-EJZS">عديم الاحترام</td><td class="cell-eY}I"></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="4b599efb-c870-447f-a0ee-a9eae755f03d"><td class="cell-title">unhygienic</td><td class="cell-EJZS">غير صحي</td><td class="cell-eY}I"><em>not clean or sanitary</em></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="eb1b5cf0-459b-4e9e-bfb3-00307dfd6a83"><td class="cell-title">cuisine</td><td class="cell-EJZS">المطبخ (<em>ليس المكان</em>)</td><td class="cell-eY}I"><em>a style or method of cooking, especially as characteristic of a particular country, region, or establishment</em></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="196ef982-a181-49bb-8ee2-8c07f9fc2d17"><td class="cell-title">every nook and corner [idiom]</td><td class="cell-EJZS"></td><td class="cell-eY}I"><em>every place</em>
+-
+<em>every part of</em></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="9e976ee1-952b-47c0-a4b2-24e87a24745f"><td class="cell-title">slurp</td><td class="cell-EJZS"></td><td class="cell-eY}I"><em>eat or drink (something) with a loud sloppy sucking noise</em></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="e857e40a-1062-42ac-ad3f-072909387aa8"><td class="cell-title">immensely</td><td class="cell-EJZS">بشكل هائل</td><td class="cell-eY}I"></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="e65a9e6b-e58f-4b75-8887-5ce09c759395"><td class="cell-title">culinary</td><td class="cell-EJZS">(مطبخيّ)</td><td class="cell-eY}I"><em>(of or for cooking)</em></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="4b27f409-d56d-4ab9-8d7d-0cbebf120d37"><td class="cell-title">assemble</td><td class="cell-EJZS">جمعية / تجمع</td><td class="cell-eY}I"></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="02d8a55b-eef3-4e23-be92-50d33f5c9030"><td class="cell-title">chopstick</td><td class="cell-EJZS"></td><td class="cell-eY}I"><em>each of a pair of small, thin, tapered sticks of wood, ivory, or plastic, held together in one hand and used as eating utensils, especially by the Chinese, the Japanese, and other people in eastern Asia</em></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="b7fe1f2c-20b6-45d7-8718-616ecc0f2968"><td class="cell-title">offend</td><td class="cell-EJZS">يسيء</td><td class="cell-eY}I"></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="11b3990b-7344-43a5-b816-3e2911fcf3ad"><td class="cell-title">offensive</td><td class="cell-EJZS">هجومي / عدواني
+-
+مهين</td><td class="cell-eY}I"></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="76967f71-7ccd-4c9d-b2a5-fd057480ad64"><td class="cell-title">funeral</td><td class="cell-EJZS">جنازة</td><td class="cell-eY}I"></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="5bdc0401-17a4-4f3d-b054-10d7a0c2524a"><td class="cell-title">beverage</td><td class="cell-EJZS">شراب (غير الماء)</td><td class="cell-eY}I"><em>a drink, especially one other than water</em></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="488be67b-9f6c-4c09-9504-af23f2f66a1e"><td class="cell-title">saucer</td><td class="cell-EJZS">صحن الفنجان</td><td class="cell-eY}I"><em>a shallow dish, typically having a circular indentation in the center, on which a cup is placed</em></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="647e7b51-06d0-41f9-a9dc-7678d56ba90e"><td class="cell-title">stir</td><td class="cell-EJZS">يقلّب (يمزج بالتحريك)</td><td class="cell-eY}I"></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="0635df82-52f0-4b4e-a75b-745c2e945590"><td class="cell-title">drumstick</td><td class="cell-EJZS">عصا الطبل</td><td class="cell-eY}I"><em>a stick, typically with a shaped or padded head, used for beating a drum</em></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="6a7273fe-b92e-4645-a6bf-e55ec82632ad"><td class="cell-title">customary</td><td class="cell-EJZS">عرفي / معتاد</td><td class="cell-eY}I"></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="4601237c-3eb9-4624-9437-a0c23045f170"><td class="cell-title">pepper</td><td class="cell-EJZS">فلفل</td><td class="cell-eY}I"></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr><tr id="d8091f9d-93d3-4028-b565-a6344c066b19"><td class="cell-title">insult</td><td class="cell-EJZS">يسب / يهين</td><td class="cell-eY}I"></td><td class="cell-on[V"></td><td class="cell-}sNL"></td></tr></tbody></table></div><hr id="085b5ed6-2b4a-4ed9-a87a-90dffe5a20ba"/><h2 id="d4b2bc78-b463-450a-a464-4a82a914734c" class="">From Grammarway 4</h2><h3 id="f4aabf1c-6f13-42a0-b343-68205bb81a61" class=""><mark class="highlight-red_background">Unit 5</mark></h3><figure id="469a63c7-ac92-40bc-9221-3fa11352e5df" class="image"><img style="width:1559px" src="Cycle%201%20(Water%20Challenges)%20c68777dadaa54ead978d7f93899412f8/Untitled.png"/></figure><hr id="7093c127-e541-44d4-b231-35c8f801c972"/><figure id="f0d93b33-71e1-4b56-9645-06344f66ba20" class="image"><img style="width:480px" src="Cycle%201%20(Water%20Challenges)%20c68777dadaa54ead978d7f93899412f8/Untitled%201.png"/></figure><p id="fc8beb62-01c4-4177-8929-b0ebed777d2a" class="">
+</p><hr id="b066d4a2-b100-4eb7-aa6d-6520590e9c2c"/><h3 id="b735ab08-7876-4954-a47f-141118178654" class=""><mark class="highlight-red_background">Unit 3</mark></h3><figure id="0c420360-3ec1-451b-8dbc-354317a3f939" class="image"><img style="width:480px" src="Cycle%201%20(Water%20Challenges)%20c68777dadaa54ead978d7f93899412f8/Untitled%202.png"/></figure><p id="e6aedc5e-efac-40ef-81e6-181cbaa687a8" class="">
+</p></div></article><footer style="text-align: center; width: 100%; height: 50px; display: flex; align-items: center; justify-content: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+	<p>Made with ❤ by Mikhael Mounay</p>
+</footer></body></html>
