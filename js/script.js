@@ -13,6 +13,7 @@ window.onload = function() {
     let txtchoicetemp;
 
     startbtn.onclick = function() {
+        txtchoice = '';
         for (let i = 0; i < chkboxs.length; i++) {
             if (chkboxs[i].checked == true && i == 0) {
                 if (txtchoice != '') {
